@@ -8,7 +8,7 @@ require (
 	github.com/go-openapi/spec v0.19.5 // indirect
 	github.com/go-openapi/strfmt v0.19.4
 	github.com/go-openapi/swag v0.19.6
-	github.com/go-openapi/validate v0.19.5 // indirect
+	github.com/go-openapi/validate v0.19.5
 	github.com/google/go-cmp v0.4.0 // indirect
 	github.com/kr/pretty v0.2.0 // indirect
 	go.mongodb.org/mongo-driver v1.2.1 // indirect

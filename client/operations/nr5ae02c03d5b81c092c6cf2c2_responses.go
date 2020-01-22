@@ -7,10 +7,13 @@ package operations
 
 import (
 	"fmt"
+	"io"
 
 	"github.com/go-openapi/runtime"
 
 	strfmt "github.com/go-openapi/strfmt"
+
+	models "github.com/crazedpeanut/luis/models"
 )
 
 // Nr5ae02c03d5b81c092c6cf2c2Reader is a Reader for the Nr5ae02c03d5b81c092c6cf2c2 structure.
@@ -83,13 +86,25 @@ The app ID is missing or invalid.
 The includeResponse is invalid.
 */
 type Nr5ae02c03d5b81c092c6cf2c2BadRequest struct {
+	Payload *models.ErrorResponseObject
 }
 
 func (o *Nr5ae02c03d5b81c092c6cf2c2BadRequest) Error() string {
-	return fmt.Sprintf("[POST /apps/{appId}/querylogsasync/][%d] 5ae02c03d5b81c092c6cf2c2BadRequest ", 400)
+	return fmt.Sprintf("[POST /apps/{appId}/querylogsasync/][%d] 5ae02c03d5b81c092c6cf2c2BadRequest  %+v", 400, o.Payload)
+}
+
+func (o *Nr5ae02c03d5b81c092c6cf2c2BadRequest) GetPayload() *models.ErrorResponseObject {
+	return o.Payload
 }
 
 func (o *Nr5ae02c03d5b81c092c6cf2c2BadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.ErrorResponseObject)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
 
 	return nil
 }

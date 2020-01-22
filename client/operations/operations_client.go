@@ -27,2607 +27,6 @@ type Client struct {
 }
 
 /*
-Nr5890b47c39e2bb052c5b9bfd features create pattern feature
-
-Creates a new pattern feature.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9bfd(params *Nr5890b47c39e2bb052c5b9bfdParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9bfdCreated, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9bfdParams()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9bfd",
-		Method:             "POST",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/patterns",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9bfdReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9bfdCreated)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9bfd: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9bfe features get version pattern feature list
-
-Gets all application version pattern features.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9bfe(params *Nr5890b47c39e2bb052c5b9bfeParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9bfeOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9bfeParams()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9bfe",
-		Method:             "GET",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/patterns",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9bfeReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9bfeOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9bfe: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9bff features create phraselist feature
-
-Creates a new phraselist feature.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9bff(params *Nr5890b47c39e2bb052c5b9bffParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9bffCreated, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9bffParams()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9bff",
-		Method:             "POST",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/phraselists",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9bffReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9bffCreated)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9bff: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c00 features get version phraselist features list
-
-Gets all application phraselist features.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c00(params *Nr5890b47c39e2bb052c5b9c00Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c00OK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c00Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c00",
-		Method:             "GET",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/phraselists",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c00Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c00OK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c00: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c01 features get version features
-
-Gets all application version features.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c01(params *Nr5890b47c39e2bb052c5b9c01Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c01OK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c01Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c01",
-		Method:             "GET",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/features",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c01Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c01OK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c01: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c02 features get pattern feature info
-
-Gets pattern feature info.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c02(params *Nr5890b47c39e2bb052c5b9c02Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c02OK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c02Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c02",
-		Method:             "GET",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/patterns/{patternId}",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c02Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c02OK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c02: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c03 features update pattern feature
-
-Updates the pattern, the name and the state of the pattern feature.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c03(params *Nr5890b47c39e2bb052c5b9c03Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c03OK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c03Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c03",
-		Method:             "PUT",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/patterns/{patternId}",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c03Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c03OK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c03: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c04 features delete pattern feature
-
-Deletes a pattern feature from an application version.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c04(params *Nr5890b47c39e2bb052c5b9c04Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c04OK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c04Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c04",
-		Method:             "DELETE",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/patterns/{patternId}",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c04Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c04OK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c04: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c05 features get phraselist feature info
-
-Gets phraselist feature info.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c05(params *Nr5890b47c39e2bb052c5b9c05Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c05OK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c05Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c05",
-		Method:             "GET",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/phraselists/{phraselistId}",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c05Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c05OK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c05: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c06 features update phraselist feature
-
-Updates the phrases, the state and the name of the phraselist feature.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c06(params *Nr5890b47c39e2bb052c5b9c06Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c06OK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c06Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c06",
-		Method:             "PUT",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/phraselists/{phraselistId}",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c06Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c06OK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c06: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c07 features delete phraselist feature
-
-Deletes a phraselist feature from an application.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c07(params *Nr5890b47c39e2bb052c5b9c07Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c07OK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c07Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c07",
-		Method:             "DELETE",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/phraselists/{phraselistId}",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c07Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c07OK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c07: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c08 examples utterances add label
-
-Adds a labeled example to the application.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c08(params *Nr5890b47c39e2bb052c5b9c08Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c08Created, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c08Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c08",
-		Method:             "POST",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/example",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c08Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c08Created)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c08: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c09 examples utterances batch add labels
-
-Adds a batch of non-duplicate labeled examples to the specified application. Batch can't include hierarchical child entities.
-
-The maximum batch size is 100 items.
-
-If the item has the ExampleId and a value between 0 - 99, the returned result will also include the ExampleId. This is helpful if items have errors.
-
-Some items can pass while others fail. The returned result will indicate each item's status.
-
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c09(params *Nr5890b47c39e2bb052c5b9c09Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c09Created, *Nr5890b47c39e2bb052c5b9c09MultiStatus, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c09Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c09",
-		Method:             "POST",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/examples",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c09Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, nil, err
-	}
-	switch value := result.(type) {
-	case *Nr5890b47c39e2bb052c5b9c09Created:
-		return value, nil, nil
-	case *Nr5890b47c39e2bb052c5b9c09MultiStatus:
-		return nil, value, nil
-	}
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for operations: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c0a examples utterances review labeled examples
-
-Returns examples to be reviewed.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c0a(params *Nr5890b47c39e2bb052c5b9c0aParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c0aOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c0aParams()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c0a",
-		Method:             "GET",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/examples",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c0aReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c0aOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c0a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c0b examples utterances delete example labels
-
-Deletes the label with the specified ID.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c0b(params *Nr5890b47c39e2bb052c5b9c0bParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c0bOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c0bParams()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c0b",
-		Method:             "DELETE",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/examples/{exampleId}",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c0bReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c0bOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c0b: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c0c models create intent
-
-Adds an intent classifier to the application.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c0c(params *Nr5890b47c39e2bb052c5b9c0cParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c0cCreated, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c0cParams()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c0c",
-		Method:             "POST",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/intents",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c0cReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c0cCreated)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c0c: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c0d models get version intent list
-
-Gets information about the intent models.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c0d(params *Nr5890b47c39e2bb052c5b9c0dParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c0dOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c0dParams()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c0d",
-		Method:             "GET",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/intents",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c0dReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c0dOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c0d: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c0e models create entity
-
-Adds an entity extractor to the application.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c0e(params *Nr5890b47c39e2bb052c5b9c0eParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c0eCreated, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c0eParams()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c0e",
-		Method:             "POST",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/entities",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c0eReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c0eCreated)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c0e: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c0f models get version entity list
-
-Gets information about the entity models.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c0f(params *Nr5890b47c39e2bb052c5b9c0fParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c0fOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c0fParams()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c0f",
-		Method:             "GET",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/entities",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c0fReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c0fOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c0f: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c10 models create hierarchical entity
-
-Adds a hierarchical entity extractor to the application version.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c10(params *Nr5890b47c39e2bb052c5b9c10Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c10Created, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c10Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c10",
-		Method:             "POST",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/hierarchicalentities",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c10Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c10Created)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c10: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c11 models get version hierarchical entity list
-
-Gets information about the hierarchical entity models.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c11(params *Nr5890b47c39e2bb052c5b9c11Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c11OK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c11Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c11",
-		Method:             "GET",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/hierarchicalentities",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c11Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c11OK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c11: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c12 models create composite entity
-
-Adds a composite entity extractor to the application.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c12(params *Nr5890b47c39e2bb052c5b9c12Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c12Created, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c12Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c12",
-		Method:             "POST",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/compositeentities",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c12Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c12Created)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c12: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c13 models get version composite entity list
-
-Gets information about the composite entity models.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c13(params *Nr5890b47c39e2bb052c5b9c13Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c13OK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c13Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c13",
-		Method:             "GET",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/compositeentities",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c13Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c13OK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c13: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c14 models create closed list entity
-
-Adds a list entity to the LUIS app.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c14(params *Nr5890b47c39e2bb052c5b9c14Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c14Created, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c14Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c14",
-		Method:             "POST",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/closedlists",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c14Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c14Created)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c14: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c15 models get version closedlist list
-
-Gets information about the closedlist models.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c15(params *Nr5890b47c39e2bb052c5b9c15Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c15OK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c15Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c15",
-		Method:             "GET",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/closedlists",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c15Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c15OK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c15: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c16 models add prebuilt entity list
-
-Adds a list of prebuilt entity extractors to the application.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c16(params *Nr5890b47c39e2bb052c5b9c16Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c16Created, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c16Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c16",
-		Method:             "POST",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/prebuilts",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c16Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c16Created)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c16: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c17 models get version prebuilt entity list
-
-Gets information about the prebuilt entity models.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c17(params *Nr5890b47c39e2bb052c5b9c17Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c17OK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c17Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c17",
-		Method:             "GET",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/prebuilts",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c17Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c17OK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c17: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c18 models get available prebuilt entity list
-
-Gets all the available prebuilt entities for the application based on the application's culture.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c18(params *Nr5890b47c39e2bb052c5b9c18Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c18OK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c18Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c18",
-		Method:             "GET",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/listprebuilts",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c18Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c18OK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c18: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c19 models get version model list
-
-Gets information about the application version models.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c19(params *Nr5890b47c39e2bb052c5b9c19Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c19OK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c19Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c19",
-		Method:             "GET",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/models",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c19Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c19OK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c19: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c1a models get intent
-
-Gets information about the intent model.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c1a(params *Nr5890b47c39e2bb052c5b9c1aParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c1aOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c1aParams()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c1a",
-		Method:             "GET",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/intents/{intentId}",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c1aReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c1aOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c1a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c1b models rename intent
-
-Updates the name of an intent classifier.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c1b(params *Nr5890b47c39e2bb052c5b9c1bParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c1bOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c1bParams()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c1b",
-		Method:             "PUT",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/intents/{intentId}",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c1bReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c1bOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c1b: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c1c models delete intent
-
-Deletes an intent classifier from the application.
-
-`deleteUtterances` is an optional parameter (boolean): true means delete utterances from app, false means move utterances to None intent.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c1c(params *Nr5890b47c39e2bb052c5b9c1cParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c1cOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c1cParams()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c1c",
-		Method:             "DELETE",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/intents/{intentId}",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c1cReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c1cOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c1c: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c1d models get entity
-
-Gets information about the entity model.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c1d(params *Nr5890b47c39e2bb052c5b9c1dParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c1dOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c1dParams()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c1d",
-		Method:             "GET",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/entities/{entityId}",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c1dReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c1dOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c1d: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c1e models rename entity
-
-Updates the name of an entity extractor.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c1e(params *Nr5890b47c39e2bb052c5b9c1eParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c1eOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c1eParams()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c1e",
-		Method:             "PUT",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/entities/{entityId}",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c1eReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c1eOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c1e: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c1f models delete entity
-
-Deletes an entity extractor from the application.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c1f(params *Nr5890b47c39e2bb052c5b9c1fParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c1fOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c1fParams()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c1f",
-		Method:             "DELETE",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/entities/{entityId}",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c1fReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c1fOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c1f: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c20 models get hierarchical entity
-
-Gets information about the hierarchical entity model.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c20(params *Nr5890b47c39e2bb052c5b9c20Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c20OK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c20Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c20",
-		Method:             "GET",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/hierarchicalentities/{hEntityId}",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c20Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c20OK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c20: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c21 models update hierarchical entity
-
-Updates the name and children of a hierarchical entity model.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c21(params *Nr5890b47c39e2bb052c5b9c21Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c21OK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c21Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c21",
-		Method:             "PUT",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/hierarchicalentities/{hEntityId}",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c21Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c21OK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c21: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c22 models delete hierarchical entity
-
-Deletes a hierarchical entity extractor from the application version.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c22(params *Nr5890b47c39e2bb052c5b9c22Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c22OK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c22Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c22",
-		Method:             "DELETE",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/hierarchicalentities/{hEntityId}",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c22Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c22OK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c22: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c23 models get composite entity
-
-Gets information about the composite entity model.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c23(params *Nr5890b47c39e2bb052c5b9c23Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c23OK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c23Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c23",
-		Method:             "GET",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/compositeentities/{cEntityId}",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c23Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c23OK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c23: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c24 models update composite entity
-
-Updates the composite entity extractor.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c24(params *Nr5890b47c39e2bb052c5b9c24Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c24OK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c24Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c24",
-		Method:             "PUT",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/compositeentities/{cEntityId}",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c24Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c24OK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c24: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c25 models delete composite entity
-
-Deletes a composite entity extractor from the application.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c25(params *Nr5890b47c39e2bb052c5b9c25Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c25OK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c25Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c25",
-		Method:             "DELETE",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/compositeentities/{cEntityId}",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c25Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c25OK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c25: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c26 models get closed list entity
-
-Gets information of a closed list model.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c26(params *Nr5890b47c39e2bb052c5b9c26Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c26OK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c26Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c26",
-		Method:             "GET",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/closedlists/{clEntityId}",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c26Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c26OK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c26: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c27 models update closed list entity
-
-Updates the closed list model.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c27(params *Nr5890b47c39e2bb052c5b9c27Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c27OK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c27Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c27",
-		Method:             "PUT",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/closedlists/{clEntityId}",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c27Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c27OK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c27: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c28 models patch closed list entity
-
-Adds a batch of sublists to an existing closedlist.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c28(params *Nr5890b47c39e2bb052c5b9c28Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c28OK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c28Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c28",
-		Method:             "PATCH",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/closedlists/{clEntityId}",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c28Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c28OK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c28: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c29 models delete closed list entity
-
-Deletes a closed list model from the application.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c29(params *Nr5890b47c39e2bb052c5b9c29Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c29OK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c29Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c29",
-		Method:             "DELETE",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/closedlists/{clEntityId}",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c29Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c29OK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c29: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c2a models get prebuilt entity
-
-Gets information about the prebuilt entity model.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c2a(params *Nr5890b47c39e2bb052c5b9c2aParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c2aOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c2aParams()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c2a",
-		Method:             "GET",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/prebuilts/{prebuiltId}",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c2aReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c2aOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c2a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c2b models delete prebuilt entity
-
-Deletes a prebuilt entity extractor from the application.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c2b(params *Nr5890b47c39e2bb052c5b9c2bParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c2bOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c2bParams()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c2b",
-		Method:             "DELETE",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/prebuilts/{prebuiltId}",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c2bReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c2bOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c2b: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c2c models delete sublist entity
-
-Deletes a sublist of a specified list entity.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c2c(params *Nr5890b47c39e2bb052c5b9c2cParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c2cOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c2cParams()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c2c",
-		Method:             "DELETE",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/closedlists/{clEntityId}/sublists/{subListId}",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c2cReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c2cOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c2c: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c2d models suggest endpoint queries for intents
-
-Suggests examples that would improve the accuracy of the intent model.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c2d(params *Nr5890b47c39e2bb052c5b9c2dParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c2dOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c2dParams()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c2d",
-		Method:             "GET",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/intents/{intentId}/suggest",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c2dReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c2dOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c2d: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c2e models suggest endpoint queries for entities
-
-Suggests examples that would improve the accuracy of the entity model.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c2e(params *Nr5890b47c39e2bb052c5b9c2eParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c2eOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c2eParams()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c2e",
-		Method:             "GET",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/entities/{entityId}/suggest",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c2eReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c2eOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c2e: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c2f apps add application
-
-Creates a new LUIS app.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c2f(params *Nr5890b47c39e2bb052c5b9c2fParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c2fCreated, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c2fParams()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c2f",
-		Method:             "POST",
-		PathPattern:        "/apps/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c2fReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c2fCreated)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c2f: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c30 apps get applications list
-
-Lists all of the user applications.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c30(params *Nr5890b47c39e2bb052c5b9c30Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c30OK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c30Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c30",
-		Method:             "GET",
-		PathPattern:        "/apps/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c30Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c30OK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c30: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c31 apps import application
-
-Imports an application to LUIS, the application's JSON or LU should be included in the request body. Returns new app ID.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c31(params *Nr5890b47c39e2bb052c5b9c31Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c31Created, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c31Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c31",
-		Method:             "POST",
-		PathPattern:        "/apps/import",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json", "text/plain"},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c31Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c31Created)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c31: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c32 apps get personal assistant applications
-
-**THIS API IS DEPRECATED.**
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c32(params *Nr5890b47c39e2bb052c5b9c32Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c32OK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c32Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c32",
-		Method:             "GET",
-		PathPattern:        "/apps/assistants",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c32Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c32OK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c32: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c33 apps get l UI s application domains list
-
-Gets the available application domains.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c33(params *Nr5890b47c39e2bb052c5b9c33Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c33OK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c33Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c33",
-		Method:             "GET",
-		PathPattern:        "/apps/domains",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c33Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c33OK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c33: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c34 apps get l UI s application usage scenarios list
-
-Gets the application available usage scenarios.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c34(params *Nr5890b47c39e2bb052c5b9c34Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c34OK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c34Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c34",
-		Method:             "GET",
-		PathPattern:        "/apps/usagescenarios",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c34Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c34OK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c34: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c35 apps get l UI s application cultures list
-
-Gets the supported LUIS application cultures.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c35(params *Nr5890b47c39e2bb052c5b9c35Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c35OK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c35Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c35",
-		Method:             "GET",
-		PathPattern:        "/apps/cultures",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c35Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c35OK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c35: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c36 apps download application query logs
-
-Gets the query logs of the past month for the application.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c36(params *Nr5890b47c39e2bb052c5b9c36Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c36OK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c36Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c36",
-		Method:             "GET",
-		PathPattern:        "/apps/{appId}/querylogs/",
-		ProducesMediaTypes: []string{"application/json", "application/octet-stream"},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c36Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c36OK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c36: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c37 apps get application info
-
-Gets the application info.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c37(params *Nr5890b47c39e2bb052c5b9c37Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c37OK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c37Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c37",
-		Method:             "GET",
-		PathPattern:        "/apps/{appId}",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c37Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c37OK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c37: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c38 apps rename application
-
-Updates the name or description of the application.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c38(params *Nr5890b47c39e2bb052c5b9c38Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c38OK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c38Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c38",
-		Method:             "PUT",
-		PathPattern:        "/apps/{appId}",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c38Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c38OK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c38: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c39 apps delete application
-
-Deletes an application.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c39(params *Nr5890b47c39e2bb052c5b9c39Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c39OK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c39Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c39",
-		Method:             "DELETE",
-		PathPattern:        "/apps/{appId}",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c39Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c39OK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c39: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c3a versions clone version
-
-Creates a new version equivalent to the current snapshot of the selected application version.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c3a(params *Nr5890b47c39e2bb052c5b9c3aParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c3aCreated, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c3aParams()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c3a",
-		Method:             "POST",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/clone",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c3aReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c3aCreated)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c3a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c3b apps publish application
-
-Publishes a specific version of the application.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c3b(params *Nr5890b47c39e2bb052c5b9c3bParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c3bCreated, *Nr5890b47c39e2bb052c5b9c3bMultiStatus, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c3bParams()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c3b",
-		Method:             "POST",
-		PathPattern:        "/apps/{appId}/publish",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c3bReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, nil, err
-	}
-	switch value := result.(type) {
-	case *Nr5890b47c39e2bb052c5b9c3bCreated:
-		return value, nil, nil
-	case *Nr5890b47c39e2bb052c5b9c3bMultiStatus:
-		return nil, value, nil
-	}
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for operations: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c3c versions get application version list
-
-Gets the application versions info.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c3c(params *Nr5890b47c39e2bb052c5b9c3cParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c3cOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c3cParams()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c3c",
-		Method:             "GET",
-		PathPattern:        "/apps/{appId}/versions",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c3cReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c3cOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c3c: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c3d versions get application version
-
-Gets the task info.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c3d(params *Nr5890b47c39e2bb052c5b9c3dParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c3dOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c3dParams()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c3d",
-		Method:             "GET",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c3dReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c3dOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c3d: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c3e versions rename application version
-
-Updates the name or description of the application version.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c3e(params *Nr5890b47c39e2bb052c5b9c3eParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c3eOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c3eParams()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c3e",
-		Method:             "PUT",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c3eReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c3eOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c3e: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c3f versions delete application version
-
-Deletes an application version.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c3f(params *Nr5890b47c39e2bb052c5b9c3fParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c3fOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c3fParams()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c3f",
-		Method:             "DELETE",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c3fReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c3fOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c3f: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c40 versions export application version
-
-Exports a LUIS application to JSON format.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c40(params *Nr5890b47c39e2bb052c5b9c40Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c40OK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c40Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c40",
-		Method:             "GET",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/export",
-		ProducesMediaTypes: []string{"application/json", "text/plain"},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c40Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c40OK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c40: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c41 versions get application version subscription key
-
-**THIS IS DEPRECATED**
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c41(params *Nr5890b47c39e2bb052c5b9c41Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c41OK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c41Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c41",
-		Method:             "GET",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/assignedkey",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c41Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c41OK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c41: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c42 versions assign subscription key to version
-
-**THIS IS DEPRECATED**
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c42(params *Nr5890b47c39e2bb052c5b9c42Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c42OK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c42Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c42",
-		Method:             "PUT",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/assignedkey",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c42Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c42OK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c42: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
 Nr5890b47c39e2bb052c5b9c43 versions update application version external key
 
 **THIS IS DEPRECATED**
@@ -2702,385 +101,6 @@ func (a *Client) Nr5890b47c39e2bb052c5b9c44(params *Nr5890b47c39e2bb052c5b9c44Pa
 }
 
 /*
-Nr5890b47c39e2bb052c5b9c45 trains train application version
-
-Sends a training request for a version of a specified LUIS app.
-
-This POST request initiates a request asynchronously. To determine whether the training request is successful, submit a GET request to get training status.
-
-* **Note**: The application version is not fully trained unless all the models (intents and entities) are trained successfully or are up to date.
-
-To verify training success, get the training status at least once after training is complete.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c45(params *Nr5890b47c39e2bb052c5b9c45Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c45Accepted, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c45Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c45",
-		Method:             "POST",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/train",
-		ProducesMediaTypes: []string{"JSON", "application/json"},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c45Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c45Accepted)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c45: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c46 trains get version training status
-
-Gets the training status of all models (intents and entities) for the specified LUIS app. You must <a href="https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c45">call the train API</a> to train the LUIS app before you call this API to get training status.
-
-
-
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c46(params *Nr5890b47c39e2bb052c5b9c46Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c46OK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c46Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c46",
-		Method:             "GET",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/train",
-		ProducesMediaTypes: []string{"JSON", "application/json"},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c46Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c46OK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c46: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c47 users add subscription key
-
-**THIS API IS DEPRECATED.**
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c47(params *Nr5890b47c39e2bb052c5b9c47Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c47Created, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c47Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c47",
-		Method:             "POST",
-		PathPattern:        "/subscriptions",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c47Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c47Created)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c47: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c48 users get user subscription keys
-
-**THIS API IS DEPRECATED.**
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c48(params *Nr5890b47c39e2bb052c5b9c48Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c48OK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c48Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c48",
-		Method:             "GET",
-		PathPattern:        "/subscriptions",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c48Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c48OK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c48: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c49 users add external api key
-
-**THIS API IS DEPRECATED.**
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c49(params *Nr5890b47c39e2bb052c5b9c49Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c49Created, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c49Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c49",
-		Method:             "POST",
-		PathPattern:        "/externalKeys",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c49Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c49Created)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c49: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c4a users get user external api keys
-
-**THIS API IS DEPRECATED.**
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c4a(params *Nr5890b47c39e2bb052c5b9c4aParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c4aOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c4aParams()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c4a",
-		Method:             "GET",
-		PathPattern:        "/externalKeys",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c4aReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c4aOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c4a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c4b users reset programmatic key
-
-**THIS API IS DEPRECATED.**
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c4b(params *Nr5890b47c39e2bb052c5b9c4bParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c4bOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c4bParams()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c4b",
-		Method:             "PUT",
-		PathPattern:        "/programmatickey",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c4bReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c4bOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c4b: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c4c users delete subscription key
-
-**THIS API IS DEPRECATED.**
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c4c(params *Nr5890b47c39e2bb052c5b9c4cParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c4cOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c4cParams()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c4c",
-		Method:             "DELETE",
-		PathPattern:        "/subscriptions/{subscriptionKey}",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c4cReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c4cOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c4c: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5890b47c39e2bb052c5b9c4d users delete external api key
-
-**THIS API IS DEPRECATED.**.
-*/
-func (a *Client) Nr5890b47c39e2bb052c5b9c4d(params *Nr5890b47c39e2bb052c5b9c4dParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c4dOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5890b47c39e2bb052c5b9c4dParams()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5890b47c39e2bb052c5b9c4d",
-		Method:             "DELETE",
-		PathPattern:        "/externalKeys/{externalKeyValue}",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5890b47c39e2bb052c5b9c4dReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5890b47c39e2bb052c5b9c4dOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5890b47c39e2bb052c5b9c4d: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5892283039e2bb0d9c2805f5 versions import version to application
-
-Imports a new version into a LUIS application, the version's JSON or LU should be included in in the request body.
-*/
-func (a *Client) Nr5892283039e2bb0d9c2805f5(params *Nr5892283039e2bb0d9c2805f5Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5892283039e2bb0d9c2805f5Created, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5892283039e2bb0d9c2805f5Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5892283039e2bb0d9c2805f5",
-		Method:             "POST",
-		PathPattern:        "/apps/{appId}/versions/import",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json", "text/plain"},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5892283039e2bb0d9c2805f5Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5892283039e2bb0d9c2805f5Created)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5892283039e2bb0d9c2805f5: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
 Nr589228f639e2bb0d9c2805f6 versions get application version external api keys
 
 **THIS IS DEPRECATED**
@@ -3114,417 +134,6 @@ func (a *Client) Nr589228f639e2bb0d9c2805f6(params *Nr589228f639e2bb0d9c2805f6Pa
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
 	msg := fmt.Sprintf("unexpected success response for 589228f639e2bb0d9c2805f6: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr58aef9fb39e2bb03dcd5909d apps get application settings
-
-Get the application settings
-*/
-func (a *Client) Nr58aef9fb39e2bb03dcd5909d(params *Nr58aef9fb39e2bb03dcd5909dParams, authInfo runtime.ClientAuthInfoWriter) (*Nr58aef9fb39e2bb03dcd5909dOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr58aef9fb39e2bb03dcd5909dParams()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "58aef9fb39e2bb03dcd5909d",
-		Method:             "GET",
-		PathPattern:        "/apps/{appId}/settings",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr58aef9fb39e2bb03dcd5909dReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr58aef9fb39e2bb03dcd5909dOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 58aef9fb39e2bb03dcd5909d: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr58aeface39e2bb03dcd5909e apps update application settings
-
-Updates the application settings
-*/
-func (a *Client) Nr58aeface39e2bb03dcd5909e(params *Nr58aeface39e2bb03dcd5909eParams, authInfo runtime.ClientAuthInfoWriter) (*Nr58aeface39e2bb03dcd5909eOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr58aeface39e2bb03dcd5909eParams()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "58aeface39e2bb03dcd5909e",
-		Method:             "PUT",
-		PathPattern:        "/apps/{appId}/settings",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr58aeface39e2bb03dcd5909eReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr58aeface39e2bb03dcd5909eOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 58aeface39e2bb03dcd5909e: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr58b6f1a639e2bb139ce823c8 users rename subscription key
-
-**THIS API IS DEPRECATED.**
-*/
-func (a *Client) Nr58b6f1a639e2bb139ce823c8(params *Nr58b6f1a639e2bb139ce823c8Params, authInfo runtime.ClientAuthInfoWriter) (*Nr58b6f1a639e2bb139ce823c8OK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr58b6f1a639e2bb139ce823c8Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "58b6f1a639e2bb139ce823c8",
-		Method:             "PUT",
-		PathPattern:        "/subscriptions",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr58b6f1a639e2bb139ce823c8Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr58b6f1a639e2bb139ce823c8OK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 58b6f1a639e2bb139ce823c8: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr58b6f32139e2bb139ce823c9 versions delete unlabelled utterance
-
-Deleted an unlabelled utterance. This utterance is in the "Review endpoint utterances" list.
-*/
-func (a *Client) Nr58b6f32139e2bb139ce823c9(params *Nr58b6f32139e2bb139ce823c9Params, authInfo runtime.ClientAuthInfoWriter) (*Nr58b6f32139e2bb139ce823c9OK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr58b6f32139e2bb139ce823c9Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "58b6f32139e2bb139ce823c9",
-		Method:             "DELETE",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/suggest",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{"text/plain"},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr58b6f32139e2bb139ce823c9Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr58b6f32139e2bb139ce823c9OK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 58b6f32139e2bb139ce823c9: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr58fccccd5aca2f08a4104341 permissions get user access list
-
-Gets the list of user emails that have permissions to access your application.
-*/
-func (a *Client) Nr58fccccd5aca2f08a4104341(params *Nr58fccccd5aca2f08a4104341Params, authInfo runtime.ClientAuthInfoWriter) (*Nr58fccccd5aca2f08a4104341OK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr58fccccd5aca2f08a4104341Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "58fccccd5aca2f08a4104341",
-		Method:             "GET",
-		PathPattern:        "/apps/{appId}/permissions",
-		ProducesMediaTypes: []string{"JSON"},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr58fccccd5aca2f08a4104341Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr58fccccd5aca2f08a4104341OK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 58fccccd5aca2f08a4104341: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr58fcccdd5aca2f08a4104342 permissions add email to access list
-
-Adds a user to the allowed list of users to access this LUIS application.
-Users are added using their email address.
-*/
-func (a *Client) Nr58fcccdd5aca2f08a4104342(params *Nr58fcccdd5aca2f08a4104342Params, authInfo runtime.ClientAuthInfoWriter) (*Nr58fcccdd5aca2f08a4104342OK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr58fcccdd5aca2f08a4104342Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "58fcccdd5aca2f08a4104342",
-		Method:             "POST",
-		PathPattern:        "/apps/{appId}/permissions",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr58fcccdd5aca2f08a4104342Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr58fcccdd5aca2f08a4104342OK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 58fcccdd5aca2f08a4104342: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr58fcce195aca2f08a4104343 permissions remove user from access list
-
-Removed a user to the allowed list of users to access this LUIS application.
-Users are removed using their email address.
-*/
-func (a *Client) Nr58fcce195aca2f08a4104343(params *Nr58fcce195aca2f08a4104343Params, authInfo runtime.ClientAuthInfoWriter) (*Nr58fcce195aca2f08a4104343OK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr58fcce195aca2f08a4104343Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "58fcce195aca2f08a4104343",
-		Method:             "DELETE",
-		PathPattern:        "/apps/{appId}/permissions",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr58fcce195aca2f08a4104343Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr58fcce195aca2f08a4104343OK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 58fcce195aca2f08a4104343: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr58fcce825aca2f08a4104344 permissions update access list
-
-Replaces the current users access list with the one sent in the body.
-If an empty list is sent, all access to other users will be removed.
-
-*/
-func (a *Client) Nr58fcce825aca2f08a4104344(params *Nr58fcce825aca2f08a4104344Params, authInfo runtime.ClientAuthInfoWriter) (*Nr58fcce825aca2f08a4104344OK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr58fcce825aca2f08a4104344Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "58fcce825aca2f08a4104344",
-		Method:             "PUT",
-		PathPattern:        "/apps/{appId}/permissions",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr58fcce825aca2f08a4104344Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr58fcce825aca2f08a4104344OK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 58fcce825aca2f08a4104344: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr59087d2d5aca2f03943a889a models update closedlist s sublist
-
-Updates one of the closed list's sublists
-*/
-func (a *Client) Nr59087d2d5aca2f03943a889a(params *Nr59087d2d5aca2f03943a889aParams, authInfo runtime.ClientAuthInfoWriter) (*Nr59087d2d5aca2f03943a889aOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr59087d2d5aca2f03943a889aParams()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "59087d2d5aca2f03943a889a",
-		Method:             "PUT",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/closedlists/{clEntityId}/sublists/{subListId}",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr59087d2d5aca2f03943a889aReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr59087d2d5aca2f03943a889aOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 59087d2d5aca2f03943a889a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr590aff885aca2f09e404ec3f apps get endpoints
-
-Returns the available endpoint deployment regions and urls
-*/
-func (a *Client) Nr590aff885aca2f09e404ec3f(params *Nr590aff885aca2f09e404ec3fParams, authInfo runtime.ClientAuthInfoWriter) (*Nr590aff885aca2f09e404ec3fOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr590aff885aca2f09e404ec3fParams()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "590aff885aca2f09e404ec3f",
-		Method:             "GET",
-		PathPattern:        "/apps/{appId}/endpoints",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr590aff885aca2f09e404ec3fReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr590aff885aca2f09e404ec3fOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 590aff885aca2f09e404ec3f: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr590c5dc65aca2f04a0d3d684 models add closed list s sublist
-
-Adds a list to an existing closed list
-*/
-func (a *Client) Nr590c5dc65aca2f04a0d3d684(params *Nr590c5dc65aca2f04a0d3d684Params, authInfo runtime.ClientAuthInfoWriter) (*Nr590c5dc65aca2f04a0d3d684Created, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr590c5dc65aca2f04a0d3d684Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "590c5dc65aca2f04a0d3d684",
-		Method:             "POST",
-		PathPattern:        "/apps/{appId}/versions/{versionId}/closedlists/{clEntityId}/sublists",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr590c5dc65aca2f04a0d3d684Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr590c5dc65aca2f04a0d3d684Created)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 590c5dc65aca2f04a0d3d684: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -3784,117 +393,6 @@ func (a *Client) Nr59104b095aca2f0b48c76be2(params *Nr59104b095aca2f0b48c76be2Pa
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
 	msg := fmt.Sprintf("unexpected success response for 59104b095aca2f0b48c76be2: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr59104cec5aca2f0b48c76be3 apps get l UI s prebuilt domains list
-
-Gets all the available custom prebuilt domains for all cultures
-*/
-func (a *Client) Nr59104cec5aca2f0b48c76be3(params *Nr59104cec5aca2f0b48c76be3Params, authInfo runtime.ClientAuthInfoWriter) (*Nr59104cec5aca2f0b48c76be3OK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr59104cec5aca2f0b48c76be3Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "59104cec5aca2f0b48c76be3",
-		Method:             "GET",
-		PathPattern:        "/apps/customprebuiltdomains",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr59104cec5aca2f0b48c76be3Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr59104cec5aca2f0b48c76be3OK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 59104cec5aca2f0b48c76be3: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr59104d855aca2f0b48c76be4 apps get l UI s prebuilt domains for culture list
-
-Gets all the available custom prebuilt domains for a specific culture
-*/
-func (a *Client) Nr59104d855aca2f0b48c76be4(params *Nr59104d855aca2f0b48c76be4Params, authInfo runtime.ClientAuthInfoWriter) (*Nr59104d855aca2f0b48c76be4OK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr59104d855aca2f0b48c76be4Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "59104d855aca2f0b48c76be4",
-		Method:             "GET",
-		PathPattern:        "/apps/customprebuiltdomains/{culture}",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr59104d855aca2f0b48c76be4Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr59104d855aca2f0b48c76be4OK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 59104d855aca2f0b48c76be4: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr59104e515aca2f0b48c76be5 apps add prebuilt application
-
-Adds a prebuilt domain along with its models as a new application. Returns new app ID.
-*/
-func (a *Client) Nr59104e515aca2f0b48c76be5(params *Nr59104e515aca2f0b48c76be5Params, authInfo runtime.ClientAuthInfoWriter) (*Nr59104e515aca2f0b48c76be5Created, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr59104e515aca2f0b48c76be5Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "59104e515aca2f0b48c76be5",
-		Method:             "POST",
-		PathPattern:        "/apps/customprebuiltdomains",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr59104e515aca2f0b48c76be5Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr59104e515aca2f0b48c76be5Created)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 59104e515aca2f0b48c76be5: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -6640,6 +3138,3545 @@ func (a *Client) Nr5cc9862a7531ab6414e3a39c(params *Nr5cc9862a7531ab6414e3a39cPa
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
 	msg := fmt.Sprintf("unexpected success response for 5cc9862a7531ab6414e3a39c: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+AddCompositeEntity models create composite entity
+
+Adds a composite entity extractor to the application.
+*/
+func (a *Client) AddCompositeEntity(params *AddCompositeEntityParams, authInfo runtime.ClientAuthInfoWriter) (*AddCompositeEntityCreated, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewAddCompositeEntityParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "AddCompositeEntity",
+		Method:             "POST",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/compositeentities",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &AddCompositeEntityReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*AddCompositeEntityCreated)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for AddCompositeEntity: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+AddCustomPrebuiltDomain apps add prebuilt application
+
+Adds a prebuilt domain along with its models as a new application. Returns new app ID.
+*/
+func (a *Client) AddCustomPrebuiltDomain(params *AddCustomPrebuiltDomainParams, authInfo runtime.ClientAuthInfoWriter) (*AddCustomPrebuiltDomainCreated, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewAddCustomPrebuiltDomainParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "AddCustomPrebuiltDomain",
+		Method:             "POST",
+		PathPattern:        "/apps/customprebuiltdomains",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &AddCustomPrebuiltDomainReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*AddCustomPrebuiltDomainCreated)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for AddCustomPrebuiltDomain: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+AddEntity models create entity
+
+Adds an entity extractor to the application.
+*/
+func (a *Client) AddEntity(params *AddEntityParams, authInfo runtime.ClientAuthInfoWriter) (*AddEntityCreated, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewAddEntityParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "AddEntity",
+		Method:             "POST",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/entities",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &AddEntityReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*AddEntityCreated)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for AddEntity: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+AddExample examples utterances add label
+
+Adds a labeled example to the application.
+*/
+func (a *Client) AddExample(params *AddExampleParams, authInfo runtime.ClientAuthInfoWriter) (*AddExampleCreated, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewAddExampleParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "AddExample",
+		Method:             "POST",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/example",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &AddExampleReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*AddExampleCreated)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for AddExample: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+AddExamples examples utterances batch add labels
+
+Adds a batch of non-duplicate labeled examples to the specified application. Batch can't include hierarchical child entities.
+
+The maximum batch size is 100 items.
+
+If the item has the ExampleId and a value between 0 - 99, the returned result will also include the ExampleId. This is helpful if items have errors.
+
+Some items can pass while others fail. The returned result will indicate each item's status.
+
+*/
+func (a *Client) AddExamples(params *AddExamplesParams, authInfo runtime.ClientAuthInfoWriter) (*AddExamplesCreated, *AddExamplesMultiStatus, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewAddExamplesParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "AddExamples",
+		Method:             "POST",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/examples",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &AddExamplesReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, nil, err
+	}
+	switch value := result.(type) {
+	case *AddExamplesCreated:
+		return value, nil, nil
+	case *AddExamplesMultiStatus:
+		return nil, value, nil
+	}
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for operations: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+AddExternalKeys users add external api key
+
+**THIS API IS DEPRECATED.**
+*/
+func (a *Client) AddExternalKeys(params *AddExternalKeysParams, authInfo runtime.ClientAuthInfoWriter) (*AddExternalKeysCreated, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewAddExternalKeysParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "AddExternalKeys",
+		Method:             "POST",
+		PathPattern:        "/externalKeys",
+		ProducesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &AddExternalKeysReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*AddExternalKeysCreated)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for AddExternalKeys: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+AddHierarchialEntity models create hierarchical entity
+
+Adds a hierarchical entity extractor to the application version.
+*/
+func (a *Client) AddHierarchialEntity(params *AddHierarchialEntityParams, authInfo runtime.ClientAuthInfoWriter) (*AddHierarchialEntityCreated, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewAddHierarchialEntityParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "AddHierarchialEntity",
+		Method:             "POST",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/hierarchicalentities",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &AddHierarchialEntityReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*AddHierarchialEntityCreated)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for AddHierarchialEntity: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+AddIntent models create intent
+
+Adds an intent classifier to the application.
+*/
+func (a *Client) AddIntent(params *AddIntentParams, authInfo runtime.ClientAuthInfoWriter) (*AddIntentCreated, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewAddIntentParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "AddIntent",
+		Method:             "POST",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/intents",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &AddIntentReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*AddIntentCreated)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for AddIntent: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+AddList models add closed list s sublist
+
+Adds a list to an existing closed list
+*/
+func (a *Client) AddList(params *AddListParams, authInfo runtime.ClientAuthInfoWriter) (*AddListCreated, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewAddListParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "AddList",
+		Method:             "POST",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/closedlists/{clEntityId}/sublists",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &AddListReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*AddListCreated)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for AddList: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+AddListEntity models create closed list entity
+
+Adds a list entity to the LUIS app.
+*/
+func (a *Client) AddListEntity(params *AddListEntityParams, authInfo runtime.ClientAuthInfoWriter) (*AddListEntityCreated, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewAddListEntityParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "AddListEntity",
+		Method:             "POST",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/closedlists",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &AddListEntityReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*AddListEntityCreated)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for AddListEntity: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+AddPrebuildEntities models add prebuilt entity list
+
+Adds a list of prebuilt entity extractors to the application.
+*/
+func (a *Client) AddPrebuildEntities(params *AddPrebuildEntitiesParams, authInfo runtime.ClientAuthInfoWriter) (*AddPrebuildEntitiesCreated, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewAddPrebuildEntitiesParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "AddPrebuildEntities",
+		Method:             "POST",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/prebuilts",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &AddPrebuildEntitiesReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*AddPrebuildEntitiesCreated)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for AddPrebuildEntities: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+AddSublists models patch closed list entity
+
+Adds a batch of sublists to an existing closedlist.
+*/
+func (a *Client) AddSublists(params *AddSublistsParams, authInfo runtime.ClientAuthInfoWriter) (*AddSublistsOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewAddSublistsParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "AddSublists",
+		Method:             "PATCH",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/closedlists/{clEntityId}",
+		ProducesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &AddSublistsReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*AddSublistsOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for AddSublists: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+AddUserToAccessList permissions add email to access list
+
+Adds a user to the allowed list of users to access this LUIS application.
+Users are added using their email address.
+*/
+func (a *Client) AddUserToAccessList(params *AddUserToAccessListParams, authInfo runtime.ClientAuthInfoWriter) (*AddUserToAccessListOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewAddUserToAccessListParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "AddUserToAccessList",
+		Method:             "POST",
+		PathPattern:        "/apps/{appId}/permissions",
+		ProducesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &AddUserToAccessListReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*AddUserToAccessListOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for AddUserToAccessList: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+CloneVersion versions clone version
+
+Creates a new version equivalent to the current snapshot of the selected application version.
+*/
+func (a *Client) CloneVersion(params *CloneVersionParams, authInfo runtime.ClientAuthInfoWriter) (*CloneVersionCreated, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewCloneVersionParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "CloneVersion",
+		Method:             "POST",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/clone",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &CloneVersionReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*CloneVersionCreated)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for CloneVersion: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+CreateApplication apps add application
+
+Creates a new LUIS app.
+*/
+func (a *Client) CreateApplication(params *CreateApplicationParams, authInfo runtime.ClientAuthInfoWriter) (*CreateApplicationCreated, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewCreateApplicationParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "CreateApplication",
+		Method:             "POST",
+		PathPattern:        "/apps/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &CreateApplicationReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*CreateApplicationCreated)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for CreateApplication: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+CreatePatternFeature features create pattern feature
+
+Creates a new pattern feature.
+*/
+func (a *Client) CreatePatternFeature(params *CreatePatternFeatureParams, authInfo runtime.ClientAuthInfoWriter) (*CreatePatternFeatureCreated, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewCreatePatternFeatureParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "CreatePatternFeature",
+		Method:             "POST",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/patterns",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &CreatePatternFeatureReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*CreatePatternFeatureCreated)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for CreatePatternFeature: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+CreatePhraseListFeature features create phraselist feature
+
+Creates a new phraselist feature.
+*/
+func (a *Client) CreatePhraseListFeature(params *CreatePhraseListFeatureParams, authInfo runtime.ClientAuthInfoWriter) (*CreatePhraseListFeatureCreated, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewCreatePhraseListFeatureParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "CreatePhraseListFeature",
+		Method:             "POST",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/phraselists",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &CreatePhraseListFeatureReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*CreatePhraseListFeatureCreated)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for CreatePhraseListFeature: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+DeleteApplication apps delete application
+
+Deletes an application.
+*/
+func (a *Client) DeleteApplication(params *DeleteApplicationParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteApplicationOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewDeleteApplicationParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "DeleteApplication",
+		Method:             "DELETE",
+		PathPattern:        "/apps/{appId}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &DeleteApplicationReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*DeleteApplicationOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for DeleteApplication: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+DeleteClosedList models delete closed list entity
+
+Deletes a closed list model from the application.
+*/
+func (a *Client) DeleteClosedList(params *DeleteClosedListParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteClosedListOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewDeleteClosedListParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "DeleteClosedList",
+		Method:             "DELETE",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/closedlists/{clEntityId}",
+		ProducesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &DeleteClosedListReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*DeleteClosedListOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for DeleteClosedList: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+DeleteCompositeEntity models delete composite entity
+
+Deletes a composite entity extractor from the application.
+*/
+func (a *Client) DeleteCompositeEntity(params *DeleteCompositeEntityParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteCompositeEntityOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewDeleteCompositeEntityParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "DeleteCompositeEntity",
+		Method:             "DELETE",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/compositeentities/{cEntityId}",
+		ProducesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &DeleteCompositeEntityReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*DeleteCompositeEntityOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for DeleteCompositeEntity: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+DeleteEntity models delete entity
+
+Deletes an entity extractor from the application.
+*/
+func (a *Client) DeleteEntity(params *DeleteEntityParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteEntityOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewDeleteEntityParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "DeleteEntity",
+		Method:             "DELETE",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/entities/{entityId}",
+		ProducesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &DeleteEntityReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*DeleteEntityOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for DeleteEntity: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+DeleteExample examples utterances delete example labels
+
+Deletes the label with the specified ID.
+*/
+func (a *Client) DeleteExample(params *DeleteExampleParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteExampleOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewDeleteExampleParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "DeleteExample",
+		Method:             "DELETE",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/examples/{exampleId}",
+		ProducesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &DeleteExampleReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*DeleteExampleOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for DeleteExample: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+DeleteExternalAPIKey users delete external api key
+
+**THIS API IS DEPRECATED.**.
+*/
+func (a *Client) DeleteExternalAPIKey(params *DeleteExternalAPIKeyParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteExternalAPIKeyOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewDeleteExternalAPIKeyParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "DeleteExternalApiKey",
+		Method:             "DELETE",
+		PathPattern:        "/externalKeys/{externalKeyValue}",
+		ProducesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &DeleteExternalAPIKeyReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*DeleteExternalAPIKeyOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for DeleteExternalApiKey: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+DeleteIntent models delete intent
+
+Deletes an intent classifier from the application.
+
+`deleteUtterances` is an optional parameter (boolean): true means delete utterances from app, false means move utterances to None intent.
+*/
+func (a *Client) DeleteIntent(params *DeleteIntentParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteIntentOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewDeleteIntentParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "DeleteIntent",
+		Method:             "DELETE",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/intents/{intentId}",
+		ProducesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &DeleteIntentReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*DeleteIntentOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for DeleteIntent: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+DeletePatternFeature features delete pattern feature
+
+Deletes a pattern feature from an application version.
+*/
+func (a *Client) DeletePatternFeature(params *DeletePatternFeatureParams, authInfo runtime.ClientAuthInfoWriter) (*DeletePatternFeatureOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewDeletePatternFeatureParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "DeletePatternFeature",
+		Method:             "DELETE",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/patterns/{patternId}",
+		ProducesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &DeletePatternFeatureReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*DeletePatternFeatureOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for DeletePatternFeature: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+DeletePhraseListFeature features delete phraselist feature
+
+Deletes a phraselist feature from an application.
+*/
+func (a *Client) DeletePhraseListFeature(params *DeletePhraseListFeatureParams, authInfo runtime.ClientAuthInfoWriter) (*DeletePhraseListFeatureOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewDeletePhraseListFeatureParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "DeletePhraseListFeature",
+		Method:             "DELETE",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/phraselists/{phraselistId}",
+		ProducesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &DeletePhraseListFeatureReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*DeletePhraseListFeatureOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for DeletePhraseListFeature: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+DeletePrebuildEntity models delete prebuilt entity
+
+Deletes a prebuilt entity extractor from the application.
+*/
+func (a *Client) DeletePrebuildEntity(params *DeletePrebuildEntityParams, authInfo runtime.ClientAuthInfoWriter) (*DeletePrebuildEntityOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewDeletePrebuildEntityParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "DeletePrebuildEntity",
+		Method:             "DELETE",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/prebuilts/{prebuiltId}",
+		ProducesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &DeletePrebuildEntityReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*DeletePrebuildEntityOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for DeletePrebuildEntity: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+DeleteSublist models delete sublist entity
+
+Deletes a sublist of a specified list entity.
+*/
+func (a *Client) DeleteSublist(params *DeleteSublistParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteSublistOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewDeleteSublistParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "DeleteSublist",
+		Method:             "DELETE",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/closedlists/{clEntityId}/sublists/{subListId}",
+		ProducesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &DeleteSublistReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*DeleteSublistOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for DeleteSublist: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+DeleteSubscriptionKey users delete subscription key
+
+**THIS API IS DEPRECATED.**
+*/
+func (a *Client) DeleteSubscriptionKey(params *DeleteSubscriptionKeyParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteSubscriptionKeyOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewDeleteSubscriptionKeyParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "DeleteSubscriptionKey",
+		Method:             "DELETE",
+		PathPattern:        "/subscriptions/{subscriptionKey}",
+		ProducesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &DeleteSubscriptionKeyReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*DeleteSubscriptionKeyOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for DeleteSubscriptionKey: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+DeleteUnlabelledUtterance versions delete unlabelled utterance
+
+Deleted an unlabelled utterance. This utterance is in the "Review endpoint utterances" list.
+*/
+func (a *Client) DeleteUnlabelledUtterance(params *DeleteUnlabelledUtteranceParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteUnlabelledUtteranceOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewDeleteUnlabelledUtteranceParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "DeleteUnlabelledUtterance",
+		Method:             "DELETE",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/suggest",
+		ProducesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"text/plain"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &DeleteUnlabelledUtteranceReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*DeleteUnlabelledUtteranceOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for DeleteUnlabelledUtterance: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+DeleteVersion versions delete application version
+
+Deletes an application version.
+*/
+func (a *Client) DeleteVersion(params *DeleteVersionParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteVersionOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewDeleteVersionParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "DeleteVersion",
+		Method:             "DELETE",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/",
+		ProducesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &DeleteVersionReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*DeleteVersionOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for DeleteVersion: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+DeletehierarchialEntity models delete hierarchical entity
+
+Deletes a hierarchical entity extractor from the application version.
+*/
+func (a *Client) DeletehierarchialEntity(params *DeletehierarchialEntityParams, authInfo runtime.ClientAuthInfoWriter) (*DeletehierarchialEntityOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewDeletehierarchialEntityParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "DeletehierarchialEntity",
+		Method:             "DELETE",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/hierarchicalentities/{hEntityId}",
+		ProducesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &DeletehierarchialEntityReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*DeletehierarchialEntityOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for DeletehierarchialEntity: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+ExportVersion versions export application version
+
+Exports a LUIS application to JSON format.
+*/
+func (a *Client) ExportVersion(params *ExportVersionParams, authInfo runtime.ClientAuthInfoWriter) (*ExportVersionOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExportVersionParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "ExportVersion",
+		Method:             "GET",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/export",
+		ProducesMediaTypes: []string{"application/json", "text/plain"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &ExportVersionReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ExportVersionOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for ExportVersion: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+GetApplication apps get application info
+
+Gets the application info.
+*/
+func (a *Client) GetApplication(params *GetApplicationParams, authInfo runtime.ClientAuthInfoWriter) (*GetApplicationOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetApplicationParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "GetApplication",
+		Method:             "GET",
+		PathPattern:        "/apps/{appId}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetApplicationReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetApplicationOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for GetApplication: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+GetApplicationFeatures features get version features
+
+Gets all application version features.
+*/
+func (a *Client) GetApplicationFeatures(params *GetApplicationFeaturesParams, authInfo runtime.ClientAuthInfoWriter) (*GetApplicationFeaturesOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetApplicationFeaturesParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "GetApplicationFeatures",
+		Method:             "GET",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/features",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetApplicationFeaturesReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetApplicationFeaturesOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for GetApplicationFeatures: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+GetApplicationSettings apps get application settings
+
+Get the application settings
+*/
+func (a *Client) GetApplicationSettings(params *GetApplicationSettingsParams, authInfo runtime.ClientAuthInfoWriter) (*GetApplicationSettingsOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetApplicationSettingsParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "GetApplicationSettings",
+		Method:             "GET",
+		PathPattern:        "/apps/{appId}/settings",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetApplicationSettingsReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetApplicationSettingsOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for GetApplicationSettings: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+GetApplicationVersion versions get application version
+
+Gets the task info.
+*/
+func (a *Client) GetApplicationVersion(params *GetApplicationVersionParams, authInfo runtime.ClientAuthInfoWriter) (*GetApplicationVersionOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetApplicationVersionParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "GetApplicationVersion",
+		Method:             "GET",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetApplicationVersionReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetApplicationVersionOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for GetApplicationVersion: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+GetApplicationVersionKey versions get application version subscription key
+
+**THIS IS DEPRECATED**
+*/
+func (a *Client) GetApplicationVersionKey(params *GetApplicationVersionKeyParams, authInfo runtime.ClientAuthInfoWriter) (*GetApplicationVersionKeyOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetApplicationVersionKeyParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "GetApplicationVersionKey",
+		Method:             "GET",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/assignedkey",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetApplicationVersionKeyReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetApplicationVersionKeyOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for GetApplicationVersionKey: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+GetApplications apps get applications list
+
+Lists all of the user applications.
+*/
+func (a *Client) GetApplications(params *GetApplicationsParams, authInfo runtime.ClientAuthInfoWriter) (*GetApplicationsOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetApplicationsParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "GetApplications",
+		Method:             "GET",
+		PathPattern:        "/apps/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetApplicationsReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetApplicationsOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for GetApplications: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+GetAssistants apps get personal assistant applications
+
+**THIS API IS DEPRECATED.**
+*/
+func (a *Client) GetAssistants(params *GetAssistantsParams, authInfo runtime.ClientAuthInfoWriter) (*GetAssistantsOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetAssistantsParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "GetAssistants",
+		Method:             "GET",
+		PathPattern:        "/apps/assistants",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetAssistantsReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetAssistantsOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for GetAssistants: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+GetClosedList models get closed list entity
+
+Gets information of a closed list model.
+*/
+func (a *Client) GetClosedList(params *GetClosedListParams, authInfo runtime.ClientAuthInfoWriter) (*GetClosedListOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetClosedListParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "GetClosedList",
+		Method:             "GET",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/closedlists/{clEntityId}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetClosedListReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetClosedListOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for GetClosedList: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+GetClosedLists models get version closedlist list
+
+Gets information about the closedlist models.
+*/
+func (a *Client) GetClosedLists(params *GetClosedListsParams, authInfo runtime.ClientAuthInfoWriter) (*GetClosedListsOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetClosedListsParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "GetClosedLists",
+		Method:             "GET",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/closedlists",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetClosedListsReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetClosedListsOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for GetClosedLists: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+GetCompositeEntities models get version composite entity list
+
+Gets information about the composite entity models.
+*/
+func (a *Client) GetCompositeEntities(params *GetCompositeEntitiesParams, authInfo runtime.ClientAuthInfoWriter) (*GetCompositeEntitiesOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetCompositeEntitiesParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "GetCompositeEntities",
+		Method:             "GET",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/compositeentities",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetCompositeEntitiesReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetCompositeEntitiesOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for GetCompositeEntities: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+GetCompositeEntity models get composite entity
+
+Gets information about the composite entity model.
+*/
+func (a *Client) GetCompositeEntity(params *GetCompositeEntityParams, authInfo runtime.ClientAuthInfoWriter) (*GetCompositeEntityOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetCompositeEntityParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "GetCompositeEntity",
+		Method:             "GET",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/compositeentities/{cEntityId}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetCompositeEntityReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetCompositeEntityOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for GetCompositeEntity: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+GetCultures apps get l UI s application cultures list
+
+Gets the supported LUIS application cultures.
+*/
+func (a *Client) GetCultures(params *GetCulturesParams, authInfo runtime.ClientAuthInfoWriter) (*GetCulturesOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetCulturesParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "GetCultures",
+		Method:             "GET",
+		PathPattern:        "/apps/cultures",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetCulturesReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetCulturesOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for GetCultures: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+GetCustomPrebuiltDomain apps get l UI s prebuilt domains list
+
+Gets all the available custom prebuilt domains for all cultures
+*/
+func (a *Client) GetCustomPrebuiltDomain(params *GetCustomPrebuiltDomainParams, authInfo runtime.ClientAuthInfoWriter) (*GetCustomPrebuiltDomainOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetCustomPrebuiltDomainParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "GetCustomPrebuiltDomain",
+		Method:             "GET",
+		PathPattern:        "/apps/customprebuiltdomains",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetCustomPrebuiltDomainReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetCustomPrebuiltDomainOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for GetCustomPrebuiltDomain: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+GetCustomPrebuiltDomainsByCulture apps get l UI s prebuilt domains for culture list
+
+Gets all the available custom prebuilt domains for a specific culture
+*/
+func (a *Client) GetCustomPrebuiltDomainsByCulture(params *GetCustomPrebuiltDomainsByCultureParams, authInfo runtime.ClientAuthInfoWriter) (*GetCustomPrebuiltDomainsByCultureOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetCustomPrebuiltDomainsByCultureParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "GetCustomPrebuiltDomainsByCulture",
+		Method:             "GET",
+		PathPattern:        "/apps/customprebuiltdomains/{culture}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetCustomPrebuiltDomainsByCultureReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetCustomPrebuiltDomainsByCultureOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for GetCustomPrebuiltDomainsByCulture: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+GetDomains apps get l UI s application domains list
+
+Gets the available application domains.
+*/
+func (a *Client) GetDomains(params *GetDomainsParams, authInfo runtime.ClientAuthInfoWriter) (*GetDomainsOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetDomainsParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "GetDomains",
+		Method:             "GET",
+		PathPattern:        "/apps/domains",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetDomainsReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetDomainsOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for GetDomains: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+GetEndpoints apps get endpoints
+
+Returns the available endpoint deployment regions and urls
+*/
+func (a *Client) GetEndpoints(params *GetEndpointsParams, authInfo runtime.ClientAuthInfoWriter) (*GetEndpointsOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetEndpointsParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "GetEndpoints",
+		Method:             "GET",
+		PathPattern:        "/apps/{appId}/endpoints",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetEndpointsReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetEndpointsOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for GetEndpoints: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+GetEntities models get version entity list
+
+Gets information about the entity models.
+*/
+func (a *Client) GetEntities(params *GetEntitiesParams, authInfo runtime.ClientAuthInfoWriter) (*GetEntitiesOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetEntitiesParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "GetEntities",
+		Method:             "GET",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/entities",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetEntitiesReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetEntitiesOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for GetEntities: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+GetEntity models get entity
+
+Gets information about the entity model.
+*/
+func (a *Client) GetEntity(params *GetEntityParams, authInfo runtime.ClientAuthInfoWriter) (*GetEntityOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetEntityParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "GetEntity",
+		Method:             "GET",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/entities/{entityId}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetEntityReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetEntityOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for GetEntity: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+GetExamples examples utterances review labeled examples
+
+Returns examples to be reviewed.
+*/
+func (a *Client) GetExamples(params *GetExamplesParams, authInfo runtime.ClientAuthInfoWriter) (*GetExamplesOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetExamplesParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "GetExamples",
+		Method:             "GET",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/examples",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetExamplesReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetExamplesOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for GetExamples: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+GetHierarchialEntity models get hierarchical entity
+
+Gets information about the hierarchical entity model.
+*/
+func (a *Client) GetHierarchialEntity(params *GetHierarchialEntityParams, authInfo runtime.ClientAuthInfoWriter) (*GetHierarchialEntityOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetHierarchialEntityParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "GetHierarchialEntity",
+		Method:             "GET",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/hierarchicalentities/{hEntityId}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetHierarchialEntityReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetHierarchialEntityOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for GetHierarchialEntity: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+GetIntent models get intent
+
+Gets information about the intent model.
+*/
+func (a *Client) GetIntent(params *GetIntentParams, authInfo runtime.ClientAuthInfoWriter) (*GetIntentOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetIntentParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "GetIntent",
+		Method:             "GET",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/intents/{intentId}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetIntentReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetIntentOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for GetIntent: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+GetIntents models get version intent list
+
+Gets information about the intent models.
+*/
+func (a *Client) GetIntents(params *GetIntentsParams, authInfo runtime.ClientAuthInfoWriter) (*GetIntentsOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetIntentsParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "GetIntents",
+		Method:             "GET",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/intents",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetIntentsReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetIntentsOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for GetIntents: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+GetLogs apps download application query logs
+
+Gets the query logs of the past month for the application.
+*/
+func (a *Client) GetLogs(params *GetLogsParams, authInfo runtime.ClientAuthInfoWriter) (*GetLogsOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetLogsParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "GetLogs",
+		Method:             "GET",
+		PathPattern:        "/apps/{appId}/querylogs/",
+		ProducesMediaTypes: []string{"application/json", "application/octet-stream"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetLogsReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetLogsOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for GetLogs: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+GetPatternFeature features get pattern feature info
+
+Gets pattern feature info.
+*/
+func (a *Client) GetPatternFeature(params *GetPatternFeatureParams, authInfo runtime.ClientAuthInfoWriter) (*GetPatternFeatureOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetPatternFeatureParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "GetPatternFeature",
+		Method:             "GET",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/patterns/{patternId}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetPatternFeatureReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetPatternFeatureOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for GetPatternFeature: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+GetPatternFeatures features get version pattern feature list
+
+Gets all application version pattern features.
+*/
+func (a *Client) GetPatternFeatures(params *GetPatternFeaturesParams, authInfo runtime.ClientAuthInfoWriter) (*GetPatternFeaturesOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetPatternFeaturesParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "GetPatternFeatures",
+		Method:             "GET",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/patterns",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetPatternFeaturesReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetPatternFeaturesOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for GetPatternFeatures: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+GetPhraseListFeature features get phraselist feature info
+
+Gets phraselist feature info.
+*/
+func (a *Client) GetPhraseListFeature(params *GetPhraseListFeatureParams, authInfo runtime.ClientAuthInfoWriter) (*GetPhraseListFeatureOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetPhraseListFeatureParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "GetPhraseListFeature",
+		Method:             "GET",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/phraselists/{phraselistId}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetPhraseListFeatureReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetPhraseListFeatureOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for GetPhraseListFeature: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+GetPhraseListFeatures features get version phraselist features list
+
+Gets all application phraselist features.
+*/
+func (a *Client) GetPhraseListFeatures(params *GetPhraseListFeaturesParams, authInfo runtime.ClientAuthInfoWriter) (*GetPhraseListFeaturesOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetPhraseListFeaturesParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "GetPhraseListFeatures",
+		Method:             "GET",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/phraselists",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetPhraseListFeaturesReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetPhraseListFeaturesOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for GetPhraseListFeatures: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+GetPrebuildEntities models get version prebuilt entity list
+
+Gets information about the prebuilt entity models.
+*/
+func (a *Client) GetPrebuildEntities(params *GetPrebuildEntitiesParams, authInfo runtime.ClientAuthInfoWriter) (*GetPrebuildEntitiesOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetPrebuildEntitiesParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "GetPrebuildEntities",
+		Method:             "GET",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/prebuilts",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetPrebuildEntitiesReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetPrebuildEntitiesOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for GetPrebuildEntities: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+GetPrebuildEntity models get prebuilt entity
+
+Gets information about the prebuilt entity model.
+*/
+func (a *Client) GetPrebuildEntity(params *GetPrebuildEntityParams, authInfo runtime.ClientAuthInfoWriter) (*GetPrebuildEntityOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetPrebuildEntityParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "GetPrebuildEntity",
+		Method:             "GET",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/prebuilts/{prebuiltId}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetPrebuildEntityReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetPrebuildEntityOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for GetPrebuildEntity: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+GetSubscriptions users add subscription key
+
+**THIS API IS DEPRECATED.**
+*/
+func (a *Client) GetSubscriptions(params *GetSubscriptionsParams, authInfo runtime.ClientAuthInfoWriter) (*GetSubscriptionsCreated, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetSubscriptionsParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "GetSubscriptions",
+		Method:             "POST",
+		PathPattern:        "/subscriptions",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetSubscriptionsReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetSubscriptionsCreated)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for GetSubscriptions: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+GetTrainingStatus trains get version training status
+
+Gets the training status of all models (intents and entities) for the specified LUIS app. You must <a href="https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c45">call the train API</a> to train the LUIS app before you call this API to get training status.
+
+
+
+*/
+func (a *Client) GetTrainingStatus(params *GetTrainingStatusParams, authInfo runtime.ClientAuthInfoWriter) (*GetTrainingStatusOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetTrainingStatusParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "GetTrainingStatus",
+		Method:             "GET",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/train",
+		ProducesMediaTypes: []string{"JSON", "application/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetTrainingStatusReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetTrainingStatusOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for GetTrainingStatus: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+GetUsageScenarios apps get l UI s application usage scenarios list
+
+Gets the application available usage scenarios.
+*/
+func (a *Client) GetUsageScenarios(params *GetUsageScenariosParams, authInfo runtime.ClientAuthInfoWriter) (*GetUsageScenariosOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetUsageScenariosParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "GetUsageScenarios",
+		Method:             "GET",
+		PathPattern:        "/apps/usagescenarios",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetUsageScenariosReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetUsageScenariosOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for GetUsageScenarios: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+GetUserExternalKeys users get user external api keys
+
+**THIS API IS DEPRECATED.**
+*/
+func (a *Client) GetUserExternalKeys(params *GetUserExternalKeysParams, authInfo runtime.ClientAuthInfoWriter) (*GetUserExternalKeysOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetUserExternalKeysParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "GetUserExternalKeys",
+		Method:             "GET",
+		PathPattern:        "/externalKeys",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetUserExternalKeysReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetUserExternalKeysOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for GetUserExternalKeys: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+GetUserSubscriptionKeys users get user subscription keys
+
+**THIS API IS DEPRECATED.**
+*/
+func (a *Client) GetUserSubscriptionKeys(params *GetUserSubscriptionKeysParams, authInfo runtime.ClientAuthInfoWriter) (*GetUserSubscriptionKeysOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetUserSubscriptionKeysParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "GetUserSubscriptionKeys",
+		Method:             "GET",
+		PathPattern:        "/subscriptions",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetUserSubscriptionKeysReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetUserSubscriptionKeysOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for GetUserSubscriptionKeys: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+GetUsersAccessList permissions get user access list
+
+Gets the list of user emails that have permissions to access your application.
+*/
+func (a *Client) GetUsersAccessList(params *GetUsersAccessListParams, authInfo runtime.ClientAuthInfoWriter) (*GetUsersAccessListOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetUsersAccessListParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "GetUsersAccessList",
+		Method:             "GET",
+		PathPattern:        "/apps/{appId}/permissions",
+		ProducesMediaTypes: []string{"JSON"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetUsersAccessListReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetUsersAccessListOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for GetUsersAccessList: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+GetVersionModels models get version model list
+
+Gets information about the application version models.
+*/
+func (a *Client) GetVersionModels(params *GetVersionModelsParams, authInfo runtime.ClientAuthInfoWriter) (*GetVersionModelsOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetVersionModelsParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "GetVersionModels",
+		Method:             "GET",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/models",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetVersionModelsReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetVersionModelsOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for GetVersionModels: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+GetVersions versions get application version list
+
+Gets the application versions info.
+*/
+func (a *Client) GetVersions(params *GetVersionsParams, authInfo runtime.ClientAuthInfoWriter) (*GetVersionsOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetVersionsParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "GetVersions",
+		Method:             "GET",
+		PathPattern:        "/apps/{appId}/versions",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetVersionsReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetVersionsOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for GetVersions: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+GetVersionsPrebuiltEntities models get available prebuilt entity list
+
+Gets all the available prebuilt entities for the application based on the application's culture.
+*/
+func (a *Client) GetVersionsPrebuiltEntities(params *GetVersionsPrebuiltEntitiesParams, authInfo runtime.ClientAuthInfoWriter) (*GetVersionsPrebuiltEntitiesOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetVersionsPrebuiltEntitiesParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "GetVersionsPrebuiltEntities",
+		Method:             "GET",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/listprebuilts",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetVersionsPrebuiltEntitiesReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetVersionsPrebuiltEntitiesOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for GetVersionsPrebuiltEntities: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+GethierarchicalEntities models get version hierarchical entity list
+
+Gets information about the hierarchical entity models.
+*/
+func (a *Client) GethierarchicalEntities(params *GethierarchicalEntitiesParams, authInfo runtime.ClientAuthInfoWriter) (*GethierarchicalEntitiesOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGethierarchicalEntitiesParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "GethierarchicalEntities",
+		Method:             "GET",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/hierarchicalentities",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GethierarchicalEntitiesReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GethierarchicalEntitiesOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for GethierarchicalEntities: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+ImportApplication apps import application
+
+Imports an application to LUIS, the application's JSON or LU should be included in the request body. Returns new app ID.
+*/
+func (a *Client) ImportApplication(params *ImportApplicationParams, authInfo runtime.ClientAuthInfoWriter) (*ImportApplicationCreated, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewImportApplicationParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "ImportApplication",
+		Method:             "POST",
+		PathPattern:        "/apps/import",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json", "text/plain"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &ImportApplicationReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ImportApplicationCreated)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for ImportApplication: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+ImportVersionJSON versions import version to application
+
+Imports a new version into a LUIS application, the version's JSON
+*/
+func (a *Client) ImportVersionJSON(params *ImportVersionJSONParams, authInfo runtime.ClientAuthInfoWriter) (*ImportVersionJSONCreated, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewImportVersionJSONParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "ImportVersionJson",
+		Method:             "POST",
+		PathPattern:        "/apps/{appId}/versions/import/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &ImportVersionJSONReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ImportVersionJSONCreated)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for ImportVersionJson: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+ImportVersionLu versions import version to application
+
+Imports a new version into a LUIS application, the version's LU should be included in in the request body.
+*/
+func (a *Client) ImportVersionLu(params *ImportVersionLuParams, authInfo runtime.ClientAuthInfoWriter) (*ImportVersionLuCreated, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewImportVersionLuParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "ImportVersionLu",
+		Method:             "POST",
+		PathPattern:        "/apps/{appId}/versions/import",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"text/plain"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &ImportVersionLuReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ImportVersionLuCreated)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for ImportVersionLu: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+PublishApplication apps publish application
+
+Publishes a specific version of the application.
+*/
+func (a *Client) PublishApplication(params *PublishApplicationParams, authInfo runtime.ClientAuthInfoWriter) (*PublishApplicationCreated, *PublishApplicationMultiStatus, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewPublishApplicationParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "PublishApplication",
+		Method:             "POST",
+		PathPattern:        "/apps/{appId}/publish",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &PublishApplicationReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, nil, err
+	}
+	switch value := result.(type) {
+	case *PublishApplicationCreated:
+		return value, nil, nil
+	case *PublishApplicationMultiStatus:
+		return nil, value, nil
+	}
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for operations: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+RemoveUserFromAccessList permissions remove user from access list
+
+Removed a user to the allowed list of users to access this LUIS application.
+Users are removed using their email address.
+*/
+func (a *Client) RemoveUserFromAccessList(params *RemoveUserFromAccessListParams, authInfo runtime.ClientAuthInfoWriter) (*RemoveUserFromAccessListOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewRemoveUserFromAccessListParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "RemoveUserFromAccessList",
+		Method:             "DELETE",
+		PathPattern:        "/apps/{appId}/permissions",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &RemoveUserFromAccessListReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*RemoveUserFromAccessListOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for RemoveUserFromAccessList: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+RenameSubscriptionKey users rename subscription key
+
+**THIS API IS DEPRECATED.**
+*/
+func (a *Client) RenameSubscriptionKey(params *RenameSubscriptionKeyParams, authInfo runtime.ClientAuthInfoWriter) (*RenameSubscriptionKeyOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewRenameSubscriptionKeyParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "RenameSubscriptionKey",
+		Method:             "PUT",
+		PathPattern:        "/subscriptions",
+		ProducesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &RenameSubscriptionKeyReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*RenameSubscriptionKeyOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for RenameSubscriptionKey: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+ResetProgrammaticKey users reset programmatic key
+
+**THIS API IS DEPRECATED.**
+*/
+func (a *Client) ResetProgrammaticKey(params *ResetProgrammaticKeyParams, authInfo runtime.ClientAuthInfoWriter) (*ResetProgrammaticKeyOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewResetProgrammaticKeyParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "ResetProgrammaticKey",
+		Method:             "PUT",
+		PathPattern:        "/programmatickey",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &ResetProgrammaticKeyReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ResetProgrammaticKeyOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for ResetProgrammaticKey: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+SuggestEntityExamples models suggest endpoint queries for entities
+
+Suggests examples that would improve the accuracy of the entity model.
+*/
+func (a *Client) SuggestEntityExamples(params *SuggestEntityExamplesParams, authInfo runtime.ClientAuthInfoWriter) (*SuggestEntityExamplesOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewSuggestEntityExamplesParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "SuggestEntityExamples",
+		Method:             "GET",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/entities/{entityId}/suggest",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &SuggestEntityExamplesReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*SuggestEntityExamplesOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for SuggestEntityExamples: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+SuggestIntentExamples models suggest endpoint queries for intents
+
+Suggests examples that would improve the accuracy of the intent model.
+*/
+func (a *Client) SuggestIntentExamples(params *SuggestIntentExamplesParams, authInfo runtime.ClientAuthInfoWriter) (*SuggestIntentExamplesOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewSuggestIntentExamplesParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "SuggestIntentExamples",
+		Method:             "GET",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/intents/{intentId}/suggest",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &SuggestIntentExamplesReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*SuggestIntentExamplesOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for SuggestIntentExamples: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+TrainVersion trains train application version
+
+Sends a training request for a version of a specified LUIS app.
+
+This POST request initiates a request asynchronously. To determine whether the training request is successful, submit a GET request to get training status.
+
+* **Note**: The application version is not fully trained unless all the models (intents and entities) are trained successfully or are up to date.
+
+To verify training success, get the training status at least once after training is complete.
+*/
+func (a *Client) TrainVersion(params *TrainVersionParams, authInfo runtime.ClientAuthInfoWriter) (*TrainVersionAccepted, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewTrainVersionParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "TrainVersion",
+		Method:             "POST",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/train",
+		ProducesMediaTypes: []string{"JSON", "application/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &TrainVersionReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*TrainVersionAccepted)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for TrainVersion: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+UpdateAccessList permissions update access list
+
+Replaces the current users access list with the one sent in the body.
+If an empty list is sent, all access to other users will be removed.
+
+*/
+func (a *Client) UpdateAccessList(params *UpdateAccessListParams, authInfo runtime.ClientAuthInfoWriter) (*UpdateAccessListOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewUpdateAccessListParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "UpdateAccessList",
+		Method:             "PUT",
+		PathPattern:        "/apps/{appId}/permissions",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &UpdateAccessListReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*UpdateAccessListOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for UpdateAccessList: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+UpdateApplication apps rename application
+
+Updates the name or description of the application.
+*/
+func (a *Client) UpdateApplication(params *UpdateApplicationParams, authInfo runtime.ClientAuthInfoWriter) (*UpdateApplicationOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewUpdateApplicationParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "UpdateApplication",
+		Method:             "PUT",
+		PathPattern:        "/apps/{appId}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &UpdateApplicationReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*UpdateApplicationOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for UpdateApplication: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+UpdateApplicationSettings apps update application settings
+
+Updates the application settings
+*/
+func (a *Client) UpdateApplicationSettings(params *UpdateApplicationSettingsParams, authInfo runtime.ClientAuthInfoWriter) (*UpdateApplicationSettingsOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewUpdateApplicationSettingsParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "UpdateApplicationSettings",
+		Method:             "PUT",
+		PathPattern:        "/apps/{appId}/settings",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &UpdateApplicationSettingsReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*UpdateApplicationSettingsOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for UpdateApplicationSettings: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+UpdateAssignedKey versions assign subscription key to version
+
+**THIS IS DEPRECATED**
+*/
+func (a *Client) UpdateAssignedKey(params *UpdateAssignedKeyParams, authInfo runtime.ClientAuthInfoWriter) (*UpdateAssignedKeyOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewUpdateAssignedKeyParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "UpdateAssignedKey",
+		Method:             "PUT",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/assignedkey",
+		ProducesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &UpdateAssignedKeyReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*UpdateAssignedKeyOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for UpdateAssignedKey: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+UpdateClosedList models update closed list entity
+
+Updates the closed list model.
+*/
+func (a *Client) UpdateClosedList(params *UpdateClosedListParams, authInfo runtime.ClientAuthInfoWriter) (*UpdateClosedListOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewUpdateClosedListParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "UpdateClosedList",
+		Method:             "PUT",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/closedlists/{clEntityId}",
+		ProducesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &UpdateClosedListReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*UpdateClosedListOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for UpdateClosedList: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+UpdateCompositeEntity models update composite entity
+
+Updates the composite entity extractor.
+*/
+func (a *Client) UpdateCompositeEntity(params *UpdateCompositeEntityParams, authInfo runtime.ClientAuthInfoWriter) (*UpdateCompositeEntityOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewUpdateCompositeEntityParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "UpdateCompositeEntity",
+		Method:             "PUT",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/compositeentities/{cEntityId}",
+		ProducesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &UpdateCompositeEntityReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*UpdateCompositeEntityOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for UpdateCompositeEntity: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+UpdateEntity models rename entity
+
+Updates the name of an entity extractor.
+*/
+func (a *Client) UpdateEntity(params *UpdateEntityParams, authInfo runtime.ClientAuthInfoWriter) (*UpdateEntityOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewUpdateEntityParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "UpdateEntity",
+		Method:             "PUT",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/entities/{entityId}",
+		ProducesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &UpdateEntityReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*UpdateEntityOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for UpdateEntity: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+UpdateHierarchialEntity models update hierarchical entity
+
+Updates the name and children of a hierarchical entity model.
+*/
+func (a *Client) UpdateHierarchialEntity(params *UpdateHierarchialEntityParams, authInfo runtime.ClientAuthInfoWriter) (*UpdateHierarchialEntityOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewUpdateHierarchialEntityParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "UpdateHierarchialEntity",
+		Method:             "PUT",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/hierarchicalentities/{hEntityId}",
+		ProducesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &UpdateHierarchialEntityReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*UpdateHierarchialEntityOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for UpdateHierarchialEntity: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+UpdateIntent models rename intent
+
+Updates the name of an intent classifier.
+*/
+func (a *Client) UpdateIntent(params *UpdateIntentParams, authInfo runtime.ClientAuthInfoWriter) (*UpdateIntentOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewUpdateIntentParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "UpdateIntent",
+		Method:             "PUT",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/intents/{intentId}",
+		ProducesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &UpdateIntentReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*UpdateIntentOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for UpdateIntent: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+UpdatePatternFeature features update pattern feature
+
+Updates the pattern, the name and the state of the pattern feature.
+*/
+func (a *Client) UpdatePatternFeature(params *UpdatePatternFeatureParams, authInfo runtime.ClientAuthInfoWriter) (*UpdatePatternFeatureOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewUpdatePatternFeatureParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "UpdatePatternFeature",
+		Method:             "PUT",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/patterns/{patternId}",
+		ProducesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &UpdatePatternFeatureReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*UpdatePatternFeatureOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for UpdatePatternFeature: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+UpdatePhraseListFeature features update phraselist feature
+
+Updates the phrases, the state and the name of the phraselist feature.
+*/
+func (a *Client) UpdatePhraseListFeature(params *UpdatePhraseListFeatureParams, authInfo runtime.ClientAuthInfoWriter) (*UpdatePhraseListFeatureOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewUpdatePhraseListFeatureParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "UpdatePhraseListFeature",
+		Method:             "PUT",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/phraselists/{phraselistId}",
+		ProducesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &UpdatePhraseListFeatureReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*UpdatePhraseListFeatureOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for UpdatePhraseListFeature: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+UpdateSublist models update closedlist s sublist
+
+Updates one of the closed list's sublists
+*/
+func (a *Client) UpdateSublist(params *UpdateSublistParams, authInfo runtime.ClientAuthInfoWriter) (*UpdateSublistOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewUpdateSublistParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "UpdateSublist",
+		Method:             "PUT",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/closedlists/{clEntityId}/sublists/{subListId}",
+		ProducesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &UpdateSublistReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*UpdateSublistOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for UpdateSublist: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+UpdateVersion versions rename application version
+
+Updates the name or description of the application version.
+*/
+func (a *Client) UpdateVersion(params *UpdateVersionParams, authInfo runtime.ClientAuthInfoWriter) (*UpdateVersionOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewUpdateVersionParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "UpdateVersion",
+		Method:             "PUT",
+		PathPattern:        "/apps/{appId}/versions/{versionId}/",
+		ProducesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &UpdateVersionReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*UpdateVersionOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for UpdateVersion: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 

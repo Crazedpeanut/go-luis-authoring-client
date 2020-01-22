@@ -7,10 +7,13 @@ package operations
 
 import (
 	"fmt"
+	"io"
 
 	"github.com/go-openapi/runtime"
 
 	strfmt "github.com/go-openapi/strfmt"
+
+	models "github.com/crazedpeanut/luis/models"
 )
 
 // Nr5ade1315d5b81c209ce2e59fReader is a Reader for the Nr5ade1315d5b81c209ce2e59f structure.
@@ -88,13 +91,25 @@ func NewNr5ade1315d5b81c209ce2e59fBadRequest() *Nr5ade1315d5b81c209ce2e59fBadReq
 This error can be returned if the request's parameters are incorrect meaning the required parameters are missing, malformed, or too large.
 */
 type Nr5ade1315d5b81c209ce2e59fBadRequest struct {
+	Payload *models.ErrorResponseObject
 }
 
 func (o *Nr5ade1315d5b81c209ce2e59fBadRequest) Error() string {
-	return fmt.Sprintf("[POST /apps/{appId}/versions/{versionId}/compositeentities/{cEntityId}/roles][%d] 5ade1315d5b81c209ce2e59fBadRequest ", 400)
+	return fmt.Sprintf("[POST /apps/{appId}/versions/{versionId}/compositeentities/{cEntityId}/roles][%d] 5ade1315d5b81c209ce2e59fBadRequest  %+v", 400, o.Payload)
+}
+
+func (o *Nr5ade1315d5b81c209ce2e59fBadRequest) GetPayload() *models.ErrorResponseObject {
+	return o.Payload
 }
 
 func (o *Nr5ade1315d5b81c209ce2e59fBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.ErrorResponseObject)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
 
 	return nil
 }

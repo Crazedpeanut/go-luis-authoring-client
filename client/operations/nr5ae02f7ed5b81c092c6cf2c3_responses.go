@@ -7,10 +7,13 @@ package operations
 
 import (
 	"fmt"
+	"io"
 
 	"github.com/go-openapi/runtime"
 
 	strfmt "github.com/go-openapi/strfmt"
+
+	models "github.com/crazedpeanut/luis/models"
 )
 
 // Nr5ae02f7ed5b81c092c6cf2c3Reader is a Reader for the Nr5ae02f7ed5b81c092c6cf2c3 structure.
@@ -136,13 +139,25 @@ func NewNr5ae02f7ed5b81c092c6cf2c3BadRequest() *Nr5ae02f7ed5b81c092c6cf2c3BadReq
 The app ID is missing or invalid.
 */
 type Nr5ae02f7ed5b81c092c6cf2c3BadRequest struct {
+	Payload *models.ErrorResponseObject
 }
 
 func (o *Nr5ae02f7ed5b81c092c6cf2c3BadRequest) Error() string {
-	return fmt.Sprintf("[GET /apps/{appId}/querylogsasync/][%d] 5ae02f7ed5b81c092c6cf2c3BadRequest ", 400)
+	return fmt.Sprintf("[GET /apps/{appId}/querylogsasync/][%d] 5ae02f7ed5b81c092c6cf2c3BadRequest  %+v", 400, o.Payload)
+}
+
+func (o *Nr5ae02f7ed5b81c092c6cf2c3BadRequest) GetPayload() *models.ErrorResponseObject {
+	return o.Payload
 }
 
 func (o *Nr5ae02f7ed5b81c092c6cf2c3BadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.ErrorResponseObject)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
 
 	return nil
 }

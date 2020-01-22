@@ -20,7 +20,7 @@ var Default = NewHTTPClient(nil)
 const (
 	// DefaultHost is the default Host
 	// found in Meta (info) section of spec file
-	DefaultHost string = "westus.api.cognitive.microsoft.com"
+	DefaultHost string = "australiaeast.api.cognitive.microsoft.com"
 	// DefaultBasePath is the default BasePath
 	// found in Meta (info) section of spec file
 	DefaultBasePath string = "/luis/api/v2.0"

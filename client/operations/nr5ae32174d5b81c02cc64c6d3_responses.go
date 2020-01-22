@@ -7,10 +7,13 @@ package operations
 
 import (
 	"fmt"
+	"io"
 
 	"github.com/go-openapi/runtime"
 
 	strfmt "github.com/go-openapi/strfmt"
+
+	models "github.com/crazedpeanut/luis/models"
 )
 
 // Nr5ae32174d5b81c02cc64c6d3Reader is a Reader for the Nr5ae32174d5b81c02cc64c6d3 structure.
@@ -90,13 +93,25 @@ This error can be returned if the request's parameters are incorrect meaning the
 This error can be returned if the request's body is incorrect meaning the JSON is missing, malformed, or too large.
 */
 type Nr5ae32174d5b81c02cc64c6d3BadRequest struct {
+	Payload *models.ErrorResponseObject
 }
 
 func (o *Nr5ae32174d5b81c02cc64c6d3BadRequest) Error() string {
-	return fmt.Sprintf("[PUT /apps/{appId}/publishsettings][%d] 5ae32174d5b81c02cc64c6d3BadRequest ", 400)
+	return fmt.Sprintf("[PUT /apps/{appId}/publishsettings][%d] 5ae32174d5b81c02cc64c6d3BadRequest  %+v", 400, o.Payload)
+}
+
+func (o *Nr5ae32174d5b81c02cc64c6d3BadRequest) GetPayload() *models.ErrorResponseObject {
+	return o.Payload
 }
 
 func (o *Nr5ae32174d5b81c02cc64c6d3BadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.ErrorResponseObject)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
 
 	return nil
 }

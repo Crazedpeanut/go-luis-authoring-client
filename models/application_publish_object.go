@@ -15,6 +15,9 @@ import (
 // swagger:model ApplicationPublishObject
 type ApplicationPublishObject struct {
 
+	// direct version publish
+	DirectVersionPublish bool `json:"directVersionPublish,omitempty"`
+
 	// is staging
 	IsStaging *bool `json:"isStaging,omitempty"`
 
