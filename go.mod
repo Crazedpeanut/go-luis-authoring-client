@@ -1,4 +1,4 @@
-module github.com/crazedpeanut/luis
+module github.com/crazedpeanut/go-luis-authoring-client
 
 require (
 	github.com/asaskevich/govalidator v0.0.0-20200108200545-475eaeb16496 // indirect
