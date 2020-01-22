@@ -1,6 +1,7 @@
-# Golang Luis Authoring Client
+# Golang LUIS Authoring Client
+A golang client for the LUIS Authoring API. This client is generated using [goswagger](https://github.com/go-swagger/go-swagger). 
 
-A client generated with [goswagger](https://github.com/go-swagger/go-swagger). The source openapi specification was generated at [Programmatic API Documentation](https://australiaeast.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c3d/console) and slightly modified
+The source openapi specification was generated at [Programmatic API Documentation](https://australiaeast.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c3d/console) and slightly modified
 
 ## Installation
 
@@ -29,7 +30,7 @@ func main() {
   params := operations.NewGetApplicationParams()
 	params.SetAppID(id)
   resp, err := luisAuthoringClient.Operations.GetApplication(params, nil)
-  
+
   if err != nil {
    log.Println("Your applications name is %s", resp.Payload.Name) 
   }
