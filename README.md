@@ -8,7 +8,7 @@ The source openapi specification was generated at [Programmatic API Documentatio
 Use [go get](https://golang.org/pkg/cmd/go/internal/get/) to install the client .
 
 ```bash
-go get -u github.com/crazedpeanut/luis
+go get -u github.com/crazedpeanut/go-luis-authoring-client
 ```
 
 ## Usage
@@ -19,7 +19,7 @@ import (
   "github.com/go-openapi/runtime/client"
   "log"
   
-  luis "github.com/crazedpeanut/luis/client"
+  luis "github.com/crazedpeanut/go-luis-authoring-client/client"
 )
 
 func main() {

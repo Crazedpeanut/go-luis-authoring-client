@@ -11,7 +11,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/crazedpeanut/luis/client/operations"
+	"github.com/crazedpeanut/go-luis-authoring-client/client/operations"
 )
 
 // Default luis authoring HTTP client.

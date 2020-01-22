@@ -13,7 +13,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	models "github.com/crazedpeanut/luis/models"
+	models "github.com/crazedpeanut/go-luis-authoring-client/models"
 )
 
 // GetApplicationReader is a Reader for the GetApplication structure.
