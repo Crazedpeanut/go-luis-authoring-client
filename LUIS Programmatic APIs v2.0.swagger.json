@@ -108,9 +108,9 @@
               "application/json": "[\n    {\n        \"id\": \"363187f1-c573-46b3-bc4c-ae01d686e68e\",\n        \"name\": \"MyFirstDummyApp\",\n        \"description\": \"This is my first dummy application\",\n        \"culture\": \"en-us\",\n        \"usageScenario\": \"IoT\",\n        \"domain\": \"Comics\",\n        \"versionsCount\": 3,\n        \"createdDateTime\": \"2017-01-31T16:15:54Z\",\n        \"endpoints\": {\n            \"PRODUCTION\": {\n                \"versionId\": \"0.1\",\n                \"isStaging\": false,\n                \"endpointUrl\": \"DummyUrl\",\n                \"assignedEndpointKey\": \"\",\n                \"endpointRegion\": \"westus\",\n                \"publishedDateTime\": \"2017-02-19T17:09:14Z\"\n            }\n        },\n        \"endpointHitsCount\": 0,\n        \"activeVersion\": \"0.1\",\n        \"ownerEmail\": \"test@domain.com\"\n    }\n]"
             },
             "schema": {
-              "type":"array",
+              "type": "array",
               "items": {
-                "$ref":"#/definitions/ApplicationGetObject"
+                "$ref": "#/definitions/ApplicationGetObject"
               }
             }
           },
@@ -199,7 +199,7 @@
         "responses": {
           "200": {
             "description": "A JSON object containing the application info.",
-            "schema":{
+            "schema": {
               "$ref": "#/definitions/ApplicationGetObject"
             },
             "examples": {
@@ -4011,7 +4011,7 @@
         ],
         "responses": {
           "200": {
-            "description": "A JSON object containing the task info. **trainingStatus** can have the values \n\n* NeedsTraining\n* InProgress\n* Trained", 
+            "description": "A JSON object containing the task info. **trainingStatus** can have the values \n\n* NeedsTraining\n* InProgress\n* Trained",
             "schema": {
               "$ref": "#/definitions/GetVersionObject"
             },
@@ -10188,7 +10188,6 @@
           }
         }
       }
-
     },
     "ApplicationCreateObject": {
       "additionalProperties": false,
@@ -10800,23 +10799,26 @@
       "items": {
         "type": "object",
         "properties": {
-          "statusId": {
-            "type":"string"
-          },
-          "failureReason":{
+          "modelId": {
             "type": "string"
           },
-          "status": {
-            "type":"string",
-            "enum": [
-              "InProgress",
-              "Success",
-              "UptoDate",
-              "Fail"
-            ]
-          },
-          "exampleCount":{
-            "type": "integer"
+          "details": {
+            "type": "object",
+            "properties": {
+              "statusId": {
+                "type": "string"
+              },
+              "failureReason": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string",
+                "enum": ["InProgress", "Success", "UptoDate", "Fail"]
+              },
+              "exampleCount": {
+                "type": "integer"
+              }
+            }
           }
         }
       }
