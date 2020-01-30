@@ -120,9 +120,6 @@ type TrainStatusObjectItems0Details struct {
 	// status
 	// Enum: [InProgress Success UptoDate Fail]
 	Status string `json:"status,omitempty"`
-
-	// status Id
-	StatusID string `json:"statusId,omitempty"`
 }
 
 // Validate validates this train status object items0 details
