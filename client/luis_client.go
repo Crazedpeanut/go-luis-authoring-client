@@ -14,7 +14,7 @@ import (
 	"github.com/crazedpeanut/go-luis-authoring-client/client/operations"
 )
 
-// Default luis authoring HTTP client.
+// Default luis HTTP client.
 var Default = NewHTTPClient(nil)
 
 const (
@@ -29,14 +29,14 @@ const (
 // DefaultSchemes are the default schemes found in Meta (info) section of spec file
 var DefaultSchemes = []string{"https"}
 
-// NewHTTPClient creates a new luis authoring HTTP client.
-func NewHTTPClient(formats strfmt.Registry) *LuisAuthoring {
+// NewHTTPClient creates a new luis HTTP client.
+func NewHTTPClient(formats strfmt.Registry) *Luis {
 	return NewHTTPClientWithConfig(formats, nil)
 }
 
-// NewHTTPClientWithConfig creates a new luis authoring HTTP client,
+// NewHTTPClientWithConfig creates a new luis HTTP client,
 // using a customizable transport config.
-func NewHTTPClientWithConfig(formats strfmt.Registry, cfg *TransportConfig) *LuisAuthoring {
+func NewHTTPClientWithConfig(formats strfmt.Registry, cfg *TransportConfig) *Luis {
 	// ensure nullable parameters have default
 	if cfg == nil {
 		cfg = DefaultTransportConfig()
@@ -47,14 +47,14 @@ func NewHTTPClientWithConfig(formats strfmt.Registry, cfg *TransportConfig) *Lui
 	return New(transport, formats)
 }
 
-// New creates a new luis authoring client
-func New(transport runtime.ClientTransport, formats strfmt.Registry) *LuisAuthoring {
+// New creates a new luis client
+func New(transport runtime.ClientTransport, formats strfmt.Registry) *Luis {
 	// ensure nullable parameters have default
 	if formats == nil {
 		formats = strfmt.Default
 	}
 
-	cli := new(LuisAuthoring)
+	cli := new(Luis)
 	cli.Transport = transport
 
 	cli.Operations = operations.New(transport, formats)
@@ -101,15 +101,15 @@ func (cfg *TransportConfig) WithSchemes(schemes []string) *TransportConfig {
 	return cfg
 }
 
-// LuisAuthoring is a client for luis authoring
-type LuisAuthoring struct {
+// Luis is a client for luis
+type Luis struct {
 	Operations *operations.Client
 
 	Transport runtime.ClientTransport
 }
 
 // SetTransport changes the transport on the client and all its subresources
-func (c *LuisAuthoring) SetTransport(transport runtime.ClientTransport) {
+func (c *Luis) SetTransport(transport runtime.ClientTransport) {
 	c.Transport = transport
 
 	c.Operations.SetTransport(transport)

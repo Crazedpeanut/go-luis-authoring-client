@@ -10803,10 +10803,16 @@
           "statusId": {
             "type":"string"
           },
+          "failureReason":{
+            "type": "string"
+          },
           "status": {
             "type":"string",
             "enum": [
-              "InProgress"
+              "InProgress",
+              "Success",
+              "UptoDate",
+              "Fail"
             ]
           },
           "exampleCount":{

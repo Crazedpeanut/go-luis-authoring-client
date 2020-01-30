@@ -53,8 +53,11 @@ type TrainStatusObjectItems0 struct {
 	// example count
 	ExampleCount int64 `json:"exampleCount,omitempty"`
 
+	// failure reason
+	FailureReason string `json:"failureReason,omitempty"`
+
 	// status
-	// Enum: [InProgress]
+	// Enum: [InProgress Success UptoDate Fail]
 	Status string `json:"status,omitempty"`
 
 	// status Id
@@ -79,7 +82,7 @@ var trainStatusObjectItems0TypeStatusPropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["InProgress"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["InProgress","Success","UptoDate","Fail"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -91,6 +94,15 @@ const (
 
 	// TrainStatusObjectItems0StatusInProgress captures enum value "InProgress"
 	TrainStatusObjectItems0StatusInProgress string = "InProgress"
+
+	// TrainStatusObjectItems0StatusSuccess captures enum value "Success"
+	TrainStatusObjectItems0StatusSuccess string = "Success"
+
+	// TrainStatusObjectItems0StatusUptoDate captures enum value "UptoDate"
+	TrainStatusObjectItems0StatusUptoDate string = "UptoDate"
+
+	// TrainStatusObjectItems0StatusFail captures enum value "Fail"
+	TrainStatusObjectItems0StatusFail string = "Fail"
 )
 
 // prop value enum
