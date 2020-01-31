@@ -2957,117 +2957,6 @@ func (a *Client) Nr5be313cec181ae720aa2b26c(params *Nr5be313cec181ae720aa2b26cPa
 }
 
 /*
-Nr5be32028a1d48f88cfd57e20 apps get l UI s azure accounts assigned to the application
-
-Gets the LUIS azure accounts assigned to the application for the user using his ARM token.
-*/
-func (a *Client) Nr5be32028a1d48f88cfd57e20(params *Nr5be32028a1d48f88cfd57e20Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5be32028a1d48f88cfd57e20OK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5be32028a1d48f88cfd57e20Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5be32028a1d48f88cfd57e20",
-		Method:             "GET",
-		PathPattern:        "/apps/{appId}/azureaccounts",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5be32028a1d48f88cfd57e20Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5be32028a1d48f88cfd57e20OK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5be32028a1d48f88cfd57e20: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5be32228e8473de116325515 apps assign a l UI s azure accounts to an application
-
-Assigns an azure account to the application.
-*/
-func (a *Client) Nr5be32228e8473de116325515(params *Nr5be32228e8473de116325515Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5be32228e8473de116325515Created, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5be32228e8473de116325515Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5be32228e8473de116325515",
-		Method:             "POST",
-		PathPattern:        "/apps/{appId}/azureaccounts",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5be32228e8473de116325515Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5be32228e8473de116325515Created)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5be32228e8473de116325515: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-Nr5be32554f8591db3a86232e1 apps removes an assigned l UI s azure accounts from an application
-
-Gets the LUIS azure accounts for the user using his ARM token.
-*/
-func (a *Client) Nr5be32554f8591db3a86232e1(params *Nr5be32554f8591db3a86232e1Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5be32554f8591db3a86232e1OK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewNr5be32554f8591db3a86232e1Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "5be32554f8591db3a86232e1",
-		Method:             "DELETE",
-		PathPattern:        "/apps/{appId}/azureaccounts",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &Nr5be32554f8591db3a86232e1Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*Nr5be32554f8591db3a86232e1OK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for 5be32554f8591db3a86232e1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
 Nr5c56cfc9cf9c9235b4fc8c04 apps get l UI s application tokenizer versions for culture
 
 Gets the LUIS application culture and supported tokenizer versions for culture.
@@ -3628,6 +3517,43 @@ func (a *Client) AddUserToAccessList(params *AddUserToAccessListParams, authInfo
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
 	msg := fmt.Sprintf("unexpected success response for AddUserToAccessList: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+AssignAzureAccount apps assign a l UI s azure accounts to an application
+
+Assigns an azure account to the application.
+*/
+func (a *Client) AssignAzureAccount(params *AssignAzureAccountParams, authInfo runtime.ClientAuthInfoWriter) (*AssignAzureAccountCreated, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewAssignAzureAccountParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "AssignAzureAccount",
+		Method:             "POST",
+		PathPattern:        "/apps/{appId}/azureaccounts",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &AssignAzureAccountReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*AssignAzureAccountCreated)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for AssignAzureAccount: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -4629,6 +4555,43 @@ func (a *Client) GetAssistants(params *GetAssistantsParams, authInfo runtime.Cli
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
 	msg := fmt.Sprintf("unexpected success response for GetAssistants: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+GetAzureAccounts apps get l UI s azure accounts assigned to the application
+
+Gets the LUIS azure accounts assigned to the application for the user using his ARM token.
+*/
+func (a *Client) GetAzureAccounts(params *GetAzureAccountsParams, authInfo runtime.ClientAuthInfoWriter) (*GetAzureAccountsOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetAzureAccountsParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "GetAzureAccounts",
+		Method:             "GET",
+		PathPattern:        "/apps/{appId}/azureaccounts",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetAzureAccountsReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetAzureAccountsOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for GetAzureAccounts: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -5965,6 +5928,43 @@ func (a *Client) PublishApplication(params *PublishApplicationParams, authInfo r
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
 	msg := fmt.Sprintf("unexpected success response for operations: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+RemoveAzureAccount apps removes an assigned l UI s azure accounts from an application
+
+Gets the LUIS azure accounts for the user using his ARM token.
+*/
+func (a *Client) RemoveAzureAccount(params *RemoveAzureAccountParams, authInfo runtime.ClientAuthInfoWriter) (*RemoveAzureAccountOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewRemoveAzureAccountParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "RemoveAzureAccount",
+		Method:             "DELETE",
+		PathPattern:        "/apps/{appId}/azureaccounts",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &RemoveAzureAccountReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*RemoveAzureAccountOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for RemoveAzureAccount: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 

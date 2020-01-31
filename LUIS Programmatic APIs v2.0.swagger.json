@@ -9551,7 +9551,7 @@
     "/apps/{appId}/azureaccounts": {
       "post": {
         "description": "Assigns an azure account to the application.",
-        "operationId": "5be32228e8473de116325515",
+        "operationId": "AssignAzureAccount",
         "summary": "apps - Assign a LUIS azure accounts to an application",
         "parameters": [
           {
@@ -9608,7 +9608,7 @@
       },
       "get": {
         "description": "Gets the LUIS azure accounts assigned to the application for the user using his ARM token.",
-        "operationId": "5be32028a1d48f88cfd57e20",
+        "operationId": "GetAzureAccounts",
         "summary": "apps - Get LUIS azure accounts assigned to the application",
         "parameters": [
           {
@@ -9631,6 +9631,12 @@
             "description": "A List of azure account information objects.",
             "examples": {
               "application/json": "[\n    {\n        \"AzureSubscriptionId\": \"{subscription_id}\",\n        \"ResourceGroup\": \"{resource_group_name}\",\n        \"AccountName\": \"{account_name}\"\n    }\n]"
+            },
+            "schema":{
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/AzureAccountInfoObject"
+              }
             }
           },
           "429": {
@@ -9653,7 +9659,7 @@
       },
       "delete": {
         "description": "Gets the LUIS azure accounts for the user using his ARM token.",
-        "operationId": "5be32554f8591db3a86232e1",
+        "operationId": "RemoveAzureAccount",
         "summary": "apps - Removes an assigned LUIS azure accounts from an application",
         "parameters": [
           {
@@ -9674,7 +9680,7 @@
             "name": "azureAccountInfoObject",
             "in": "body",
             "schema": {
-              "example": "{\n\t\"azureSubscriptionId\": \"{subscription_id}\",\n\t\"resourceGroup\": \"{resource_group_name}\",\n\t\"accountName\": \"{account_name}\"\n}"
+              "$ref": "#/definitions/AzureAccountInfoObject"
             },
             "description": "The azure account information object."
           }
