@@ -17,7 +17,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	models "github.com/crazedpeanut/go-luis-authoring-client/models"
+	"github.com/crazedpeanut/go-luis-authoring-client/models"
 )
 
 // NewUpdatePatternFeatureParams creates a new UpdatePatternFeatureParams object

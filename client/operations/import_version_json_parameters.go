@@ -15,6 +15,8 @@ import (
 	cr "github.com/go-openapi/runtime/client"
 
 	strfmt "github.com/go-openapi/strfmt"
+
+	"github.com/crazedpeanut/go-luis-authoring-client/models"
 )
 
 // NewImportVersionJSONParams creates a new ImportVersionJSONParams object
@@ -66,11 +68,11 @@ type ImportVersionJSONParams struct {
 
 	*/
 	AppID string
-	/*Content
-	  A JSON representing the LUIS application structure
+	/*JSONApp
+	  A JSON representing the LUIS application structure.
 
 	*/
-	Content string
+	JSONApp *models.JSONApp
 	/*VersionID
 	  The imported versionId.
 
@@ -126,15 +128,15 @@ func (o *ImportVersionJSONParams) SetAppID(appID string) {
 	o.AppID = appID
 }
 
-// WithContent adds the content to the import version Json params
-func (o *ImportVersionJSONParams) WithContent(content string) *ImportVersionJSONParams {
-	o.SetContent(content)
+// WithJSONApp adds the jSONApp to the import version Json params
+func (o *ImportVersionJSONParams) WithJSONApp(jSONApp *models.JSONApp) *ImportVersionJSONParams {
+	o.SetJSONApp(jSONApp)
 	return o
 }
 
-// SetContent adds the content to the import version Json params
-func (o *ImportVersionJSONParams) SetContent(content string) {
-	o.Content = content
+// SetJSONApp adds the jSONApp to the import version Json params
+func (o *ImportVersionJSONParams) SetJSONApp(jSONApp *models.JSONApp) {
+	o.JSONApp = jSONApp
 }
 
 // WithVersionID adds the versionID to the import version Json params
@@ -161,8 +163,10 @@ func (o *ImportVersionJSONParams) WriteToRequest(r runtime.ClientRequest, reg st
 		return err
 	}
 
-	if err := r.SetBodyParam(o.Content); err != nil {
-		return err
+	if o.JSONApp != nil {
+		if err := r.SetBodyParam(o.JSONApp); err != nil {
+			return err
+		}
 	}
 
 	if o.VersionID != nil {

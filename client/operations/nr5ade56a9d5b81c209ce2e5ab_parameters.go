@@ -16,7 +16,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	models "github.com/crazedpeanut/go-luis-authoring-client/models"
+	"github.com/crazedpeanut/go-luis-authoring-client/models"
 )
 
 // NewNr5ade56a9d5b81c209ce2e5abParams creates a new Nr5ade56a9d5b81c209ce2e5abParams object

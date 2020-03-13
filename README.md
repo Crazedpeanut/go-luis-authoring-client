@@ -1,5 +1,5 @@
 # Golang LUIS Authoring Client
-A golang client for the LUIS Authoring API. This client is generated using [goswagger](https://github.com/go-swagger/go-swagger). 
+A golang client for the LUIS Authoring API. This client is generated using [goswagger](https://github.com/go-swagger/go-swagvimger). 
 
 The source openapi specification was generated at [Programmatic API Documentation](https://australiaeast.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c3d/console) and slightly modified
 

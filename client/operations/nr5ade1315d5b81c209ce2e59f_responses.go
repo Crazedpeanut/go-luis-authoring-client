@@ -13,7 +13,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	models "github.com/crazedpeanut/go-luis-authoring-client/models"
+	"github.com/crazedpeanut/go-luis-authoring-client/models"
 )
 
 // Nr5ade1315d5b81c209ce2e59fReader is a Reader for the Nr5ade1315d5b81c209ce2e59f structure.

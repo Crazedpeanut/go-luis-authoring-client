@@ -4708,12 +4708,12 @@
             "type": "string"
           },
           {
-            "name": "content",
+            "name": "jSONApp",
             "in": "body",
             "schema": {
-              "type": "string"
+              "$ref": "#/definitions/JSONApp"
             },
-            "description": "A JSON representing the LUIS application structure"
+            "description": "A JSON representing the LUIS application structure."
           }
         ],
         "consumes": ["application/json"],
@@ -9632,7 +9632,7 @@
             "examples": {
               "application/json": "[\n    {\n        \"AzureSubscriptionId\": \"{subscription_id}\",\n        \"ResourceGroup\": \"{resource_group_name}\",\n        \"AccountName\": \"{account_name}\"\n    }\n]"
             },
-            "schema":{
+            "schema": {
               "type": "array",
               "items": {
                 "$ref": "#/definitions/AzureAccountInfoObject"

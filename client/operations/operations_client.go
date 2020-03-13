@@ -9,12 +9,11 @@ import (
 	"fmt"
 
 	"github.com/go-openapi/runtime"
-
-	strfmt "github.com/go-openapi/strfmt"
+	"github.com/go-openapi/strfmt"
 )
 
 // New creates a new operations API client.
-func New(transport runtime.ClientTransport, formats strfmt.Registry) *Client {
+func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientService {
 	return &Client{transport: transport, formats: formats}
 }
 
@@ -26,10 +25,387 @@ type Client struct {
 	formats   strfmt.Registry
 }
 
-/*
-Nr5890b47c39e2bb052c5b9c43 versions update application version external key
+// ClientService is the interface for Client methods
+type ClientService interface {
+	Nr5890b47c39e2bb052c5b9c43(params *Nr5890b47c39e2bb052c5b9c43Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c43OK, error)
 
-**THIS IS DEPRECATED**
+	Nr5890b47c39e2bb052c5b9c44(params *Nr5890b47c39e2bb052c5b9c44Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c44OK, error)
+
+	Nr589228f639e2bb0d9c2805f6(params *Nr589228f639e2bb0d9c2805f6Params, authInfo runtime.ClientAuthInfoWriter) (*Nr589228f639e2bb0d9c2805f6OK, error)
+
+	Nr591045b75aca2f0b48c76bdc(params *Nr591045b75aca2f0b48c76bdcParams, authInfo runtime.ClientAuthInfoWriter) (*Nr591045b75aca2f0b48c76bdcCreated, error)
+
+	Nr591047175aca2f0b48c76bdd(params *Nr591047175aca2f0b48c76bddParams, authInfo runtime.ClientAuthInfoWriter) (*Nr591047175aca2f0b48c76bddCreated, error)
+
+	Nr591047bf5aca2f0b48c76bde(params *Nr591047bf5aca2f0b48c76bdeParams, authInfo runtime.ClientAuthInfoWriter) (*Nr591047bf5aca2f0b48c76bdeCreated, error)
+
+	Nr591049915aca2f0b48c76bdf(params *Nr591049915aca2f0b48c76bdfParams, authInfo runtime.ClientAuthInfoWriter) (*Nr591049915aca2f0b48c76bdfOK, error)
+
+	Nr59104a525aca2f0b48c76be0(params *Nr59104a525aca2f0b48c76be0Params, authInfo runtime.ClientAuthInfoWriter) (*Nr59104a525aca2f0b48c76be0OK, error)
+
+	Nr59104ab15aca2f0b48c76be1(params *Nr59104ab15aca2f0b48c76be1Params, authInfo runtime.ClientAuthInfoWriter) (*Nr59104ab15aca2f0b48c76be1OK, error)
+
+	Nr59104b095aca2f0b48c76be2(params *Nr59104b095aca2f0b48c76be2Params, authInfo runtime.ClientAuthInfoWriter) (*Nr59104b095aca2f0b48c76be2OK, error)
+
+	Nr593884d65aca2f0e2458184e(params *Nr593884d65aca2f0e2458184eParams, authInfo runtime.ClientAuthInfoWriter) (*Nr593884d65aca2f0e2458184eOK, error)
+
+	Nr593887c75aca2f0e2458184f(params *Nr593887c75aca2f0e2458184fParams, authInfo runtime.ClientAuthInfoWriter) (*Nr593887c75aca2f0e2458184fCreated, error)
+
+	Nr593889745aca2f0e24581850(params *Nr593889745aca2f0e24581850Params, authInfo runtime.ClientAuthInfoWriter) (*Nr593889745aca2f0e24581850Created, error)
+
+	Nr59388c545aca2f0e24581851(params *Nr59388c545aca2f0e24581851Params, authInfo runtime.ClientAuthInfoWriter) (*Nr59388c545aca2f0e24581851OK, error)
+
+	Nr59388e185aca2f0e24581852(params *Nr59388e185aca2f0e24581852Params, authInfo runtime.ClientAuthInfoWriter) (*Nr59388e185aca2f0e24581852OK, error)
+
+	Nr59388efb5aca2f0e24581853(params *Nr59388efb5aca2f0e24581853Params, authInfo runtime.ClientAuthInfoWriter) (*Nr59388efb5aca2f0e24581853OK, error)
+
+	Nr5aa7d98cd5b81c0b702579e6(params *Nr5aa7d98cd5b81c0b702579e6Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5aa7d98cd5b81c0b702579e6Created, error)
+
+	Nr5aa7db53d5b81c0b702579e8(params *Nr5aa7db53d5b81c0b702579e8Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5aa7db53d5b81c0b702579e8OK, error)
+
+	Nr5aa7dd5cd5b81c0b702579e9(params *Nr5aa7dd5cd5b81c0b702579e9Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5aa7dd5cd5b81c0b702579e9OK, error)
+
+	Nr5aa7dfd0d5b81c0b702579ea(params *Nr5aa7dfd0d5b81c0b702579eaParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5aa7dfd0d5b81c0b702579eaOK, error)
+
+	Nr5aa7e16cd5b81c0b702579eb(params *Nr5aa7e16cd5b81c0b702579ebParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5aa7e16cd5b81c0b702579ebOK, error)
+
+	Nr5ade082dd5b81c209ce2e596(params *Nr5ade082dd5b81c209ce2e596Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade082dd5b81c209ce2e596OK, error)
+
+	Nr5ade084ad5b81c209ce2e597(params *Nr5ade084ad5b81c209ce2e597Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade084ad5b81c209ce2e597Created, error)
+
+	Nr5ade096cd5b81c209ce2e598(params *Nr5ade096cd5b81c209ce2e598Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade096cd5b81c209ce2e598OK, error)
+
+	Nr5ade0c8bd5b81c209ce2e599(params *Nr5ade0c8bd5b81c209ce2e599Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade0c8bd5b81c209ce2e599Created, error)
+
+	Nr5ade0d16d5b81c209ce2e59a(params *Nr5ade0d16d5b81c209ce2e59aParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade0d16d5b81c209ce2e59aOK, error)
+
+	Nr5ade0d69d5b81c209ce2e59b(params *Nr5ade0d69d5b81c209ce2e59bParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade0d69d5b81c209ce2e59bCreated, error)
+
+	Nr5ade0e74d5b81c209ce2e59c(params *Nr5ade0e74d5b81c209ce2e59cParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade0e74d5b81c209ce2e59cOK, error)
+
+	Nr5ade0f32d5b81c209ce2e59d(params *Nr5ade0f32d5b81c209ce2e59dParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade0f32d5b81c209ce2e59dCreated, error)
+
+	Nr5ade12b3d5b81c209ce2e59e(params *Nr5ade12b3d5b81c209ce2e59eParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade12b3d5b81c209ce2e59eOK, error)
+
+	Nr5ade1315d5b81c209ce2e59f(params *Nr5ade1315d5b81c209ce2e59fParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade1315d5b81c209ce2e59fCreated, error)
+
+	Nr5ade4f6bd5b81c209ce2e5a0(params *Nr5ade4f6bd5b81c209ce2e5a0Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade4f6bd5b81c209ce2e5a0OK, error)
+
+	Nr5ade5101d5b81c209ce2e5a1(params *Nr5ade5101d5b81c209ce2e5a1Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade5101d5b81c209ce2e5a1Created, error)
+
+	Nr5ade5137d5b81c209ce2e5a2(params *Nr5ade5137d5b81c209ce2e5a2Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade5137d5b81c209ce2e5a2OK, error)
+
+	Nr5ade5183d5b81c209ce2e5a3(params *Nr5ade5183d5b81c209ce2e5a3Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade5183d5b81c209ce2e5a3Created, error)
+
+	Nr5ade52fad5b81c209ce2e5a6(params *Nr5ade52fad5b81c209ce2e5a6Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade52fad5b81c209ce2e5a6OK, error)
+
+	Nr5ade5406d5b81c209ce2e5a7(params *Nr5ade5406d5b81c209ce2e5a7Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade5406d5b81c209ce2e5a7Created, error)
+
+	Nr5ade550bd5b81c209ce2e5a8(params *Nr5ade550bd5b81c209ce2e5a8Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade550bd5b81c209ce2e5a8Created, error)
+
+	Nr5ade5598d5b81c209ce2e5a9(params *Nr5ade5598d5b81c209ce2e5a9Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade5598d5b81c209ce2e5a9OK, error)
+
+	Nr5ade55bdd5b81c209ce2e5aa(params *Nr5ade55bdd5b81c209ce2e5aaParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade55bdd5b81c209ce2e5aaOK, error)
+
+	Nr5ade56a9d5b81c209ce2e5ab(params *Nr5ade56a9d5b81c209ce2e5abParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade56a9d5b81c209ce2e5abOK, error)
+
+	Nr5ade575ed5b81c209ce2e5ac(params *Nr5ade575ed5b81c209ce2e5acParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade575ed5b81c209ce2e5acOK, error)
+
+	Nr5ade5868d5b81c209ce2e5ad(params *Nr5ade5868d5b81c209ce2e5adParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade5868d5b81c209ce2e5adOK, error)
+
+	Nr5ade58cfd5b81c209ce2e5ae(params *Nr5ade58cfd5b81c209ce2e5aeParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade58cfd5b81c209ce2e5aeOK, error)
+
+	Nr5ade5963d5b81c209ce2e5af(params *Nr5ade5963d5b81c209ce2e5afParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade5963d5b81c209ce2e5afOK, error)
+
+	Nr5ade59bcd5b81c209ce2e5b0(params *Nr5ade59bcd5b81c209ce2e5b0Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade59bcd5b81c209ce2e5b0OK, error)
+
+	Nr5ade5a49d5b81c209ce2e5b1(params *Nr5ade5a49d5b81c209ce2e5b1Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade5a49d5b81c209ce2e5b1OK, error)
+
+	Nr5ade5a8ad5b81c209ce2e5b2(params *Nr5ade5a8ad5b81c209ce2e5b2Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade5a8ad5b81c209ce2e5b2OK, error)
+
+	Nr5ade5b29d5b81c209ce2e5b3(params *Nr5ade5b29d5b81c209ce2e5b3Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade5b29d5b81c209ce2e5b3OK, error)
+
+	Nr5ade5b5dd5b81c209ce2e5b4(params *Nr5ade5b5dd5b81c209ce2e5b4Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade5b5dd5b81c209ce2e5b4OK, error)
+
+	Nr5ade5c1ad5b81c209ce2e5b5(params *Nr5ade5c1ad5b81c209ce2e5b5Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade5c1ad5b81c209ce2e5b5OK, error)
+
+	Nr5ade602bd5b81c209ce2e5b6(params *Nr5ade602bd5b81c209ce2e5b6Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade602bd5b81c209ce2e5b6OK, error)
+
+	Nr5ade606dd5b81c209ce2e5b7(params *Nr5ade606dd5b81c209ce2e5b7Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade606dd5b81c209ce2e5b7OK, error)
+
+	Nr5ade61f2d5b81c209ce2e5b8(params *Nr5ade61f2d5b81c209ce2e5b8Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade61f2d5b81c209ce2e5b8OK, error)
+
+	Nr5ade6328d5b81c209ce2e5b9(params *Nr5ade6328d5b81c209ce2e5b9Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade6328d5b81c209ce2e5b9OK, error)
+
+	Nr5ade636ad5b81c209ce2e5ba(params *Nr5ade636ad5b81c209ce2e5baParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade636ad5b81c209ce2e5baOK, error)
+
+	Nr5ade63c7d5b81c209ce2e5bb(params *Nr5ade63c7d5b81c209ce2e5bbParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade63c7d5b81c209ce2e5bbOK, error)
+
+	Nr5ade643bd5b81c209ce2e5bc(params *Nr5ade643bd5b81c209ce2e5bcParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade643bd5b81c209ce2e5bcOK, error)
+
+	Nr5ade647bd5b81c209ce2e5bd(params *Nr5ade647bd5b81c209ce2e5bdParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade647bd5b81c209ce2e5bdOK, error)
+
+	Nr5ade64aed5b81c209ce2e5be(params *Nr5ade64aed5b81c209ce2e5beParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade64aed5b81c209ce2e5beOK, error)
+
+	Nr5ade6581d5b81c209ce2e5c2(params *Nr5ade6581d5b81c209ce2e5c2Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade6581d5b81c209ce2e5c2OK, error)
+
+	Nr5ade65aad5b81c209ce2e5c3(params *Nr5ade65aad5b81c209ce2e5c3Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade65aad5b81c209ce2e5c3OK, error)
+
+	Nr5ade6622d5b81c209ce2e5c4(params *Nr5ade6622d5b81c209ce2e5c4Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade6622d5b81c209ce2e5c4OK, error)
+
+	Nr5ade6657d5b81c209ce2e5c5(params *Nr5ade6657d5b81c209ce2e5c5Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade6657d5b81c209ce2e5c5OK, error)
+
+	Nr5ade676bd5b81c209ce2e5c6(params *Nr5ade676bd5b81c209ce2e5c6Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade676bd5b81c209ce2e5c6OK, error)
+
+	Nr5ade68d3d5b81c209ce2e5c7(params *Nr5ade68d3d5b81c209ce2e5c7Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade68d3d5b81c209ce2e5c7OK, error)
+
+	Nr5adf41e9d5b81c09bc0db021(params *Nr5adf41e9d5b81c09bc0db021Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5adf41e9d5b81c09bc0db021Created, error)
+
+	Nr5adf4a64d5b81c09bc0db022(params *Nr5adf4a64d5b81c09bc0db022Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5adf4a64d5b81c09bc0db022OK, error)
+
+	Nr5adf4d1fd5b81c09bc0db023(params *Nr5adf4d1fd5b81c09bc0db023Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5adf4d1fd5b81c09bc0db023OK, error)
+
+	Nr5adf4de4d5b81c09bc0db024(params *Nr5adf4de4d5b81c09bc0db024Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5adf4de4d5b81c09bc0db024Created, error)
+
+	Nr5adf72ebd5b81c09bc0db025(params *Nr5adf72ebd5b81c09bc0db025Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5adf72ebd5b81c09bc0db025OK, error)
+
+	Nr5adf73bbd5b81c09bc0db026(params *Nr5adf73bbd5b81c09bc0db026Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5adf73bbd5b81c09bc0db026OK, error)
+
+	Nr5adf743ed5b81c09bc0db027(params *Nr5adf743ed5b81c09bc0db027Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5adf743ed5b81c09bc0db027OK, error)
+
+	Nr5adf74d8d5b81c09bc0db028(params *Nr5adf74d8d5b81c09bc0db028Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5adf74d8d5b81c09bc0db028OK, error)
+
+	Nr5ae02c03d5b81c092c6cf2c2(params *Nr5ae02c03d5b81c092c6cf2c2Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ae02c03d5b81c092c6cf2c2Accepted, error)
+
+	Nr5ae02f7ed5b81c092c6cf2c3(params *Nr5ae02f7ed5b81c092c6cf2c3Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ae02f7ed5b81c092c6cf2c3OK, *Nr5ae02f7ed5b81c092c6cf2c3Created, *Nr5ae02f7ed5b81c092c6cf2c3Accepted, error)
+
+	Nr5ae3212ed5b81c02cc64c6d2(params *Nr5ae3212ed5b81c02cc64c6d2Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ae3212ed5b81c02cc64c6d2OK, error)
+
+	Nr5ae32174d5b81c02cc64c6d3(params *Nr5ae32174d5b81c02cc64c6d3Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ae32174d5b81c02cc64c6d3OK, error)
+
+	Nr5be313cec181ae720aa2b26c(params *Nr5be313cec181ae720aa2b26cParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5be313cec181ae720aa2b26cOK, error)
+
+	Nr5c56cfc9cf9c9235b4fc8c04(params *Nr5c56cfc9cf9c9235b4fc8c04Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5c56cfc9cf9c9235b4fc8c04OK, error)
+
+	Nr5cc9862a7531ab6414e3a39c(params *Nr5cc9862a7531ab6414e3a39cParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5cc9862a7531ab6414e3a39cOK, error)
+
+	AddCompositeEntity(params *AddCompositeEntityParams, authInfo runtime.ClientAuthInfoWriter) (*AddCompositeEntityCreated, error)
+
+	AddCustomPrebuiltDomain(params *AddCustomPrebuiltDomainParams, authInfo runtime.ClientAuthInfoWriter) (*AddCustomPrebuiltDomainCreated, error)
+
+	AddEntity(params *AddEntityParams, authInfo runtime.ClientAuthInfoWriter) (*AddEntityCreated, error)
+
+	AddExample(params *AddExampleParams, authInfo runtime.ClientAuthInfoWriter) (*AddExampleCreated, error)
+
+	AddExamples(params *AddExamplesParams, authInfo runtime.ClientAuthInfoWriter) (*AddExamplesCreated, *AddExamplesMultiStatus, error)
+
+	AddExternalKeys(params *AddExternalKeysParams, authInfo runtime.ClientAuthInfoWriter) (*AddExternalKeysCreated, error)
+
+	AddHierarchialEntity(params *AddHierarchialEntityParams, authInfo runtime.ClientAuthInfoWriter) (*AddHierarchialEntityCreated, error)
+
+	AddIntent(params *AddIntentParams, authInfo runtime.ClientAuthInfoWriter) (*AddIntentCreated, error)
+
+	AddList(params *AddListParams, authInfo runtime.ClientAuthInfoWriter) (*AddListCreated, error)
+
+	AddListEntity(params *AddListEntityParams, authInfo runtime.ClientAuthInfoWriter) (*AddListEntityCreated, error)
+
+	AddPrebuildEntities(params *AddPrebuildEntitiesParams, authInfo runtime.ClientAuthInfoWriter) (*AddPrebuildEntitiesCreated, error)
+
+	AddSublists(params *AddSublistsParams, authInfo runtime.ClientAuthInfoWriter) (*AddSublistsOK, error)
+
+	AddUserToAccessList(params *AddUserToAccessListParams, authInfo runtime.ClientAuthInfoWriter) (*AddUserToAccessListOK, error)
+
+	AssignAzureAccount(params *AssignAzureAccountParams, authInfo runtime.ClientAuthInfoWriter) (*AssignAzureAccountCreated, error)
+
+	CloneVersion(params *CloneVersionParams, authInfo runtime.ClientAuthInfoWriter) (*CloneVersionCreated, error)
+
+	CreateApplication(params *CreateApplicationParams, authInfo runtime.ClientAuthInfoWriter) (*CreateApplicationCreated, error)
+
+	CreatePatternFeature(params *CreatePatternFeatureParams, authInfo runtime.ClientAuthInfoWriter) (*CreatePatternFeatureCreated, error)
+
+	CreatePhraseListFeature(params *CreatePhraseListFeatureParams, authInfo runtime.ClientAuthInfoWriter) (*CreatePhraseListFeatureCreated, error)
+
+	DeleteApplication(params *DeleteApplicationParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteApplicationOK, error)
+
+	DeleteClosedList(params *DeleteClosedListParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteClosedListOK, error)
+
+	DeleteCompositeEntity(params *DeleteCompositeEntityParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteCompositeEntityOK, error)
+
+	DeleteEntity(params *DeleteEntityParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteEntityOK, error)
+
+	DeleteExample(params *DeleteExampleParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteExampleOK, error)
+
+	DeleteExternalAPIKey(params *DeleteExternalAPIKeyParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteExternalAPIKeyOK, error)
+
+	DeleteIntent(params *DeleteIntentParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteIntentOK, error)
+
+	DeletePatternFeature(params *DeletePatternFeatureParams, authInfo runtime.ClientAuthInfoWriter) (*DeletePatternFeatureOK, error)
+
+	DeletePhraseListFeature(params *DeletePhraseListFeatureParams, authInfo runtime.ClientAuthInfoWriter) (*DeletePhraseListFeatureOK, error)
+
+	DeletePrebuildEntity(params *DeletePrebuildEntityParams, authInfo runtime.ClientAuthInfoWriter) (*DeletePrebuildEntityOK, error)
+
+	DeleteSublist(params *DeleteSublistParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteSublistOK, error)
+
+	DeleteSubscriptionKey(params *DeleteSubscriptionKeyParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteSubscriptionKeyOK, error)
+
+	DeleteUnlabelledUtterance(params *DeleteUnlabelledUtteranceParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteUnlabelledUtteranceOK, error)
+
+	DeleteVersion(params *DeleteVersionParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteVersionOK, error)
+
+	DeletehierarchialEntity(params *DeletehierarchialEntityParams, authInfo runtime.ClientAuthInfoWriter) (*DeletehierarchialEntityOK, error)
+
+	ExportVersion(params *ExportVersionParams, authInfo runtime.ClientAuthInfoWriter) (*ExportVersionOK, error)
+
+	GetApplication(params *GetApplicationParams, authInfo runtime.ClientAuthInfoWriter) (*GetApplicationOK, error)
+
+	GetApplicationFeatures(params *GetApplicationFeaturesParams, authInfo runtime.ClientAuthInfoWriter) (*GetApplicationFeaturesOK, error)
+
+	GetApplicationSettings(params *GetApplicationSettingsParams, authInfo runtime.ClientAuthInfoWriter) (*GetApplicationSettingsOK, error)
+
+	GetApplicationVersion(params *GetApplicationVersionParams, authInfo runtime.ClientAuthInfoWriter) (*GetApplicationVersionOK, error)
+
+	GetApplicationVersionKey(params *GetApplicationVersionKeyParams, authInfo runtime.ClientAuthInfoWriter) (*GetApplicationVersionKeyOK, error)
+
+	GetApplications(params *GetApplicationsParams, authInfo runtime.ClientAuthInfoWriter) (*GetApplicationsOK, error)
+
+	GetAssistants(params *GetAssistantsParams, authInfo runtime.ClientAuthInfoWriter) (*GetAssistantsOK, error)
+
+	GetAzureAccounts(params *GetAzureAccountsParams, authInfo runtime.ClientAuthInfoWriter) (*GetAzureAccountsOK, error)
+
+	GetClosedList(params *GetClosedListParams, authInfo runtime.ClientAuthInfoWriter) (*GetClosedListOK, error)
+
+	GetClosedLists(params *GetClosedListsParams, authInfo runtime.ClientAuthInfoWriter) (*GetClosedListsOK, error)
+
+	GetCompositeEntities(params *GetCompositeEntitiesParams, authInfo runtime.ClientAuthInfoWriter) (*GetCompositeEntitiesOK, error)
+
+	GetCompositeEntity(params *GetCompositeEntityParams, authInfo runtime.ClientAuthInfoWriter) (*GetCompositeEntityOK, error)
+
+	GetCultures(params *GetCulturesParams, authInfo runtime.ClientAuthInfoWriter) (*GetCulturesOK, error)
+
+	GetCustomPrebuiltDomain(params *GetCustomPrebuiltDomainParams, authInfo runtime.ClientAuthInfoWriter) (*GetCustomPrebuiltDomainOK, error)
+
+	GetCustomPrebuiltDomainsByCulture(params *GetCustomPrebuiltDomainsByCultureParams, authInfo runtime.ClientAuthInfoWriter) (*GetCustomPrebuiltDomainsByCultureOK, error)
+
+	GetDomains(params *GetDomainsParams, authInfo runtime.ClientAuthInfoWriter) (*GetDomainsOK, error)
+
+	GetEndpoints(params *GetEndpointsParams, authInfo runtime.ClientAuthInfoWriter) (*GetEndpointsOK, error)
+
+	GetEntities(params *GetEntitiesParams, authInfo runtime.ClientAuthInfoWriter) (*GetEntitiesOK, error)
+
+	GetEntity(params *GetEntityParams, authInfo runtime.ClientAuthInfoWriter) (*GetEntityOK, error)
+
+	GetExamples(params *GetExamplesParams, authInfo runtime.ClientAuthInfoWriter) (*GetExamplesOK, error)
+
+	GetHierarchialEntity(params *GetHierarchialEntityParams, authInfo runtime.ClientAuthInfoWriter) (*GetHierarchialEntityOK, error)
+
+	GetIntent(params *GetIntentParams, authInfo runtime.ClientAuthInfoWriter) (*GetIntentOK, error)
+
+	GetIntents(params *GetIntentsParams, authInfo runtime.ClientAuthInfoWriter) (*GetIntentsOK, error)
+
+	GetLogs(params *GetLogsParams, authInfo runtime.ClientAuthInfoWriter) (*GetLogsOK, error)
+
+	GetPatternFeature(params *GetPatternFeatureParams, authInfo runtime.ClientAuthInfoWriter) (*GetPatternFeatureOK, error)
+
+	GetPatternFeatures(params *GetPatternFeaturesParams, authInfo runtime.ClientAuthInfoWriter) (*GetPatternFeaturesOK, error)
+
+	GetPhraseListFeature(params *GetPhraseListFeatureParams, authInfo runtime.ClientAuthInfoWriter) (*GetPhraseListFeatureOK, error)
+
+	GetPhraseListFeatures(params *GetPhraseListFeaturesParams, authInfo runtime.ClientAuthInfoWriter) (*GetPhraseListFeaturesOK, error)
+
+	GetPrebuildEntities(params *GetPrebuildEntitiesParams, authInfo runtime.ClientAuthInfoWriter) (*GetPrebuildEntitiesOK, error)
+
+	GetPrebuildEntity(params *GetPrebuildEntityParams, authInfo runtime.ClientAuthInfoWriter) (*GetPrebuildEntityOK, error)
+
+	GetSubscriptions(params *GetSubscriptionsParams, authInfo runtime.ClientAuthInfoWriter) (*GetSubscriptionsCreated, error)
+
+	GetTrainingStatus(params *GetTrainingStatusParams, authInfo runtime.ClientAuthInfoWriter) (*GetTrainingStatusOK, error)
+
+	GetUsageScenarios(params *GetUsageScenariosParams, authInfo runtime.ClientAuthInfoWriter) (*GetUsageScenariosOK, error)
+
+	GetUserExternalKeys(params *GetUserExternalKeysParams, authInfo runtime.ClientAuthInfoWriter) (*GetUserExternalKeysOK, error)
+
+	GetUserSubscriptionKeys(params *GetUserSubscriptionKeysParams, authInfo runtime.ClientAuthInfoWriter) (*GetUserSubscriptionKeysOK, error)
+
+	GetUsersAccessList(params *GetUsersAccessListParams, authInfo runtime.ClientAuthInfoWriter) (*GetUsersAccessListOK, error)
+
+	GetVersionModels(params *GetVersionModelsParams, authInfo runtime.ClientAuthInfoWriter) (*GetVersionModelsOK, error)
+
+	GetVersions(params *GetVersionsParams, authInfo runtime.ClientAuthInfoWriter) (*GetVersionsOK, error)
+
+	GetVersionsPrebuiltEntities(params *GetVersionsPrebuiltEntitiesParams, authInfo runtime.ClientAuthInfoWriter) (*GetVersionsPrebuiltEntitiesOK, error)
+
+	GethierarchicalEntities(params *GethierarchicalEntitiesParams, authInfo runtime.ClientAuthInfoWriter) (*GethierarchicalEntitiesOK, error)
+
+	ImportApplication(params *ImportApplicationParams, authInfo runtime.ClientAuthInfoWriter) (*ImportApplicationCreated, error)
+
+	ImportVersionJSON(params *ImportVersionJSONParams, authInfo runtime.ClientAuthInfoWriter) (*ImportVersionJSONCreated, error)
+
+	ImportVersionLu(params *ImportVersionLuParams, authInfo runtime.ClientAuthInfoWriter) (*ImportVersionLuCreated, error)
+
+	PublishApplication(params *PublishApplicationParams, authInfo runtime.ClientAuthInfoWriter) (*PublishApplicationCreated, *PublishApplicationMultiStatus, error)
+
+	RemoveAzureAccount(params *RemoveAzureAccountParams, authInfo runtime.ClientAuthInfoWriter) (*RemoveAzureAccountOK, error)
+
+	RemoveUserFromAccessList(params *RemoveUserFromAccessListParams, authInfo runtime.ClientAuthInfoWriter) (*RemoveUserFromAccessListOK, error)
+
+	RenameSubscriptionKey(params *RenameSubscriptionKeyParams, authInfo runtime.ClientAuthInfoWriter) (*RenameSubscriptionKeyOK, error)
+
+	ResetProgrammaticKey(params *ResetProgrammaticKeyParams, authInfo runtime.ClientAuthInfoWriter) (*ResetProgrammaticKeyOK, error)
+
+	SuggestEntityExamples(params *SuggestEntityExamplesParams, authInfo runtime.ClientAuthInfoWriter) (*SuggestEntityExamplesOK, error)
+
+	SuggestIntentExamples(params *SuggestIntentExamplesParams, authInfo runtime.ClientAuthInfoWriter) (*SuggestIntentExamplesOK, error)
+
+	TrainVersion(params *TrainVersionParams, authInfo runtime.ClientAuthInfoWriter) (*TrainVersionAccepted, error)
+
+	UpdateAccessList(params *UpdateAccessListParams, authInfo runtime.ClientAuthInfoWriter) (*UpdateAccessListOK, error)
+
+	UpdateApplication(params *UpdateApplicationParams, authInfo runtime.ClientAuthInfoWriter) (*UpdateApplicationOK, error)
+
+	UpdateApplicationSettings(params *UpdateApplicationSettingsParams, authInfo runtime.ClientAuthInfoWriter) (*UpdateApplicationSettingsOK, error)
+
+	UpdateAssignedKey(params *UpdateAssignedKeyParams, authInfo runtime.ClientAuthInfoWriter) (*UpdateAssignedKeyOK, error)
+
+	UpdateClosedList(params *UpdateClosedListParams, authInfo runtime.ClientAuthInfoWriter) (*UpdateClosedListOK, error)
+
+	UpdateCompositeEntity(params *UpdateCompositeEntityParams, authInfo runtime.ClientAuthInfoWriter) (*UpdateCompositeEntityOK, error)
+
+	UpdateEntity(params *UpdateEntityParams, authInfo runtime.ClientAuthInfoWriter) (*UpdateEntityOK, error)
+
+	UpdateHierarchialEntity(params *UpdateHierarchialEntityParams, authInfo runtime.ClientAuthInfoWriter) (*UpdateHierarchialEntityOK, error)
+
+	UpdateIntent(params *UpdateIntentParams, authInfo runtime.ClientAuthInfoWriter) (*UpdateIntentOK, error)
+
+	UpdatePatternFeature(params *UpdatePatternFeatureParams, authInfo runtime.ClientAuthInfoWriter) (*UpdatePatternFeatureOK, error)
+
+	UpdatePhraseListFeature(params *UpdatePhraseListFeatureParams, authInfo runtime.ClientAuthInfoWriter) (*UpdatePhraseListFeatureOK, error)
+
+	UpdateSublist(params *UpdateSublistParams, authInfo runtime.ClientAuthInfoWriter) (*UpdateSublistOK, error)
+
+	UpdateVersion(params *UpdateVersionParams, authInfo runtime.ClientAuthInfoWriter) (*UpdateVersionOK, error)
+
+	AppsMoveAppToAnotherLuisAuthoringAzureResource(params *AppsMoveAppToAnotherLuisAuthoringAzureResourceParams, authInfo runtime.ClientAuthInfoWriter) (*AppsMoveAppToAnotherLuisAuthoringAzureResourceOK, error)
+
+	AppsPackagepublishedapplicationasgzip(params *AppsPackagepublishedapplicationasgzipParams, authInfo runtime.ClientAuthInfoWriter) (*AppsPackagepublishedapplicationasgzipOK, error)
+
+	AppsPackagetrainedapplicationasgzip(params *AppsPackagetrainedapplicationasgzipParams, authInfo runtime.ClientAuthInfoWriter) (*AppsPackagetrainedapplicationasgzipOK, error)
+
+	ModelsGetModel(params *ModelsGetModelParams, authInfo runtime.ClientAuthInfoWriter) (*ModelsGetModelOK, error)
+
+	ModelsGetModelExamplesList(params *ModelsGetModelExamplesListParams, authInfo runtime.ClientAuthInfoWriter) (*ModelsGetModelExamplesListOK, error)
+
+	VersionsGetApplicationVersionSettings(params *VersionsGetApplicationVersionSettingsParams, authInfo runtime.ClientAuthInfoWriter) (*VersionsGetApplicationVersionSettingsOK, error)
+
+	VersionsUpdateApplicationVersionSettings(params *VersionsUpdateApplicationVersionSettingsParams, authInfo runtime.ClientAuthInfoWriter) (*VersionsUpdateApplicationVersionSettingsOK, error)
+
+	SetTransport(transport runtime.ClientTransport)
+}
+
+/*
+  Nr5890b47c39e2bb052c5b9c43 versions update application version external key
+
+  **THIS IS DEPRECATED**
 */
 func (a *Client) Nr5890b47c39e2bb052c5b9c43(params *Nr5890b47c39e2bb052c5b9c43Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c43OK, error) {
 	// TODO: Validate the params before sending
@@ -41,7 +417,7 @@ func (a *Client) Nr5890b47c39e2bb052c5b9c43(params *Nr5890b47c39e2bb052c5b9c43Pa
 		ID:                 "5890b47c39e2bb052c5b9c43",
 		Method:             "PUT",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/externalKeys",
-		ProducesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -64,9 +440,9 @@ func (a *Client) Nr5890b47c39e2bb052c5b9c43(params *Nr5890b47c39e2bb052c5b9c43Pa
 }
 
 /*
-Nr5890b47c39e2bb052c5b9c44 versions delete application version external key
+  Nr5890b47c39e2bb052c5b9c44 versions delete application version external key
 
-THIS API IS DEPRECATED.
+  THIS API IS DEPRECATED.
 */
 func (a *Client) Nr5890b47c39e2bb052c5b9c44(params *Nr5890b47c39e2bb052c5b9c44Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5890b47c39e2bb052c5b9c44OK, error) {
 	// TODO: Validate the params before sending
@@ -78,8 +454,8 @@ func (a *Client) Nr5890b47c39e2bb052c5b9c44(params *Nr5890b47c39e2bb052c5b9c44Pa
 		ID:                 "5890b47c39e2bb052c5b9c44",
 		Method:             "DELETE",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/externalKeys/{keyType}",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &Nr5890b47c39e2bb052c5b9c44Reader{formats: a.formats},
@@ -101,9 +477,9 @@ func (a *Client) Nr5890b47c39e2bb052c5b9c44(params *Nr5890b47c39e2bb052c5b9c44Pa
 }
 
 /*
-Nr589228f639e2bb0d9c2805f6 versions get application version external api keys
+  Nr589228f639e2bb0d9c2805f6 versions get application version external api keys
 
-**THIS IS DEPRECATED**
+  **THIS IS DEPRECATED**
 */
 func (a *Client) Nr589228f639e2bb0d9c2805f6(params *Nr589228f639e2bb0d9c2805f6Params, authInfo runtime.ClientAuthInfoWriter) (*Nr589228f639e2bb0d9c2805f6OK, error) {
 	// TODO: Validate the params before sending
@@ -116,7 +492,7 @@ func (a *Client) Nr589228f639e2bb0d9c2805f6(params *Nr589228f639e2bb0d9c2805f6Pa
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/externalKeys",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &Nr589228f639e2bb0d9c2805f6Reader{formats: a.formats},
@@ -138,9 +514,9 @@ func (a *Client) Nr589228f639e2bb0d9c2805f6(params *Nr589228f639e2bb0d9c2805f6Pa
 }
 
 /*
-Nr591045b75aca2f0b48c76bdc models add custom prebuilt domain
+  Nr591045b75aca2f0b48c76bdc models add custom prebuilt domain
 
-Adds a customizable prebuilt domain along with all of its models to this application.
+  Adds a customizable prebuilt domain along with all of its models to this application.
 */
 func (a *Client) Nr591045b75aca2f0b48c76bdc(params *Nr591045b75aca2f0b48c76bdcParams, authInfo runtime.ClientAuthInfoWriter) (*Nr591045b75aca2f0b48c76bdcCreated, error) {
 	// TODO: Validate the params before sending
@@ -175,9 +551,9 @@ func (a *Client) Nr591045b75aca2f0b48c76bdc(params *Nr591045b75aca2f0b48c76bdcPa
 }
 
 /*
-Nr591047175aca2f0b48c76bdd models add custom prebuilt intent
+  Nr591047175aca2f0b48c76bdd models add custom prebuilt intent
 
-Adds a custom prebuilt intent model to the application. Use [delete intent](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c1c) with the intent id to remove this intent.
+  Adds a custom prebuilt intent model to the application. Use [delete intent](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c1c) with the intent id to remove this intent.
 */
 func (a *Client) Nr591047175aca2f0b48c76bdd(params *Nr591047175aca2f0b48c76bddParams, authInfo runtime.ClientAuthInfoWriter) (*Nr591047175aca2f0b48c76bddCreated, error) {
 	// TODO: Validate the params before sending
@@ -212,9 +588,9 @@ func (a *Client) Nr591047175aca2f0b48c76bdd(params *Nr591047175aca2f0b48c76bddPa
 }
 
 /*
-Nr591047bf5aca2f0b48c76bde models add custom prebuilt entity
+  Nr591047bf5aca2f0b48c76bde models add custom prebuilt entity
 
-Adds a custom prebuilt entity model to the application.  Use [delete entity](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c1f) with the entity id to remove this entity.
+  Adds a custom prebuilt entity model to the application.  Use [delete entity](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c1f) with the entity id to remove this entity.
 */
 func (a *Client) Nr591047bf5aca2f0b48c76bde(params *Nr591047bf5aca2f0b48c76bdeParams, authInfo runtime.ClientAuthInfoWriter) (*Nr591047bf5aca2f0b48c76bdeCreated, error) {
 	// TODO: Validate the params before sending
@@ -249,9 +625,9 @@ func (a *Client) Nr591047bf5aca2f0b48c76bde(params *Nr591047bf5aca2f0b48c76bdePa
 }
 
 /*
-Nr591049915aca2f0b48c76bdf models get custom prebuilt domain models list
+  Nr591049915aca2f0b48c76bdf models get custom prebuilt domain models list
 
-Gets all custom prebuilt models information of this application
+  Gets all custom prebuilt models information of this application
 */
 func (a *Client) Nr591049915aca2f0b48c76bdf(params *Nr591049915aca2f0b48c76bdfParams, authInfo runtime.ClientAuthInfoWriter) (*Nr591049915aca2f0b48c76bdfOK, error) {
 	// TODO: Validate the params before sending
@@ -264,7 +640,7 @@ func (a *Client) Nr591049915aca2f0b48c76bdf(params *Nr591049915aca2f0b48c76bdfPa
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/customprebuiltmodels",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &Nr591049915aca2f0b48c76bdfReader{formats: a.formats},
@@ -286,9 +662,9 @@ func (a *Client) Nr591049915aca2f0b48c76bdf(params *Nr591049915aca2f0b48c76bdfPa
 }
 
 /*
-Nr59104a525aca2f0b48c76be0 models get custom prebuilt domain intents list
+  Nr59104a525aca2f0b48c76be0 models get custom prebuilt domain intents list
 
-Gets custom prebuilt intents information of this application
+  Gets custom prebuilt intents information of this application
 */
 func (a *Client) Nr59104a525aca2f0b48c76be0(params *Nr59104a525aca2f0b48c76be0Params, authInfo runtime.ClientAuthInfoWriter) (*Nr59104a525aca2f0b48c76be0OK, error) {
 	// TODO: Validate the params before sending
@@ -301,7 +677,7 @@ func (a *Client) Nr59104a525aca2f0b48c76be0(params *Nr59104a525aca2f0b48c76be0Pa
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/customprebuiltintents",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &Nr59104a525aca2f0b48c76be0Reader{formats: a.formats},
@@ -323,9 +699,9 @@ func (a *Client) Nr59104a525aca2f0b48c76be0(params *Nr59104a525aca2f0b48c76be0Pa
 }
 
 /*
-Nr59104ab15aca2f0b48c76be1 models get custom prebuilt domain entities list
+  Nr59104ab15aca2f0b48c76be1 models get custom prebuilt domain entities list
 
-Gets all custom prebuilt entities information of this application
+  Gets all custom prebuilt entities information of this application
 */
 func (a *Client) Nr59104ab15aca2f0b48c76be1(params *Nr59104ab15aca2f0b48c76be1Params, authInfo runtime.ClientAuthInfoWriter) (*Nr59104ab15aca2f0b48c76be1OK, error) {
 	// TODO: Validate the params before sending
@@ -338,7 +714,7 @@ func (a *Client) Nr59104ab15aca2f0b48c76be1(params *Nr59104ab15aca2f0b48c76be1Pa
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/customprebuiltentities",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &Nr59104ab15aca2f0b48c76be1Reader{formats: a.formats},
@@ -360,9 +736,9 @@ func (a *Client) Nr59104ab15aca2f0b48c76be1(params *Nr59104ab15aca2f0b48c76be1Pa
 }
 
 /*
-Nr59104b095aca2f0b48c76be2 models delete custom prebuilt domain
+  Nr59104b095aca2f0b48c76be2 models delete custom prebuilt domain
 
-Deletes a prebuilt domain's models from the application.
+  Deletes a prebuilt domain's models from the application.
 */
 func (a *Client) Nr59104b095aca2f0b48c76be2(params *Nr59104b095aca2f0b48c76be2Params, authInfo runtime.ClientAuthInfoWriter) (*Nr59104b095aca2f0b48c76be2OK, error) {
 	// TODO: Validate the params before sending
@@ -374,8 +750,8 @@ func (a *Client) Nr59104b095aca2f0b48c76be2(params *Nr59104b095aca2f0b48c76be2Pa
 		ID:                 "59104b095aca2f0b48c76be2",
 		Method:             "DELETE",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/customprebuiltdomains/{domainName}",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &Nr59104b095aca2f0b48c76be2Reader{formats: a.formats},
@@ -397,9 +773,9 @@ func (a *Client) Nr59104b095aca2f0b48c76be2(params *Nr59104b095aca2f0b48c76be2Pa
 }
 
 /*
-Nr593884d65aca2f0e2458184e models get hierarchical child entity
+  Nr593884d65aca2f0e2458184e models get hierarchical child entity
 
-Gets information about the hierarchical entity child model.
+  Gets information about the hierarchical entity child model.
 */
 func (a *Client) Nr593884d65aca2f0e2458184e(params *Nr593884d65aca2f0e2458184eParams, authInfo runtime.ClientAuthInfoWriter) (*Nr593884d65aca2f0e2458184eOK, error) {
 	// TODO: Validate the params before sending
@@ -412,7 +788,7 @@ func (a *Client) Nr593884d65aca2f0e2458184e(params *Nr593884d65aca2f0e2458184ePa
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/hierarchicalentities/{hEntityId}/children/{hChildId}",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &Nr593884d65aca2f0e2458184eReader{formats: a.formats},
@@ -434,9 +810,9 @@ func (a *Client) Nr593884d65aca2f0e2458184e(params *Nr593884d65aca2f0e2458184ePa
 }
 
 /*
-Nr593887c75aca2f0e2458184f models create hierarchical child entity
+  Nr593887c75aca2f0e2458184f models create hierarchical child entity
 
-Creates a single child in an existing hierarchical entity model.
+  Creates a single child in an existing hierarchical entity model.
 */
 func (a *Client) Nr593887c75aca2f0e2458184f(params *Nr593887c75aca2f0e2458184fParams, authInfo runtime.ClientAuthInfoWriter) (*Nr593887c75aca2f0e2458184fCreated, error) {
 	// TODO: Validate the params before sending
@@ -471,9 +847,9 @@ func (a *Client) Nr593887c75aca2f0e2458184f(params *Nr593887c75aca2f0e2458184fPa
 }
 
 /*
-Nr593889745aca2f0e24581850 models create composite child entity
+  Nr593889745aca2f0e24581850 models create composite child entity
 
-Creates a single child in an existing composite entity model.
+  Creates a single child in an existing composite entity model.
 */
 func (a *Client) Nr593889745aca2f0e24581850(params *Nr593889745aca2f0e24581850Params, authInfo runtime.ClientAuthInfoWriter) (*Nr593889745aca2f0e24581850Created, error) {
 	// TODO: Validate the params before sending
@@ -508,9 +884,9 @@ func (a *Client) Nr593889745aca2f0e24581850(params *Nr593889745aca2f0e24581850Pa
 }
 
 /*
-Nr59388c545aca2f0e24581851 models update hierarchical child entity
+  Nr59388c545aca2f0e24581851 models update hierarchical child entity
 
-Renames a single child in an existing hierarchical entity model.
+  Renames a single child in an existing hierarchical entity model.
 */
 func (a *Client) Nr59388c545aca2f0e24581851(params *Nr59388c545aca2f0e24581851Params, authInfo runtime.ClientAuthInfoWriter) (*Nr59388c545aca2f0e24581851OK, error) {
 	// TODO: Validate the params before sending
@@ -522,7 +898,7 @@ func (a *Client) Nr59388c545aca2f0e24581851(params *Nr59388c545aca2f0e24581851Pa
 		ID:                 "59388c545aca2f0e24581851",
 		Method:             "PUT",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/hierarchicalentities/{hEntityId}/children/{hChildId}",
-		ProducesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -545,9 +921,9 @@ func (a *Client) Nr59388c545aca2f0e24581851(params *Nr59388c545aca2f0e24581851Pa
 }
 
 /*
-Nr59388e185aca2f0e24581852 models delete hierarchical child entity
+  Nr59388e185aca2f0e24581852 models delete hierarchical child entity
 
-Deletes a hierarchical entity extractor child from the application.
+  Deletes a hierarchical entity extractor child from the application.
 */
 func (a *Client) Nr59388e185aca2f0e24581852(params *Nr59388e185aca2f0e24581852Params, authInfo runtime.ClientAuthInfoWriter) (*Nr59388e185aca2f0e24581852OK, error) {
 	// TODO: Validate the params before sending
@@ -559,8 +935,8 @@ func (a *Client) Nr59388e185aca2f0e24581852(params *Nr59388e185aca2f0e24581852Pa
 		ID:                 "59388e185aca2f0e24581852",
 		Method:             "DELETE",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/hierarchicalentities/{hEntityId}/children/{hChildId}",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &Nr59388e185aca2f0e24581852Reader{formats: a.formats},
@@ -582,9 +958,9 @@ func (a *Client) Nr59388e185aca2f0e24581852(params *Nr59388e185aca2f0e24581852Pa
 }
 
 /*
-Nr59388efb5aca2f0e24581853 models delete composite child entity
+  Nr59388efb5aca2f0e24581853 models delete composite child entity
 
-Deletes a composite entity extractor child from the application.
+  Deletes a composite entity extractor child from the application.
 */
 func (a *Client) Nr59388efb5aca2f0e24581853(params *Nr59388efb5aca2f0e24581853Params, authInfo runtime.ClientAuthInfoWriter) (*Nr59388efb5aca2f0e24581853OK, error) {
 	// TODO: Validate the params before sending
@@ -596,8 +972,8 @@ func (a *Client) Nr59388efb5aca2f0e24581853(params *Nr59388efb5aca2f0e24581853Pa
 		ID:                 "59388efb5aca2f0e24581853",
 		Method:             "DELETE",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/compositeentities/{cEntityId}/children/{cChildId}",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &Nr59388efb5aca2f0e24581853Reader{formats: a.formats},
@@ -619,9 +995,9 @@ func (a *Client) Nr59388efb5aca2f0e24581853(params *Nr59388efb5aca2f0e24581853Pa
 }
 
 /*
-Nr5aa7d98cd5b81c0b702579e6 models create regular expression entity
+  Nr5aa7d98cd5b81c0b702579e6 models create regular expression entity
 
-Adds a regular expression entity extractor to the application.
+  Adds a regular expression entity extractor to the application.
 */
 func (a *Client) Nr5aa7d98cd5b81c0b702579e6(params *Nr5aa7d98cd5b81c0b702579e6Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5aa7d98cd5b81c0b702579e6Created, error) {
 	// TODO: Validate the params before sending
@@ -656,9 +1032,9 @@ func (a *Client) Nr5aa7d98cd5b81c0b702579e6(params *Nr5aa7d98cd5b81c0b702579e6Pa
 }
 
 /*
-Nr5aa7db53d5b81c0b702579e8 models delete regular expression entity
+  Nr5aa7db53d5b81c0b702579e8 models delete regular expression entity
 
-Deletes a regular expression entity model from the application.
+  Deletes a regular expression entity model from the application.
 */
 func (a *Client) Nr5aa7db53d5b81c0b702579e8(params *Nr5aa7db53d5b81c0b702579e8Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5aa7db53d5b81c0b702579e8OK, error) {
 	// TODO: Validate the params before sending
@@ -670,8 +1046,8 @@ func (a *Client) Nr5aa7db53d5b81c0b702579e8(params *Nr5aa7db53d5b81c0b702579e8Pa
 		ID:                 "5aa7db53d5b81c0b702579e8",
 		Method:             "DELETE",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/regexentities/{regexEntityId}",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &Nr5aa7db53d5b81c0b702579e8Reader{formats: a.formats},
@@ -693,9 +1069,9 @@ func (a *Client) Nr5aa7db53d5b81c0b702579e8(params *Nr5aa7db53d5b81c0b702579e8Pa
 }
 
 /*
-Nr5aa7dd5cd5b81c0b702579e9 models get regular expression entity
+  Nr5aa7dd5cd5b81c0b702579e9 models get regular expression entity
 
-Gets information of a regular expression entity model.
+  Gets information of a regular expression entity model.
 */
 func (a *Client) Nr5aa7dd5cd5b81c0b702579e9(params *Nr5aa7dd5cd5b81c0b702579e9Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5aa7dd5cd5b81c0b702579e9OK, error) {
 	// TODO: Validate the params before sending
@@ -708,7 +1084,7 @@ func (a *Client) Nr5aa7dd5cd5b81c0b702579e9(params *Nr5aa7dd5cd5b81c0b702579e9Pa
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/regexentities/{regexEntityId}",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &Nr5aa7dd5cd5b81c0b702579e9Reader{formats: a.formats},
@@ -730,9 +1106,9 @@ func (a *Client) Nr5aa7dd5cd5b81c0b702579e9(params *Nr5aa7dd5cd5b81c0b702579e9Pa
 }
 
 /*
-Nr5aa7dfd0d5b81c0b702579ea models get version regular expression entity list
+  Nr5aa7dfd0d5b81c0b702579ea models get version regular expression entity list
 
-Gets information about the regular expression entity models.
+  Gets information about the regular expression entity models.
 */
 func (a *Client) Nr5aa7dfd0d5b81c0b702579ea(params *Nr5aa7dfd0d5b81c0b702579eaParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5aa7dfd0d5b81c0b702579eaOK, error) {
 	// TODO: Validate the params before sending
@@ -745,7 +1121,7 @@ func (a *Client) Nr5aa7dfd0d5b81c0b702579ea(params *Nr5aa7dfd0d5b81c0b702579eaPa
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/regexentities",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &Nr5aa7dfd0d5b81c0b702579eaReader{formats: a.formats},
@@ -767,9 +1143,9 @@ func (a *Client) Nr5aa7dfd0d5b81c0b702579ea(params *Nr5aa7dfd0d5b81c0b702579eaPa
 }
 
 /*
-Nr5aa7e16cd5b81c0b702579eb models update regular expression entity
+  Nr5aa7e16cd5b81c0b702579eb models update regular expression entity
 
-Updates the regular expression entity model.
+  Updates the regular expression entity model.
 */
 func (a *Client) Nr5aa7e16cd5b81c0b702579eb(params *Nr5aa7e16cd5b81c0b702579ebParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5aa7e16cd5b81c0b702579ebOK, error) {
 	// TODO: Validate the params before sending
@@ -781,7 +1157,7 @@ func (a *Client) Nr5aa7e16cd5b81c0b702579eb(params *Nr5aa7e16cd5b81c0b702579ebPa
 		ID:                 "5aa7e16cd5b81c0b702579eb",
 		Method:             "PUT",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/regexentities/{regexEntityId}",
-		ProducesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -804,9 +1180,9 @@ func (a *Client) Nr5aa7e16cd5b81c0b702579eb(params *Nr5aa7e16cd5b81c0b702579ebPa
 }
 
 /*
-Nr5ade082dd5b81c209ce2e596 models get entity roles
+  Nr5ade082dd5b81c209ce2e596 models get entity roles
 
-Gets the roles for an entity model.
+  Gets the roles for an entity model.
 */
 func (a *Client) Nr5ade082dd5b81c209ce2e596(params *Nr5ade082dd5b81c209ce2e596Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade082dd5b81c209ce2e596OK, error) {
 	// TODO: Validate the params before sending
@@ -819,7 +1195,7 @@ func (a *Client) Nr5ade082dd5b81c209ce2e596(params *Nr5ade082dd5b81c209ce2e596Pa
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/entities/{entityId}/roles",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &Nr5ade082dd5b81c209ce2e596Reader{formats: a.formats},
@@ -841,9 +1217,9 @@ func (a *Client) Nr5ade082dd5b81c209ce2e596(params *Nr5ade082dd5b81c209ce2e596Pa
 }
 
 /*
-Nr5ade084ad5b81c209ce2e597 models add entity role
+  Nr5ade084ad5b81c209ce2e597 models add entity role
 
-Adds a role for an entity model
+  Adds a role for an entity model
 */
 func (a *Client) Nr5ade084ad5b81c209ce2e597(params *Nr5ade084ad5b81c209ce2e597Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade084ad5b81c209ce2e597Created, error) {
 	// TODO: Validate the params before sending
@@ -878,9 +1254,9 @@ func (a *Client) Nr5ade084ad5b81c209ce2e597(params *Nr5ade084ad5b81c209ce2e597Pa
 }
 
 /*
-Nr5ade096cd5b81c209ce2e598 models get prebuilt entity roles
+  Nr5ade096cd5b81c209ce2e598 models get prebuilt entity roles
 
-Gets the roles for a prebuilt entity model.
+  Gets the roles for a prebuilt entity model.
 */
 func (a *Client) Nr5ade096cd5b81c209ce2e598(params *Nr5ade096cd5b81c209ce2e598Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade096cd5b81c209ce2e598OK, error) {
 	// TODO: Validate the params before sending
@@ -893,7 +1269,7 @@ func (a *Client) Nr5ade096cd5b81c209ce2e598(params *Nr5ade096cd5b81c209ce2e598Pa
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/prebuilts/{entityId}/roles",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &Nr5ade096cd5b81c209ce2e598Reader{formats: a.formats},
@@ -915,9 +1291,9 @@ func (a *Client) Nr5ade096cd5b81c209ce2e598(params *Nr5ade096cd5b81c209ce2e598Pa
 }
 
 /*
-Nr5ade0c8bd5b81c209ce2e599 models add prebuilt entity role
+  Nr5ade0c8bd5b81c209ce2e599 models add prebuilt entity role
 
-Adds a role for a prebuilt entity model
+  Adds a role for a prebuilt entity model
 */
 func (a *Client) Nr5ade0c8bd5b81c209ce2e599(params *Nr5ade0c8bd5b81c209ce2e599Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade0c8bd5b81c209ce2e599Created, error) {
 	// TODO: Validate the params before sending
@@ -952,9 +1328,9 @@ func (a *Client) Nr5ade0c8bd5b81c209ce2e599(params *Nr5ade0c8bd5b81c209ce2e599Pa
 }
 
 /*
-Nr5ade0d16d5b81c209ce2e59a models get closed list entity roles
+  Nr5ade0d16d5b81c209ce2e59a models get closed list entity roles
 
-Gets the roles for a closed list entity model.
+  Gets the roles for a closed list entity model.
 */
 func (a *Client) Nr5ade0d16d5b81c209ce2e59a(params *Nr5ade0d16d5b81c209ce2e59aParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade0d16d5b81c209ce2e59aOK, error) {
 	// TODO: Validate the params before sending
@@ -967,7 +1343,7 @@ func (a *Client) Nr5ade0d16d5b81c209ce2e59a(params *Nr5ade0d16d5b81c209ce2e59aPa
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/closedlists/{entityId}/roles",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &Nr5ade0d16d5b81c209ce2e59aReader{formats: a.formats},
@@ -989,9 +1365,9 @@ func (a *Client) Nr5ade0d16d5b81c209ce2e59a(params *Nr5ade0d16d5b81c209ce2e59aPa
 }
 
 /*
-Nr5ade0d69d5b81c209ce2e59b models add closed list entity role
+  Nr5ade0d69d5b81c209ce2e59b models add closed list entity role
 
-Adds a role for a closed list entity model
+  Adds a role for a closed list entity model
 */
 func (a *Client) Nr5ade0d69d5b81c209ce2e59b(params *Nr5ade0d69d5b81c209ce2e59bParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade0d69d5b81c209ce2e59bCreated, error) {
 	// TODO: Validate the params before sending
@@ -1026,9 +1402,9 @@ func (a *Client) Nr5ade0d69d5b81c209ce2e59b(params *Nr5ade0d69d5b81c209ce2e59bPa
 }
 
 /*
-Nr5ade0e74d5b81c209ce2e59c models get regular expression entity roles
+  Nr5ade0e74d5b81c209ce2e59c models get regular expression entity roles
 
-Gets the roles for a regular expression entity model.
+  Gets the roles for a regular expression entity model.
 */
 func (a *Client) Nr5ade0e74d5b81c209ce2e59c(params *Nr5ade0e74d5b81c209ce2e59cParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade0e74d5b81c209ce2e59cOK, error) {
 	// TODO: Validate the params before sending
@@ -1041,7 +1417,7 @@ func (a *Client) Nr5ade0e74d5b81c209ce2e59c(params *Nr5ade0e74d5b81c209ce2e59cPa
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/regexentities/{entityId}/roles",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &Nr5ade0e74d5b81c209ce2e59cReader{formats: a.formats},
@@ -1063,9 +1439,9 @@ func (a *Client) Nr5ade0e74d5b81c209ce2e59c(params *Nr5ade0e74d5b81c209ce2e59cPa
 }
 
 /*
-Nr5ade0f32d5b81c209ce2e59d models add regular expression entity role
+  Nr5ade0f32d5b81c209ce2e59d models add regular expression entity role
 
-Adds a role for a regular expression entity model
+  Adds a role for a regular expression entity model
 */
 func (a *Client) Nr5ade0f32d5b81c209ce2e59d(params *Nr5ade0f32d5b81c209ce2e59dParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade0f32d5b81c209ce2e59dCreated, error) {
 	// TODO: Validate the params before sending
@@ -1100,9 +1476,9 @@ func (a *Client) Nr5ade0f32d5b81c209ce2e59d(params *Nr5ade0f32d5b81c209ce2e59dPa
 }
 
 /*
-Nr5ade12b3d5b81c209ce2e59e models get composite entity roles
+  Nr5ade12b3d5b81c209ce2e59e models get composite entity roles
 
-Gets the roles for a composite entity model.
+  Gets the roles for a composite entity model.
 */
 func (a *Client) Nr5ade12b3d5b81c209ce2e59e(params *Nr5ade12b3d5b81c209ce2e59eParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade12b3d5b81c209ce2e59eOK, error) {
 	// TODO: Validate the params before sending
@@ -1115,7 +1491,7 @@ func (a *Client) Nr5ade12b3d5b81c209ce2e59e(params *Nr5ade12b3d5b81c209ce2e59ePa
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/compositeentities/{cEntityId}/roles",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &Nr5ade12b3d5b81c209ce2e59eReader{formats: a.formats},
@@ -1137,9 +1513,9 @@ func (a *Client) Nr5ade12b3d5b81c209ce2e59e(params *Nr5ade12b3d5b81c209ce2e59ePa
 }
 
 /*
-Nr5ade1315d5b81c209ce2e59f models add composite entity role
+  Nr5ade1315d5b81c209ce2e59f models add composite entity role
 
-Adds a role for a composite entity model
+  Adds a role for a composite entity model
 */
 func (a *Client) Nr5ade1315d5b81c209ce2e59f(params *Nr5ade1315d5b81c209ce2e59fParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade1315d5b81c209ce2e59fCreated, error) {
 	// TODO: Validate the params before sending
@@ -1174,9 +1550,9 @@ func (a *Client) Nr5ade1315d5b81c209ce2e59f(params *Nr5ade1315d5b81c209ce2e59fPa
 }
 
 /*
-Nr5ade4f6bd5b81c209ce2e5a0 models get pattern any entity list
+  Nr5ade4f6bd5b81c209ce2e5a0 models get pattern any entity list
 
-Gets information about the Pattern.Any entity models.
+  Gets information about the Pattern.Any entity models.
 */
 func (a *Client) Nr5ade4f6bd5b81c209ce2e5a0(params *Nr5ade4f6bd5b81c209ce2e5a0Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade4f6bd5b81c209ce2e5a0OK, error) {
 	// TODO: Validate the params before sending
@@ -1189,7 +1565,7 @@ func (a *Client) Nr5ade4f6bd5b81c209ce2e5a0(params *Nr5ade4f6bd5b81c209ce2e5a0Pa
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/patternanyentities",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &Nr5ade4f6bd5b81c209ce2e5a0Reader{formats: a.formats},
@@ -1211,9 +1587,9 @@ func (a *Client) Nr5ade4f6bd5b81c209ce2e5a0(params *Nr5ade4f6bd5b81c209ce2e5a0Pa
 }
 
 /*
-Nr5ade5101d5b81c209ce2e5a1 models create pattern any entity
+  Nr5ade5101d5b81c209ce2e5a1 models create pattern any entity
 
-Adds a Pattern.Any entity extractor to the application.
+  Adds a Pattern.Any entity extractor to the application.
 */
 func (a *Client) Nr5ade5101d5b81c209ce2e5a1(params *Nr5ade5101d5b81c209ce2e5a1Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade5101d5b81c209ce2e5a1Created, error) {
 	// TODO: Validate the params before sending
@@ -1248,9 +1624,9 @@ func (a *Client) Nr5ade5101d5b81c209ce2e5a1(params *Nr5ade5101d5b81c209ce2e5a1Pa
 }
 
 /*
-Nr5ade5137d5b81c209ce2e5a2 models get pattern any entity roles
+  Nr5ade5137d5b81c209ce2e5a2 models get pattern any entity roles
 
-Gets the roles for a Pattern.Any entity model.
+  Gets the roles for a Pattern.Any entity model.
 */
 func (a *Client) Nr5ade5137d5b81c209ce2e5a2(params *Nr5ade5137d5b81c209ce2e5a2Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade5137d5b81c209ce2e5a2OK, error) {
 	// TODO: Validate the params before sending
@@ -1263,7 +1639,7 @@ func (a *Client) Nr5ade5137d5b81c209ce2e5a2(params *Nr5ade5137d5b81c209ce2e5a2Pa
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/patternanyentities/{entityId}/roles",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &Nr5ade5137d5b81c209ce2e5a2Reader{formats: a.formats},
@@ -1285,9 +1661,9 @@ func (a *Client) Nr5ade5137d5b81c209ce2e5a2(params *Nr5ade5137d5b81c209ce2e5a2Pa
 }
 
 /*
-Nr5ade5183d5b81c209ce2e5a3 models add pattern any entity role
+  Nr5ade5183d5b81c209ce2e5a3 models add pattern any entity role
 
-Adds a role for a Pattern.Any entity model
+  Adds a role for a Pattern.Any entity model
 */
 func (a *Client) Nr5ade5183d5b81c209ce2e5a3(params *Nr5ade5183d5b81c209ce2e5a3Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade5183d5b81c209ce2e5a3Created, error) {
 	// TODO: Validate the params before sending
@@ -1322,9 +1698,9 @@ func (a *Client) Nr5ade5183d5b81c209ce2e5a3(params *Nr5ade5183d5b81c209ce2e5a3Pa
 }
 
 /*
-Nr5ade52fad5b81c209ce2e5a6 models get custom prebuilt domain entity roles
+  Nr5ade52fad5b81c209ce2e5a6 models get custom prebuilt domain entity roles
 
-Gets the roles for a custom prebuilt domain entity model.
+  Gets the roles for a custom prebuilt domain entity model.
 */
 func (a *Client) Nr5ade52fad5b81c209ce2e5a6(params *Nr5ade52fad5b81c209ce2e5a6Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade52fad5b81c209ce2e5a6OK, error) {
 	// TODO: Validate the params before sending
@@ -1337,7 +1713,7 @@ func (a *Client) Nr5ade52fad5b81c209ce2e5a6(params *Nr5ade52fad5b81c209ce2e5a6Pa
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/customprebuiltentities/{entityId}/roles",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &Nr5ade52fad5b81c209ce2e5a6Reader{formats: a.formats},
@@ -1359,9 +1735,9 @@ func (a *Client) Nr5ade52fad5b81c209ce2e5a6(params *Nr5ade52fad5b81c209ce2e5a6Pa
 }
 
 /*
-Nr5ade5406d5b81c209ce2e5a7 models add custom prebuilt entity role
+  Nr5ade5406d5b81c209ce2e5a7 models add custom prebuilt entity role
 
-Adds a role for a custom prebuilt entity model
+  Adds a role for a custom prebuilt entity model
 */
 func (a *Client) Nr5ade5406d5b81c209ce2e5a7(params *Nr5ade5406d5b81c209ce2e5a7Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade5406d5b81c209ce2e5a7Created, error) {
 	// TODO: Validate the params before sending
@@ -1396,9 +1772,9 @@ func (a *Client) Nr5ade5406d5b81c209ce2e5a7(params *Nr5ade5406d5b81c209ce2e5a7Pa
 }
 
 /*
-Nr5ade550bd5b81c209ce2e5a8 models add pattern any explicit list item
+  Nr5ade550bd5b81c209ce2e5a8 models add pattern any explicit list item
 
-Adds an item to a Pattern.Any explicit list.
+  Adds an item to a Pattern.Any explicit list.
 */
 func (a *Client) Nr5ade550bd5b81c209ce2e5a8(params *Nr5ade550bd5b81c209ce2e5a8Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade550bd5b81c209ce2e5a8Created, error) {
 	// TODO: Validate the params before sending
@@ -1433,9 +1809,9 @@ func (a *Client) Nr5ade550bd5b81c209ce2e5a8(params *Nr5ade550bd5b81c209ce2e5a8Pa
 }
 
 /*
-Nr5ade5598d5b81c209ce2e5a9 models get pattern any explicit list
+  Nr5ade5598d5b81c209ce2e5a9 models get pattern any explicit list
 
-Gets the explicit list of a Pattern.Any entity model.
+  Gets the explicit list of a Pattern.Any entity model.
 */
 func (a *Client) Nr5ade5598d5b81c209ce2e5a9(params *Nr5ade5598d5b81c209ce2e5a9Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade5598d5b81c209ce2e5a9OK, error) {
 	// TODO: Validate the params before sending
@@ -1448,7 +1824,7 @@ func (a *Client) Nr5ade5598d5b81c209ce2e5a9(params *Nr5ade5598d5b81c209ce2e5a9Pa
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/patternanyentities/{entityId}/explicitlist",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &Nr5ade5598d5b81c209ce2e5a9Reader{formats: a.formats},
@@ -1470,9 +1846,9 @@ func (a *Client) Nr5ade5598d5b81c209ce2e5a9(params *Nr5ade5598d5b81c209ce2e5a9Pa
 }
 
 /*
-Nr5ade55bdd5b81c209ce2e5aa models get pattern any entity
+  Nr5ade55bdd5b81c209ce2e5aa models get pattern any entity
 
-Gets information about the Pattern.Any entity model.
+  Gets information about the Pattern.Any entity model.
 */
 func (a *Client) Nr5ade55bdd5b81c209ce2e5aa(params *Nr5ade55bdd5b81c209ce2e5aaParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade55bdd5b81c209ce2e5aaOK, error) {
 	// TODO: Validate the params before sending
@@ -1485,7 +1861,7 @@ func (a *Client) Nr5ade55bdd5b81c209ce2e5aa(params *Nr5ade55bdd5b81c209ce2e5aaPa
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/patternanyentities/{entityId}",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &Nr5ade55bdd5b81c209ce2e5aaReader{formats: a.formats},
@@ -1507,9 +1883,9 @@ func (a *Client) Nr5ade55bdd5b81c209ce2e5aa(params *Nr5ade55bdd5b81c209ce2e5aaPa
 }
 
 /*
-Nr5ade56a9d5b81c209ce2e5ab models update pattern any entity
+  Nr5ade56a9d5b81c209ce2e5ab models update pattern any entity
 
-Updates the Pattern.Any entity extractor.
+  Updates the Pattern.Any entity extractor.
 */
 func (a *Client) Nr5ade56a9d5b81c209ce2e5ab(params *Nr5ade56a9d5b81c209ce2e5abParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade56a9d5b81c209ce2e5abOK, error) {
 	// TODO: Validate the params before sending
@@ -1521,7 +1897,7 @@ func (a *Client) Nr5ade56a9d5b81c209ce2e5ab(params *Nr5ade56a9d5b81c209ce2e5abPa
 		ID:                 "5ade56a9d5b81c209ce2e5ab",
 		Method:             "PUT",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/patternanyentities/{entityId}",
-		ProducesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -1544,9 +1920,9 @@ func (a *Client) Nr5ade56a9d5b81c209ce2e5ab(params *Nr5ade56a9d5b81c209ce2e5abPa
 }
 
 /*
-Nr5ade575ed5b81c209ce2e5ac models delete pattern any entity
+  Nr5ade575ed5b81c209ce2e5ac models delete pattern any entity
 
-Deletes a Pattern.Any entity extractor from the application.
+  Deletes a Pattern.Any entity extractor from the application.
 */
 func (a *Client) Nr5ade575ed5b81c209ce2e5ac(params *Nr5ade575ed5b81c209ce2e5acParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade575ed5b81c209ce2e5acOK, error) {
 	// TODO: Validate the params before sending
@@ -1558,8 +1934,8 @@ func (a *Client) Nr5ade575ed5b81c209ce2e5ac(params *Nr5ade575ed5b81c209ce2e5acPa
 		ID:                 "5ade575ed5b81c209ce2e5ac",
 		Method:             "DELETE",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/patternanyentities/{entityId}",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &Nr5ade575ed5b81c209ce2e5acReader{formats: a.formats},
@@ -1581,9 +1957,9 @@ func (a *Client) Nr5ade575ed5b81c209ce2e5ac(params *Nr5ade575ed5b81c209ce2e5acPa
 }
 
 /*
-Nr5ade5868d5b81c209ce2e5ad models get entity role
+  Nr5ade5868d5b81c209ce2e5ad models get entity role
 
-Gets the role for an entity model.
+  Gets the role for an entity model.
 */
 func (a *Client) Nr5ade5868d5b81c209ce2e5ad(params *Nr5ade5868d5b81c209ce2e5adParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade5868d5b81c209ce2e5adOK, error) {
 	// TODO: Validate the params before sending
@@ -1596,7 +1972,7 @@ func (a *Client) Nr5ade5868d5b81c209ce2e5ad(params *Nr5ade5868d5b81c209ce2e5adPa
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/entities/{entityId}/roles/{roleId}",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &Nr5ade5868d5b81c209ce2e5adReader{formats: a.formats},
@@ -1618,9 +1994,9 @@ func (a *Client) Nr5ade5868d5b81c209ce2e5ad(params *Nr5ade5868d5b81c209ce2e5adPa
 }
 
 /*
-Nr5ade58cfd5b81c209ce2e5ae models update entity role
+  Nr5ade58cfd5b81c209ce2e5ae models update entity role
 
-Updates a role for an entity model.
+  Updates a role for an entity model.
 */
 func (a *Client) Nr5ade58cfd5b81c209ce2e5ae(params *Nr5ade58cfd5b81c209ce2e5aeParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade58cfd5b81c209ce2e5aeOK, error) {
 	// TODO: Validate the params before sending
@@ -1632,7 +2008,7 @@ func (a *Client) Nr5ade58cfd5b81c209ce2e5ae(params *Nr5ade58cfd5b81c209ce2e5aePa
 		ID:                 "5ade58cfd5b81c209ce2e5ae",
 		Method:             "PUT",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/entities/{entityId}/roles/{roleId}",
-		ProducesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -1655,9 +2031,9 @@ func (a *Client) Nr5ade58cfd5b81c209ce2e5ae(params *Nr5ade58cfd5b81c209ce2e5aePa
 }
 
 /*
-Nr5ade5963d5b81c209ce2e5af models delete entity role
+  Nr5ade5963d5b81c209ce2e5af models delete entity role
 
-Deletes the role for an entity model.
+  Deletes the role for an entity model.
 */
 func (a *Client) Nr5ade5963d5b81c209ce2e5af(params *Nr5ade5963d5b81c209ce2e5afParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade5963d5b81c209ce2e5afOK, error) {
 	// TODO: Validate the params before sending
@@ -1669,8 +2045,8 @@ func (a *Client) Nr5ade5963d5b81c209ce2e5af(params *Nr5ade5963d5b81c209ce2e5afPa
 		ID:                 "5ade5963d5b81c209ce2e5af",
 		Method:             "DELETE",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/entities/{entityId}/roles/{roleId}",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &Nr5ade5963d5b81c209ce2e5afReader{formats: a.formats},
@@ -1692,9 +2068,9 @@ func (a *Client) Nr5ade5963d5b81c209ce2e5af(params *Nr5ade5963d5b81c209ce2e5afPa
 }
 
 /*
-Nr5ade59bcd5b81c209ce2e5b0 models get prebuilt entity role
+  Nr5ade59bcd5b81c209ce2e5b0 models get prebuilt entity role
 
-Gets the role for a prebuilt entity model.
+  Gets the role for a prebuilt entity model.
 */
 func (a *Client) Nr5ade59bcd5b81c209ce2e5b0(params *Nr5ade59bcd5b81c209ce2e5b0Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade59bcd5b81c209ce2e5b0OK, error) {
 	// TODO: Validate the params before sending
@@ -1707,7 +2083,7 @@ func (a *Client) Nr5ade59bcd5b81c209ce2e5b0(params *Nr5ade59bcd5b81c209ce2e5b0Pa
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/prebuilts/{entityId}/roles/{roleId}",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &Nr5ade59bcd5b81c209ce2e5b0Reader{formats: a.formats},
@@ -1729,9 +2105,9 @@ func (a *Client) Nr5ade59bcd5b81c209ce2e5b0(params *Nr5ade59bcd5b81c209ce2e5b0Pa
 }
 
 /*
-Nr5ade5a49d5b81c209ce2e5b1 models update prebuilt entity role
+  Nr5ade5a49d5b81c209ce2e5b1 models update prebuilt entity role
 
-Updates a role for a prebuilt entity model.
+  Updates a role for a prebuilt entity model.
 */
 func (a *Client) Nr5ade5a49d5b81c209ce2e5b1(params *Nr5ade5a49d5b81c209ce2e5b1Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade5a49d5b81c209ce2e5b1OK, error) {
 	// TODO: Validate the params before sending
@@ -1743,7 +2119,7 @@ func (a *Client) Nr5ade5a49d5b81c209ce2e5b1(params *Nr5ade5a49d5b81c209ce2e5b1Pa
 		ID:                 "5ade5a49d5b81c209ce2e5b1",
 		Method:             "PUT",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/prebuilts/{entityId}/roles/{roleId}",
-		ProducesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -1766,9 +2142,9 @@ func (a *Client) Nr5ade5a49d5b81c209ce2e5b1(params *Nr5ade5a49d5b81c209ce2e5b1Pa
 }
 
 /*
-Nr5ade5a8ad5b81c209ce2e5b2 models delete prebuilt entity role
+  Nr5ade5a8ad5b81c209ce2e5b2 models delete prebuilt entity role
 
-Deletes the role for a prebuilt entity model.
+  Deletes the role for a prebuilt entity model.
 */
 func (a *Client) Nr5ade5a8ad5b81c209ce2e5b2(params *Nr5ade5a8ad5b81c209ce2e5b2Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade5a8ad5b81c209ce2e5b2OK, error) {
 	// TODO: Validate the params before sending
@@ -1780,8 +2156,8 @@ func (a *Client) Nr5ade5a8ad5b81c209ce2e5b2(params *Nr5ade5a8ad5b81c209ce2e5b2Pa
 		ID:                 "5ade5a8ad5b81c209ce2e5b2",
 		Method:             "DELETE",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/prebuilts/{entityId}/roles/{roleId}",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &Nr5ade5a8ad5b81c209ce2e5b2Reader{formats: a.formats},
@@ -1803,9 +2179,9 @@ func (a *Client) Nr5ade5a8ad5b81c209ce2e5b2(params *Nr5ade5a8ad5b81c209ce2e5b2Pa
 }
 
 /*
-Nr5ade5b29d5b81c209ce2e5b3 models get closed list entity role
+  Nr5ade5b29d5b81c209ce2e5b3 models get closed list entity role
 
-Gets the role for a closed list entity model.
+  Gets the role for a closed list entity model.
 */
 func (a *Client) Nr5ade5b29d5b81c209ce2e5b3(params *Nr5ade5b29d5b81c209ce2e5b3Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade5b29d5b81c209ce2e5b3OK, error) {
 	// TODO: Validate the params before sending
@@ -1818,7 +2194,7 @@ func (a *Client) Nr5ade5b29d5b81c209ce2e5b3(params *Nr5ade5b29d5b81c209ce2e5b3Pa
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/closedlists/{entityId}/roles/{roleId}",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &Nr5ade5b29d5b81c209ce2e5b3Reader{formats: a.formats},
@@ -1840,9 +2216,9 @@ func (a *Client) Nr5ade5b29d5b81c209ce2e5b3(params *Nr5ade5b29d5b81c209ce2e5b3Pa
 }
 
 /*
-Nr5ade5b5dd5b81c209ce2e5b4 models update closed list entity role
+  Nr5ade5b5dd5b81c209ce2e5b4 models update closed list entity role
 
-Updates a role for a closed list entity model.
+  Updates a role for a closed list entity model.
 */
 func (a *Client) Nr5ade5b5dd5b81c209ce2e5b4(params *Nr5ade5b5dd5b81c209ce2e5b4Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade5b5dd5b81c209ce2e5b4OK, error) {
 	// TODO: Validate the params before sending
@@ -1854,7 +2230,7 @@ func (a *Client) Nr5ade5b5dd5b81c209ce2e5b4(params *Nr5ade5b5dd5b81c209ce2e5b4Pa
 		ID:                 "5ade5b5dd5b81c209ce2e5b4",
 		Method:             "PUT",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/closedlists/{entityId}/roles/{roleId}",
-		ProducesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -1877,9 +2253,9 @@ func (a *Client) Nr5ade5b5dd5b81c209ce2e5b4(params *Nr5ade5b5dd5b81c209ce2e5b4Pa
 }
 
 /*
-Nr5ade5c1ad5b81c209ce2e5b5 models delete closed list entity role
+  Nr5ade5c1ad5b81c209ce2e5b5 models delete closed list entity role
 
-Deletes the role for a closed list entity model.
+  Deletes the role for a closed list entity model.
 */
 func (a *Client) Nr5ade5c1ad5b81c209ce2e5b5(params *Nr5ade5c1ad5b81c209ce2e5b5Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade5c1ad5b81c209ce2e5b5OK, error) {
 	// TODO: Validate the params before sending
@@ -1891,8 +2267,8 @@ func (a *Client) Nr5ade5c1ad5b81c209ce2e5b5(params *Nr5ade5c1ad5b81c209ce2e5b5Pa
 		ID:                 "5ade5c1ad5b81c209ce2e5b5",
 		Method:             "DELETE",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/closedlists/{entityId}/roles/{roleId}",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &Nr5ade5c1ad5b81c209ce2e5b5Reader{formats: a.formats},
@@ -1914,9 +2290,9 @@ func (a *Client) Nr5ade5c1ad5b81c209ce2e5b5(params *Nr5ade5c1ad5b81c209ce2e5b5Pa
 }
 
 /*
-Nr5ade602bd5b81c209ce2e5b6 models get regular expression role
+  Nr5ade602bd5b81c209ce2e5b6 models get regular expression role
 
-Gets the role for a regular expression entity model.
+  Gets the role for a regular expression entity model.
 */
 func (a *Client) Nr5ade602bd5b81c209ce2e5b6(params *Nr5ade602bd5b81c209ce2e5b6Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade602bd5b81c209ce2e5b6OK, error) {
 	// TODO: Validate the params before sending
@@ -1929,7 +2305,7 @@ func (a *Client) Nr5ade602bd5b81c209ce2e5b6(params *Nr5ade602bd5b81c209ce2e5b6Pa
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/regexentities/{entityId}/roles/{roleId}",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &Nr5ade602bd5b81c209ce2e5b6Reader{formats: a.formats},
@@ -1951,9 +2327,9 @@ func (a *Client) Nr5ade602bd5b81c209ce2e5b6(params *Nr5ade602bd5b81c209ce2e5b6Pa
 }
 
 /*
-Nr5ade606dd5b81c209ce2e5b7 models update regular expression role
+  Nr5ade606dd5b81c209ce2e5b7 models update regular expression role
 
-Updates a role for a regular expression entity model.
+  Updates a role for a regular expression entity model.
 */
 func (a *Client) Nr5ade606dd5b81c209ce2e5b7(params *Nr5ade606dd5b81c209ce2e5b7Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade606dd5b81c209ce2e5b7OK, error) {
 	// TODO: Validate the params before sending
@@ -1965,7 +2341,7 @@ func (a *Client) Nr5ade606dd5b81c209ce2e5b7(params *Nr5ade606dd5b81c209ce2e5b7Pa
 		ID:                 "5ade606dd5b81c209ce2e5b7",
 		Method:             "PUT",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/regexentities/{entityId}/roles/{roleId}",
-		ProducesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -1988,9 +2364,9 @@ func (a *Client) Nr5ade606dd5b81c209ce2e5b7(params *Nr5ade606dd5b81c209ce2e5b7Pa
 }
 
 /*
-Nr5ade61f2d5b81c209ce2e5b8 models delete regular expression role
+  Nr5ade61f2d5b81c209ce2e5b8 models delete regular expression role
 
-Deletes the role for a regular expression entity model.
+  Deletes the role for a regular expression entity model.
 */
 func (a *Client) Nr5ade61f2d5b81c209ce2e5b8(params *Nr5ade61f2d5b81c209ce2e5b8Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade61f2d5b81c209ce2e5b8OK, error) {
 	// TODO: Validate the params before sending
@@ -2002,8 +2378,8 @@ func (a *Client) Nr5ade61f2d5b81c209ce2e5b8(params *Nr5ade61f2d5b81c209ce2e5b8Pa
 		ID:                 "5ade61f2d5b81c209ce2e5b8",
 		Method:             "DELETE",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/regexentities/{entityId}/roles/{roleId}",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &Nr5ade61f2d5b81c209ce2e5b8Reader{formats: a.formats},
@@ -2025,9 +2401,9 @@ func (a *Client) Nr5ade61f2d5b81c209ce2e5b8(params *Nr5ade61f2d5b81c209ce2e5b8Pa
 }
 
 /*
-Nr5ade6328d5b81c209ce2e5b9 models get composite entity role
+  Nr5ade6328d5b81c209ce2e5b9 models get composite entity role
 
-Gets the role for a composite entity model.
+  Gets the role for a composite entity model.
 */
 func (a *Client) Nr5ade6328d5b81c209ce2e5b9(params *Nr5ade6328d5b81c209ce2e5b9Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade6328d5b81c209ce2e5b9OK, error) {
 	// TODO: Validate the params before sending
@@ -2040,7 +2416,7 @@ func (a *Client) Nr5ade6328d5b81c209ce2e5b9(params *Nr5ade6328d5b81c209ce2e5b9Pa
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/compositeentities/{cEntityId}/roles/{roleId}",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &Nr5ade6328d5b81c209ce2e5b9Reader{formats: a.formats},
@@ -2062,9 +2438,9 @@ func (a *Client) Nr5ade6328d5b81c209ce2e5b9(params *Nr5ade6328d5b81c209ce2e5b9Pa
 }
 
 /*
-Nr5ade636ad5b81c209ce2e5ba models update composite entity role
+  Nr5ade636ad5b81c209ce2e5ba models update composite entity role
 
-Updates a role for a composite entity model.
+  Updates a role for a composite entity model.
 */
 func (a *Client) Nr5ade636ad5b81c209ce2e5ba(params *Nr5ade636ad5b81c209ce2e5baParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade636ad5b81c209ce2e5baOK, error) {
 	// TODO: Validate the params before sending
@@ -2076,7 +2452,7 @@ func (a *Client) Nr5ade636ad5b81c209ce2e5ba(params *Nr5ade636ad5b81c209ce2e5baPa
 		ID:                 "5ade636ad5b81c209ce2e5ba",
 		Method:             "PUT",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/compositeentities/{cEntityId}/roles/{roleId}",
-		ProducesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -2099,9 +2475,9 @@ func (a *Client) Nr5ade636ad5b81c209ce2e5ba(params *Nr5ade636ad5b81c209ce2e5baPa
 }
 
 /*
-Nr5ade63c7d5b81c209ce2e5bb models delete composite entity role
+  Nr5ade63c7d5b81c209ce2e5bb models delete composite entity role
 
-Deletes the role for a composite entity model.
+  Deletes the role for a composite entity model.
 */
 func (a *Client) Nr5ade63c7d5b81c209ce2e5bb(params *Nr5ade63c7d5b81c209ce2e5bbParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade63c7d5b81c209ce2e5bbOK, error) {
 	// TODO: Validate the params before sending
@@ -2113,8 +2489,8 @@ func (a *Client) Nr5ade63c7d5b81c209ce2e5bb(params *Nr5ade63c7d5b81c209ce2e5bbPa
 		ID:                 "5ade63c7d5b81c209ce2e5bb",
 		Method:             "DELETE",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/compositeentities/{cEntityId}/roles/{roleId}",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &Nr5ade63c7d5b81c209ce2e5bbReader{formats: a.formats},
@@ -2136,9 +2512,9 @@ func (a *Client) Nr5ade63c7d5b81c209ce2e5bb(params *Nr5ade63c7d5b81c209ce2e5bbPa
 }
 
 /*
-Nr5ade643bd5b81c209ce2e5bc models get pattern any entity role
+  Nr5ade643bd5b81c209ce2e5bc models get pattern any entity role
 
-Gets the role for a Pattern.Any entity model.
+  Gets the role for a Pattern.Any entity model.
 */
 func (a *Client) Nr5ade643bd5b81c209ce2e5bc(params *Nr5ade643bd5b81c209ce2e5bcParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade643bd5b81c209ce2e5bcOK, error) {
 	// TODO: Validate the params before sending
@@ -2151,7 +2527,7 @@ func (a *Client) Nr5ade643bd5b81c209ce2e5bc(params *Nr5ade643bd5b81c209ce2e5bcPa
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/patternanyentities/{entityId}/roles/{roleId}",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &Nr5ade643bd5b81c209ce2e5bcReader{formats: a.formats},
@@ -2173,9 +2549,9 @@ func (a *Client) Nr5ade643bd5b81c209ce2e5bc(params *Nr5ade643bd5b81c209ce2e5bcPa
 }
 
 /*
-Nr5ade647bd5b81c209ce2e5bd models update pattern any entity role
+  Nr5ade647bd5b81c209ce2e5bd models update pattern any entity role
 
-Updates a role for a Pattern.Any entity model.
+  Updates a role for a Pattern.Any entity model.
 */
 func (a *Client) Nr5ade647bd5b81c209ce2e5bd(params *Nr5ade647bd5b81c209ce2e5bdParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade647bd5b81c209ce2e5bdOK, error) {
 	// TODO: Validate the params before sending
@@ -2187,7 +2563,7 @@ func (a *Client) Nr5ade647bd5b81c209ce2e5bd(params *Nr5ade647bd5b81c209ce2e5bdPa
 		ID:                 "5ade647bd5b81c209ce2e5bd",
 		Method:             "PUT",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/patternanyentities/{entityId}/roles/{roleId}",
-		ProducesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -2210,9 +2586,9 @@ func (a *Client) Nr5ade647bd5b81c209ce2e5bd(params *Nr5ade647bd5b81c209ce2e5bdPa
 }
 
 /*
-Nr5ade64aed5b81c209ce2e5be models delete pattern any entity role
+  Nr5ade64aed5b81c209ce2e5be models delete pattern any entity role
 
-Deletes the role for a Pattern.Any entity model.
+  Deletes the role for a Pattern.Any entity model.
 */
 func (a *Client) Nr5ade64aed5b81c209ce2e5be(params *Nr5ade64aed5b81c209ce2e5beParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade64aed5b81c209ce2e5beOK, error) {
 	// TODO: Validate the params before sending
@@ -2224,8 +2600,8 @@ func (a *Client) Nr5ade64aed5b81c209ce2e5be(params *Nr5ade64aed5b81c209ce2e5bePa
 		ID:                 "5ade64aed5b81c209ce2e5be",
 		Method:             "DELETE",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/patternanyentities/{entityId}/roles/{roleId}",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &Nr5ade64aed5b81c209ce2e5beReader{formats: a.formats},
@@ -2247,9 +2623,9 @@ func (a *Client) Nr5ade64aed5b81c209ce2e5be(params *Nr5ade64aed5b81c209ce2e5bePa
 }
 
 /*
-Nr5ade6581d5b81c209ce2e5c2 models get custom prebuilt domain entity role
+  Nr5ade6581d5b81c209ce2e5c2 models get custom prebuilt domain entity role
 
-Gets the role for a custom prebuilt domain entity model.
+  Gets the role for a custom prebuilt domain entity model.
 */
 func (a *Client) Nr5ade6581d5b81c209ce2e5c2(params *Nr5ade6581d5b81c209ce2e5c2Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade6581d5b81c209ce2e5c2OK, error) {
 	// TODO: Validate the params before sending
@@ -2262,7 +2638,7 @@ func (a *Client) Nr5ade6581d5b81c209ce2e5c2(params *Nr5ade6581d5b81c209ce2e5c2Pa
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/customprebuiltentities/{entityId}/roles/{roleId}",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &Nr5ade6581d5b81c209ce2e5c2Reader{formats: a.formats},
@@ -2284,9 +2660,9 @@ func (a *Client) Nr5ade6581d5b81c209ce2e5c2(params *Nr5ade6581d5b81c209ce2e5c2Pa
 }
 
 /*
-Nr5ade65aad5b81c209ce2e5c3 models update custom prebuilt entity role
+  Nr5ade65aad5b81c209ce2e5c3 models update custom prebuilt entity role
 
-Updates a role for a custom prebuilt entity model.
+  Updates a role for a custom prebuilt entity model.
 */
 func (a *Client) Nr5ade65aad5b81c209ce2e5c3(params *Nr5ade65aad5b81c209ce2e5c3Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade65aad5b81c209ce2e5c3OK, error) {
 	// TODO: Validate the params before sending
@@ -2298,7 +2674,7 @@ func (a *Client) Nr5ade65aad5b81c209ce2e5c3(params *Nr5ade65aad5b81c209ce2e5c3Pa
 		ID:                 "5ade65aad5b81c209ce2e5c3",
 		Method:             "PUT",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/customprebuiltentities/{entityId}/roles/{roleId}",
-		ProducesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -2321,9 +2697,9 @@ func (a *Client) Nr5ade65aad5b81c209ce2e5c3(params *Nr5ade65aad5b81c209ce2e5c3Pa
 }
 
 /*
-Nr5ade6622d5b81c209ce2e5c4 models delete custom prebuilt entity role
+  Nr5ade6622d5b81c209ce2e5c4 models delete custom prebuilt entity role
 
-Deletes the role for a custom prebuilt entity model.
+  Deletes the role for a custom prebuilt entity model.
 */
 func (a *Client) Nr5ade6622d5b81c209ce2e5c4(params *Nr5ade6622d5b81c209ce2e5c4Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade6622d5b81c209ce2e5c4OK, error) {
 	// TODO: Validate the params before sending
@@ -2335,8 +2711,8 @@ func (a *Client) Nr5ade6622d5b81c209ce2e5c4(params *Nr5ade6622d5b81c209ce2e5c4Pa
 		ID:                 "5ade6622d5b81c209ce2e5c4",
 		Method:             "DELETE",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/customprebuiltentities/{entityId}/roles/{roleId}",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &Nr5ade6622d5b81c209ce2e5c4Reader{formats: a.formats},
@@ -2358,9 +2734,9 @@ func (a *Client) Nr5ade6622d5b81c209ce2e5c4(params *Nr5ade6622d5b81c209ce2e5c4Pa
 }
 
 /*
-Nr5ade6657d5b81c209ce2e5c5 models get pattern any explicit list item
+  Nr5ade6657d5b81c209ce2e5c5 models get pattern any explicit list item
 
-Gets the explicit list item for a Pattern.Any entity model.
+  Gets the explicit list item for a Pattern.Any entity model.
 */
 func (a *Client) Nr5ade6657d5b81c209ce2e5c5(params *Nr5ade6657d5b81c209ce2e5c5Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade6657d5b81c209ce2e5c5OK, error) {
 	// TODO: Validate the params before sending
@@ -2373,7 +2749,7 @@ func (a *Client) Nr5ade6657d5b81c209ce2e5c5(params *Nr5ade6657d5b81c209ce2e5c5Pa
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/patternanyentities/{entityId}/explicitlist/{itemId}",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &Nr5ade6657d5b81c209ce2e5c5Reader{formats: a.formats},
@@ -2395,9 +2771,9 @@ func (a *Client) Nr5ade6657d5b81c209ce2e5c5(params *Nr5ade6657d5b81c209ce2e5c5Pa
 }
 
 /*
-Nr5ade676bd5b81c209ce2e5c6 models update pattern any explicit list item
+  Nr5ade676bd5b81c209ce2e5c6 models update pattern any explicit list item
 
-Updates the explicit list item for a Pattern.Any entity model.
+  Updates the explicit list item for a Pattern.Any entity model.
 */
 func (a *Client) Nr5ade676bd5b81c209ce2e5c6(params *Nr5ade676bd5b81c209ce2e5c6Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade676bd5b81c209ce2e5c6OK, error) {
 	// TODO: Validate the params before sending
@@ -2409,7 +2785,7 @@ func (a *Client) Nr5ade676bd5b81c209ce2e5c6(params *Nr5ade676bd5b81c209ce2e5c6Pa
 		ID:                 "5ade676bd5b81c209ce2e5c6",
 		Method:             "PUT",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/patternanyentities/{entityId}/explicitlist/{itemId}",
-		ProducesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -2432,9 +2808,9 @@ func (a *Client) Nr5ade676bd5b81c209ce2e5c6(params *Nr5ade676bd5b81c209ce2e5c6Pa
 }
 
 /*
-Nr5ade68d3d5b81c209ce2e5c7 models delete pattern any explicit list item
+  Nr5ade68d3d5b81c209ce2e5c7 models delete pattern any explicit list item
 
-Deletes an item from a Pattern.Any explicit list.
+  Deletes an item from a Pattern.Any explicit list.
 */
 func (a *Client) Nr5ade68d3d5b81c209ce2e5c7(params *Nr5ade68d3d5b81c209ce2e5c7Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ade68d3d5b81c209ce2e5c7OK, error) {
 	// TODO: Validate the params before sending
@@ -2446,8 +2822,8 @@ func (a *Client) Nr5ade68d3d5b81c209ce2e5c7(params *Nr5ade68d3d5b81c209ce2e5c7Pa
 		ID:                 "5ade68d3d5b81c209ce2e5c7",
 		Method:             "DELETE",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/patternanyentities/{entityId}/explicitlist/{itemId}",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &Nr5ade68d3d5b81c209ce2e5c7Reader{formats: a.formats},
@@ -2469,9 +2845,9 @@ func (a *Client) Nr5ade68d3d5b81c209ce2e5c7(params *Nr5ade68d3d5b81c209ce2e5c7Pa
 }
 
 /*
-Nr5adf41e9d5b81c09bc0db021 patterns add pattern
+  Nr5adf41e9d5b81c09bc0db021 patterns add pattern
 
-Adds a pattern to the specified application.
+  Adds a pattern to the specified application.
 */
 func (a *Client) Nr5adf41e9d5b81c09bc0db021(params *Nr5adf41e9d5b81c09bc0db021Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5adf41e9d5b81c09bc0db021Created, error) {
 	// TODO: Validate the params before sending
@@ -2506,9 +2882,9 @@ func (a *Client) Nr5adf41e9d5b81c09bc0db021(params *Nr5adf41e9d5b81c09bc0db021Pa
 }
 
 /*
-Nr5adf4a64d5b81c09bc0db022 patterns get patterns
+  Nr5adf4a64d5b81c09bc0db022 patterns get patterns
 
-Gets the patterns in the application.
+  Gets the patterns in the application.
 */
 func (a *Client) Nr5adf4a64d5b81c09bc0db022(params *Nr5adf4a64d5b81c09bc0db022Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5adf4a64d5b81c09bc0db022OK, error) {
 	// TODO: Validate the params before sending
@@ -2521,7 +2897,7 @@ func (a *Client) Nr5adf4a64d5b81c09bc0db022(params *Nr5adf4a64d5b81c09bc0db022Pa
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/patternrules",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &Nr5adf4a64d5b81c09bc0db022Reader{formats: a.formats},
@@ -2543,9 +2919,9 @@ func (a *Client) Nr5adf4a64d5b81c09bc0db022(params *Nr5adf4a64d5b81c09bc0db022Pa
 }
 
 /*
-Nr5adf4d1fd5b81c09bc0db023 patterns update patterns
+  Nr5adf4d1fd5b81c09bc0db023 patterns update patterns
 
-Updates a list of patterns in the application.
+  Updates a list of patterns in the application.
 */
 func (a *Client) Nr5adf4d1fd5b81c09bc0db023(params *Nr5adf4d1fd5b81c09bc0db023Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5adf4d1fd5b81c09bc0db023OK, error) {
 	// TODO: Validate the params before sending
@@ -2580,9 +2956,9 @@ func (a *Client) Nr5adf4d1fd5b81c09bc0db023(params *Nr5adf4d1fd5b81c09bc0db023Pa
 }
 
 /*
-Nr5adf4de4d5b81c09bc0db024 patterns batch add patterns
+  Nr5adf4de4d5b81c09bc0db024 patterns batch add patterns
 
-Adds a list of patterns to the application.
+  Adds a list of patterns to the application.
 */
 func (a *Client) Nr5adf4de4d5b81c09bc0db024(params *Nr5adf4de4d5b81c09bc0db024Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5adf4de4d5b81c09bc0db024Created, error) {
 	// TODO: Validate the params before sending
@@ -2617,9 +2993,9 @@ func (a *Client) Nr5adf4de4d5b81c09bc0db024(params *Nr5adf4de4d5b81c09bc0db024Pa
 }
 
 /*
-Nr5adf72ebd5b81c09bc0db025 patterns batch delete patterns
+  Nr5adf72ebd5b81c09bc0db025 patterns batch delete patterns
 
-Deletes a list of patterns from the application.
+  Deletes a list of patterns from the application.
 */
 func (a *Client) Nr5adf72ebd5b81c09bc0db025(params *Nr5adf72ebd5b81c09bc0db025Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5adf72ebd5b81c09bc0db025OK, error) {
 	// TODO: Validate the params before sending
@@ -2631,7 +3007,7 @@ func (a *Client) Nr5adf72ebd5b81c09bc0db025(params *Nr5adf72ebd5b81c09bc0db025Pa
 		ID:                 "5adf72ebd5b81c09bc0db025",
 		Method:             "DELETE",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/patternrules",
-		ProducesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -2654,9 +3030,9 @@ func (a *Client) Nr5adf72ebd5b81c09bc0db025(params *Nr5adf72ebd5b81c09bc0db025Pa
 }
 
 /*
-Nr5adf73bbd5b81c09bc0db026 patterns update pattern
+  Nr5adf73bbd5b81c09bc0db026 patterns update pattern
 
-Updates a pattern in the application version.
+  Updates a pattern in the application version.
 */
 func (a *Client) Nr5adf73bbd5b81c09bc0db026(params *Nr5adf73bbd5b81c09bc0db026Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5adf73bbd5b81c09bc0db026OK, error) {
 	// TODO: Validate the params before sending
@@ -2668,7 +3044,7 @@ func (a *Client) Nr5adf73bbd5b81c09bc0db026(params *Nr5adf73bbd5b81c09bc0db026Pa
 		ID:                 "5adf73bbd5b81c09bc0db026",
 		Method:             "PUT",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/patternrules/{patternId}",
-		ProducesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -2691,9 +3067,9 @@ func (a *Client) Nr5adf73bbd5b81c09bc0db026(params *Nr5adf73bbd5b81c09bc0db026Pa
 }
 
 /*
-Nr5adf743ed5b81c09bc0db027 patterns delete pattern
+  Nr5adf743ed5b81c09bc0db027 patterns delete pattern
 
-Deletes a pattern from the application
+  Deletes a pattern from the application
 */
 func (a *Client) Nr5adf743ed5b81c09bc0db027(params *Nr5adf743ed5b81c09bc0db027Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5adf743ed5b81c09bc0db027OK, error) {
 	// TODO: Validate the params before sending
@@ -2705,8 +3081,8 @@ func (a *Client) Nr5adf743ed5b81c09bc0db027(params *Nr5adf743ed5b81c09bc0db027Pa
 		ID:                 "5adf743ed5b81c09bc0db027",
 		Method:             "DELETE",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/patternrules/{patternId}",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &Nr5adf743ed5b81c09bc0db027Reader{formats: a.formats},
@@ -2728,9 +3104,9 @@ func (a *Client) Nr5adf743ed5b81c09bc0db027(params *Nr5adf743ed5b81c09bc0db027Pa
 }
 
 /*
-Nr5adf74d8d5b81c09bc0db028 patterns get intent patterns
+  Nr5adf74d8d5b81c09bc0db028 patterns get intent patterns
 
-Gets the patterns for a specific intent.
+  Gets the patterns for a specific intent.
 */
 func (a *Client) Nr5adf74d8d5b81c09bc0db028(params *Nr5adf74d8d5b81c09bc0db028Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5adf74d8d5b81c09bc0db028OK, error) {
 	// TODO: Validate the params before sending
@@ -2743,7 +3119,7 @@ func (a *Client) Nr5adf74d8d5b81c09bc0db028(params *Nr5adf74d8d5b81c09bc0db028Pa
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/intents/{intentId}/patternrules",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &Nr5adf74d8d5b81c09bc0db028Reader{formats: a.formats},
@@ -2765,9 +3141,9 @@ func (a *Client) Nr5adf74d8d5b81c09bc0db028(params *Nr5adf74d8d5b81c09bc0db028Pa
 }
 
 /*
-Nr5ae02c03d5b81c092c6cf2c2 apps start downloading application query logs asynchronously
+  Nr5ae02c03d5b81c092c6cf2c2 apps start downloading application query logs asynchronously
 
-Start a download request for the query logs of the past month for the application.
+  Start a download request for the query logs of the past month for the application.
 
 This POST request initiates a request asynchronously. To determine whether the downloading request is done, submit a GET request to get downloading status.
 */
@@ -2782,7 +3158,7 @@ func (a *Client) Nr5ae02c03d5b81c092c6cf2c2(params *Nr5ae02c03d5b81c092c6cf2c2Pa
 		Method:             "POST",
 		PathPattern:        "/apps/{appId}/querylogsasync/",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &Nr5ae02c03d5b81c092c6cf2c2Reader{formats: a.formats},
@@ -2804,9 +3180,9 @@ func (a *Client) Nr5ae02c03d5b81c092c6cf2c2(params *Nr5ae02c03d5b81c092c6cf2c2Pa
 }
 
 /*
-Nr5ae02f7ed5b81c092c6cf2c3 apps get the asynchronously loaded query logs
+  Nr5ae02f7ed5b81c092c6cf2c3 apps get the asynchronously loaded query logs
 
-Get the status of the download request for query logs.
+  Get the status of the download request for query logs.
 
 Note: You must initiate a POST request first, before getting the query logs
 */
@@ -2821,7 +3197,7 @@ func (a *Client) Nr5ae02f7ed5b81c092c6cf2c3(params *Nr5ae02f7ed5b81c092c6cf2c3Pa
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/querylogsasync/",
 		ProducesMediaTypes: []string{"application/json", "application/octet-stream"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &Nr5ae02f7ed5b81c092c6cf2c3Reader{formats: a.formats},
@@ -2846,9 +3222,9 @@ func (a *Client) Nr5ae02f7ed5b81c092c6cf2c3(params *Nr5ae02f7ed5b81c092c6cf2c3Pa
 }
 
 /*
-Nr5ae3212ed5b81c02cc64c6d2 apps get publish settings
+  Nr5ae3212ed5b81c02cc64c6d2 apps get publish settings
 
-Get the publish settings for the application.
+  Get the publish settings for the application.
 */
 func (a *Client) Nr5ae3212ed5b81c02cc64c6d2(params *Nr5ae3212ed5b81c02cc64c6d2Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ae3212ed5b81c02cc64c6d2OK, error) {
 	// TODO: Validate the params before sending
@@ -2861,7 +3237,7 @@ func (a *Client) Nr5ae3212ed5b81c02cc64c6d2(params *Nr5ae3212ed5b81c02cc64c6d2Pa
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/publishsettings",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &Nr5ae3212ed5b81c02cc64c6d2Reader{formats: a.formats},
@@ -2883,9 +3259,9 @@ func (a *Client) Nr5ae3212ed5b81c02cc64c6d2(params *Nr5ae3212ed5b81c02cc64c6d2Pa
 }
 
 /*
-Nr5ae32174d5b81c02cc64c6d3 apps update publish settings
+  Nr5ae32174d5b81c02cc64c6d3 apps update publish settings
 
-Updates the application publish settings.
+  Updates the application publish settings.
 */
 func (a *Client) Nr5ae32174d5b81c02cc64c6d3(params *Nr5ae32174d5b81c02cc64c6d3Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5ae32174d5b81c02cc64c6d3OK, error) {
 	// TODO: Validate the params before sending
@@ -2920,9 +3296,9 @@ func (a *Client) Nr5ae32174d5b81c02cc64c6d3(params *Nr5ae32174d5b81c02cc64c6d3Pa
 }
 
 /*
-Nr5be313cec181ae720aa2b26c users get l UI s azure accounts
+  Nr5be313cec181ae720aa2b26c users get l UI s azure accounts
 
-Gets the LUIS azure accounts for the user using his ARM token.
+  Gets the LUIS azure accounts for the user using his ARM token.
 */
 func (a *Client) Nr5be313cec181ae720aa2b26c(params *Nr5be313cec181ae720aa2b26cParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5be313cec181ae720aa2b26cOK, error) {
 	// TODO: Validate the params before sending
@@ -2935,7 +3311,7 @@ func (a *Client) Nr5be313cec181ae720aa2b26c(params *Nr5be313cec181ae720aa2b26cPa
 		Method:             "GET",
 		PathPattern:        "/azureaccounts",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &Nr5be313cec181ae720aa2b26cReader{formats: a.formats},
@@ -2957,9 +3333,9 @@ func (a *Client) Nr5be313cec181ae720aa2b26c(params *Nr5be313cec181ae720aa2b26cPa
 }
 
 /*
-Nr5c56cfc9cf9c9235b4fc8c04 apps get l UI s application tokenizer versions for culture
+  Nr5c56cfc9cf9c9235b4fc8c04 apps get l UI s application tokenizer versions for culture
 
-Gets the LUIS application culture and supported tokenizer versions for culture.
+  Gets the LUIS application culture and supported tokenizer versions for culture.
 */
 func (a *Client) Nr5c56cfc9cf9c9235b4fc8c04(params *Nr5c56cfc9cf9c9235b4fc8c04Params, authInfo runtime.ClientAuthInfoWriter) (*Nr5c56cfc9cf9c9235b4fc8c04OK, error) {
 	// TODO: Validate the params before sending
@@ -2972,7 +3348,7 @@ func (a *Client) Nr5c56cfc9cf9c9235b4fc8c04(params *Nr5c56cfc9cf9c9235b4fc8c04Pa
 		Method:             "GET",
 		PathPattern:        "/apps/cultures/{cultureCode}/tokenizerversions",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &Nr5c56cfc9cf9c9235b4fc8c04Reader{formats: a.formats},
@@ -2994,9 +3370,9 @@ func (a *Client) Nr5c56cfc9cf9c9235b4fc8c04(params *Nr5c56cfc9cf9c9235b4fc8c04Pa
 }
 
 /*
-Nr5cc9862a7531ab6414e3a39c models suggest endpoint queries for entity roles
+  Nr5cc9862a7531ab6414e3a39c models suggest endpoint queries for entity roles
 
-Suggests examples that would improve the accuracy of the entity model.
+  Suggests examples that would improve the accuracy of the entity model.
 */
 func (a *Client) Nr5cc9862a7531ab6414e3a39c(params *Nr5cc9862a7531ab6414e3a39cParams, authInfo runtime.ClientAuthInfoWriter) (*Nr5cc9862a7531ab6414e3a39cOK, error) {
 	// TODO: Validate the params before sending
@@ -3009,7 +3385,7 @@ func (a *Client) Nr5cc9862a7531ab6414e3a39c(params *Nr5cc9862a7531ab6414e3a39cPa
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/entities/{entityId}/roles/{roleId}/suggest",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &Nr5cc9862a7531ab6414e3a39cReader{formats: a.formats},
@@ -3031,9 +3407,9 @@ func (a *Client) Nr5cc9862a7531ab6414e3a39c(params *Nr5cc9862a7531ab6414e3a39cPa
 }
 
 /*
-AddCompositeEntity models create composite entity
+  AddCompositeEntity models create composite entity
 
-Adds a composite entity extractor to the application.
+  Adds a composite entity extractor to the application.
 */
 func (a *Client) AddCompositeEntity(params *AddCompositeEntityParams, authInfo runtime.ClientAuthInfoWriter) (*AddCompositeEntityCreated, error) {
 	// TODO: Validate the params before sending
@@ -3068,9 +3444,9 @@ func (a *Client) AddCompositeEntity(params *AddCompositeEntityParams, authInfo r
 }
 
 /*
-AddCustomPrebuiltDomain apps add prebuilt application
+  AddCustomPrebuiltDomain apps add prebuilt application
 
-Adds a prebuilt domain along with its models as a new application. Returns new app ID.
+  Adds a prebuilt domain along with its models as a new application. Returns new app ID.
 */
 func (a *Client) AddCustomPrebuiltDomain(params *AddCustomPrebuiltDomainParams, authInfo runtime.ClientAuthInfoWriter) (*AddCustomPrebuiltDomainCreated, error) {
 	// TODO: Validate the params before sending
@@ -3105,9 +3481,9 @@ func (a *Client) AddCustomPrebuiltDomain(params *AddCustomPrebuiltDomainParams, 
 }
 
 /*
-AddEntity models create entity
+  AddEntity models create entity
 
-Adds an entity extractor to the application.
+  Adds an entity extractor to the application.
 */
 func (a *Client) AddEntity(params *AddEntityParams, authInfo runtime.ClientAuthInfoWriter) (*AddEntityCreated, error) {
 	// TODO: Validate the params before sending
@@ -3142,9 +3518,9 @@ func (a *Client) AddEntity(params *AddEntityParams, authInfo runtime.ClientAuthI
 }
 
 /*
-AddExample examples utterances add label
+  AddExample examples utterances add label
 
-Adds a labeled example to the application.
+  Adds a labeled example to the application.
 */
 func (a *Client) AddExample(params *AddExampleParams, authInfo runtime.ClientAuthInfoWriter) (*AddExampleCreated, error) {
 	// TODO: Validate the params before sending
@@ -3179,9 +3555,9 @@ func (a *Client) AddExample(params *AddExampleParams, authInfo runtime.ClientAut
 }
 
 /*
-AddExamples examples utterances batch add labels
+  AddExamples examples utterances batch add labels
 
-Adds a batch of non-duplicate labeled examples to the specified application. Batch can't include hierarchical child entities.
+  Adds a batch of non-duplicate labeled examples to the specified application. Batch can't include hierarchical child entities.
 
 The maximum batch size is 100 items.
 
@@ -3224,9 +3600,9 @@ func (a *Client) AddExamples(params *AddExamplesParams, authInfo runtime.ClientA
 }
 
 /*
-AddExternalKeys users add external api key
+  AddExternalKeys users add external api key
 
-**THIS API IS DEPRECATED.**
+  **THIS API IS DEPRECATED.**
 */
 func (a *Client) AddExternalKeys(params *AddExternalKeysParams, authInfo runtime.ClientAuthInfoWriter) (*AddExternalKeysCreated, error) {
 	// TODO: Validate the params before sending
@@ -3238,7 +3614,7 @@ func (a *Client) AddExternalKeys(params *AddExternalKeysParams, authInfo runtime
 		ID:                 "AddExternalKeys",
 		Method:             "POST",
 		PathPattern:        "/externalKeys",
-		ProducesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -3261,9 +3637,9 @@ func (a *Client) AddExternalKeys(params *AddExternalKeysParams, authInfo runtime
 }
 
 /*
-AddHierarchialEntity models create hierarchical entity
+  AddHierarchialEntity models create hierarchical entity
 
-Adds a hierarchical entity extractor to the application version.
+  Adds a hierarchical entity extractor to the application version.
 */
 func (a *Client) AddHierarchialEntity(params *AddHierarchialEntityParams, authInfo runtime.ClientAuthInfoWriter) (*AddHierarchialEntityCreated, error) {
 	// TODO: Validate the params before sending
@@ -3298,9 +3674,9 @@ func (a *Client) AddHierarchialEntity(params *AddHierarchialEntityParams, authIn
 }
 
 /*
-AddIntent models create intent
+  AddIntent models create intent
 
-Adds an intent classifier to the application.
+  Adds an intent classifier to the application.
 */
 func (a *Client) AddIntent(params *AddIntentParams, authInfo runtime.ClientAuthInfoWriter) (*AddIntentCreated, error) {
 	// TODO: Validate the params before sending
@@ -3335,9 +3711,9 @@ func (a *Client) AddIntent(params *AddIntentParams, authInfo runtime.ClientAuthI
 }
 
 /*
-AddList models add closed list s sublist
+  AddList models add closed list s sublist
 
-Adds a list to an existing closed list
+  Adds a list to an existing closed list
 */
 func (a *Client) AddList(params *AddListParams, authInfo runtime.ClientAuthInfoWriter) (*AddListCreated, error) {
 	// TODO: Validate the params before sending
@@ -3372,9 +3748,9 @@ func (a *Client) AddList(params *AddListParams, authInfo runtime.ClientAuthInfoW
 }
 
 /*
-AddListEntity models create closed list entity
+  AddListEntity models create closed list entity
 
-Adds a list entity to the LUIS app.
+  Adds a list entity to the LUIS app.
 */
 func (a *Client) AddListEntity(params *AddListEntityParams, authInfo runtime.ClientAuthInfoWriter) (*AddListEntityCreated, error) {
 	// TODO: Validate the params before sending
@@ -3409,9 +3785,9 @@ func (a *Client) AddListEntity(params *AddListEntityParams, authInfo runtime.Cli
 }
 
 /*
-AddPrebuildEntities models add prebuilt entity list
+  AddPrebuildEntities models add prebuilt entity list
 
-Adds a list of prebuilt entity extractors to the application.
+  Adds a list of prebuilt entity extractors to the application.
 */
 func (a *Client) AddPrebuildEntities(params *AddPrebuildEntitiesParams, authInfo runtime.ClientAuthInfoWriter) (*AddPrebuildEntitiesCreated, error) {
 	// TODO: Validate the params before sending
@@ -3446,9 +3822,9 @@ func (a *Client) AddPrebuildEntities(params *AddPrebuildEntitiesParams, authInfo
 }
 
 /*
-AddSublists models patch closed list entity
+  AddSublists models patch closed list entity
 
-Adds a batch of sublists to an existing closedlist.
+  Adds a batch of sublists to an existing closedlist.
 */
 func (a *Client) AddSublists(params *AddSublistsParams, authInfo runtime.ClientAuthInfoWriter) (*AddSublistsOK, error) {
 	// TODO: Validate the params before sending
@@ -3460,7 +3836,7 @@ func (a *Client) AddSublists(params *AddSublistsParams, authInfo runtime.ClientA
 		ID:                 "AddSublists",
 		Method:             "PATCH",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/closedlists/{clEntityId}",
-		ProducesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -3483,9 +3859,9 @@ func (a *Client) AddSublists(params *AddSublistsParams, authInfo runtime.ClientA
 }
 
 /*
-AddUserToAccessList permissions add email to access list
+  AddUserToAccessList permissions add email to access list
 
-Adds a user to the allowed list of users to access this LUIS application.
+  Adds a user to the allowed list of users to access this LUIS application.
 Users are added using their email address.
 */
 func (a *Client) AddUserToAccessList(params *AddUserToAccessListParams, authInfo runtime.ClientAuthInfoWriter) (*AddUserToAccessListOK, error) {
@@ -3498,7 +3874,7 @@ func (a *Client) AddUserToAccessList(params *AddUserToAccessListParams, authInfo
 		ID:                 "AddUserToAccessList",
 		Method:             "POST",
 		PathPattern:        "/apps/{appId}/permissions",
-		ProducesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -3521,9 +3897,9 @@ func (a *Client) AddUserToAccessList(params *AddUserToAccessListParams, authInfo
 }
 
 /*
-AssignAzureAccount apps assign a l UI s azure accounts to an application
+  AssignAzureAccount apps assign a l UI s azure accounts to an application
 
-Assigns an azure account to the application.
+  Assigns an azure account to the application.
 */
 func (a *Client) AssignAzureAccount(params *AssignAzureAccountParams, authInfo runtime.ClientAuthInfoWriter) (*AssignAzureAccountCreated, error) {
 	// TODO: Validate the params before sending
@@ -3558,9 +3934,9 @@ func (a *Client) AssignAzureAccount(params *AssignAzureAccountParams, authInfo r
 }
 
 /*
-CloneVersion versions clone version
+  CloneVersion versions clone version
 
-Creates a new version equivalent to the current snapshot of the selected application version.
+  Creates a new version equivalent to the current snapshot of the selected application version.
 */
 func (a *Client) CloneVersion(params *CloneVersionParams, authInfo runtime.ClientAuthInfoWriter) (*CloneVersionCreated, error) {
 	// TODO: Validate the params before sending
@@ -3595,9 +3971,9 @@ func (a *Client) CloneVersion(params *CloneVersionParams, authInfo runtime.Clien
 }
 
 /*
-CreateApplication apps add application
+  CreateApplication apps add application
 
-Creates a new LUIS app.
+  Creates a new LUIS app.
 */
 func (a *Client) CreateApplication(params *CreateApplicationParams, authInfo runtime.ClientAuthInfoWriter) (*CreateApplicationCreated, error) {
 	// TODO: Validate the params before sending
@@ -3632,9 +4008,9 @@ func (a *Client) CreateApplication(params *CreateApplicationParams, authInfo run
 }
 
 /*
-CreatePatternFeature features create pattern feature
+  CreatePatternFeature features create pattern feature
 
-Creates a new pattern feature.
+  Creates a new pattern feature.
 */
 func (a *Client) CreatePatternFeature(params *CreatePatternFeatureParams, authInfo runtime.ClientAuthInfoWriter) (*CreatePatternFeatureCreated, error) {
 	// TODO: Validate the params before sending
@@ -3669,9 +4045,9 @@ func (a *Client) CreatePatternFeature(params *CreatePatternFeatureParams, authIn
 }
 
 /*
-CreatePhraseListFeature features create phraselist feature
+  CreatePhraseListFeature features create phraselist feature
 
-Creates a new phraselist feature.
+  Creates a new phraselist feature.
 */
 func (a *Client) CreatePhraseListFeature(params *CreatePhraseListFeatureParams, authInfo runtime.ClientAuthInfoWriter) (*CreatePhraseListFeatureCreated, error) {
 	// TODO: Validate the params before sending
@@ -3706,9 +4082,9 @@ func (a *Client) CreatePhraseListFeature(params *CreatePhraseListFeatureParams, 
 }
 
 /*
-DeleteApplication apps delete application
+  DeleteApplication apps delete application
 
-Deletes an application.
+  Deletes an application.
 */
 func (a *Client) DeleteApplication(params *DeleteApplicationParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteApplicationOK, error) {
 	// TODO: Validate the params before sending
@@ -3721,7 +4097,7 @@ func (a *Client) DeleteApplication(params *DeleteApplicationParams, authInfo run
 		Method:             "DELETE",
 		PathPattern:        "/apps/{appId}",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &DeleteApplicationReader{formats: a.formats},
@@ -3743,9 +4119,9 @@ func (a *Client) DeleteApplication(params *DeleteApplicationParams, authInfo run
 }
 
 /*
-DeleteClosedList models delete closed list entity
+  DeleteClosedList models delete closed list entity
 
-Deletes a closed list model from the application.
+  Deletes a closed list model from the application.
 */
 func (a *Client) DeleteClosedList(params *DeleteClosedListParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteClosedListOK, error) {
 	// TODO: Validate the params before sending
@@ -3757,8 +4133,8 @@ func (a *Client) DeleteClosedList(params *DeleteClosedListParams, authInfo runti
 		ID:                 "DeleteClosedList",
 		Method:             "DELETE",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/closedlists/{clEntityId}",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &DeleteClosedListReader{formats: a.formats},
@@ -3780,9 +4156,9 @@ func (a *Client) DeleteClosedList(params *DeleteClosedListParams, authInfo runti
 }
 
 /*
-DeleteCompositeEntity models delete composite entity
+  DeleteCompositeEntity models delete composite entity
 
-Deletes a composite entity extractor from the application.
+  Deletes a composite entity extractor from the application.
 */
 func (a *Client) DeleteCompositeEntity(params *DeleteCompositeEntityParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteCompositeEntityOK, error) {
 	// TODO: Validate the params before sending
@@ -3794,8 +4170,8 @@ func (a *Client) DeleteCompositeEntity(params *DeleteCompositeEntityParams, auth
 		ID:                 "DeleteCompositeEntity",
 		Method:             "DELETE",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/compositeentities/{cEntityId}",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &DeleteCompositeEntityReader{formats: a.formats},
@@ -3817,9 +4193,9 @@ func (a *Client) DeleteCompositeEntity(params *DeleteCompositeEntityParams, auth
 }
 
 /*
-DeleteEntity models delete entity
+  DeleteEntity models delete entity
 
-Deletes an entity extractor from the application.
+  Deletes an entity extractor from the application.
 */
 func (a *Client) DeleteEntity(params *DeleteEntityParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteEntityOK, error) {
 	// TODO: Validate the params before sending
@@ -3831,8 +4207,8 @@ func (a *Client) DeleteEntity(params *DeleteEntityParams, authInfo runtime.Clien
 		ID:                 "DeleteEntity",
 		Method:             "DELETE",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/entities/{entityId}",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &DeleteEntityReader{formats: a.formats},
@@ -3854,9 +4230,9 @@ func (a *Client) DeleteEntity(params *DeleteEntityParams, authInfo runtime.Clien
 }
 
 /*
-DeleteExample examples utterances delete example labels
+  DeleteExample examples utterances delete example labels
 
-Deletes the label with the specified ID.
+  Deletes the label with the specified ID.
 */
 func (a *Client) DeleteExample(params *DeleteExampleParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteExampleOK, error) {
 	// TODO: Validate the params before sending
@@ -3868,8 +4244,8 @@ func (a *Client) DeleteExample(params *DeleteExampleParams, authInfo runtime.Cli
 		ID:                 "DeleteExample",
 		Method:             "DELETE",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/examples/{exampleId}",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &DeleteExampleReader{formats: a.formats},
@@ -3891,9 +4267,9 @@ func (a *Client) DeleteExample(params *DeleteExampleParams, authInfo runtime.Cli
 }
 
 /*
-DeleteExternalAPIKey users delete external api key
+  DeleteExternalAPIKey users delete external api key
 
-**THIS API IS DEPRECATED.**.
+  **THIS API IS DEPRECATED.**.
 */
 func (a *Client) DeleteExternalAPIKey(params *DeleteExternalAPIKeyParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteExternalAPIKeyOK, error) {
 	// TODO: Validate the params before sending
@@ -3905,8 +4281,8 @@ func (a *Client) DeleteExternalAPIKey(params *DeleteExternalAPIKeyParams, authIn
 		ID:                 "DeleteExternalApiKey",
 		Method:             "DELETE",
 		PathPattern:        "/externalKeys/{externalKeyValue}",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &DeleteExternalAPIKeyReader{formats: a.formats},
@@ -3928,9 +4304,9 @@ func (a *Client) DeleteExternalAPIKey(params *DeleteExternalAPIKeyParams, authIn
 }
 
 /*
-DeleteIntent models delete intent
+  DeleteIntent models delete intent
 
-Deletes an intent classifier from the application.
+  Deletes an intent classifier from the application.
 
 `deleteUtterances` is an optional parameter (boolean): true means delete utterances from app, false means move utterances to None intent.
 */
@@ -3944,8 +4320,8 @@ func (a *Client) DeleteIntent(params *DeleteIntentParams, authInfo runtime.Clien
 		ID:                 "DeleteIntent",
 		Method:             "DELETE",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/intents/{intentId}",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &DeleteIntentReader{formats: a.formats},
@@ -3967,9 +4343,9 @@ func (a *Client) DeleteIntent(params *DeleteIntentParams, authInfo runtime.Clien
 }
 
 /*
-DeletePatternFeature features delete pattern feature
+  DeletePatternFeature features delete pattern feature
 
-Deletes a pattern feature from an application version.
+  Deletes a pattern feature from an application version.
 */
 func (a *Client) DeletePatternFeature(params *DeletePatternFeatureParams, authInfo runtime.ClientAuthInfoWriter) (*DeletePatternFeatureOK, error) {
 	// TODO: Validate the params before sending
@@ -3981,8 +4357,8 @@ func (a *Client) DeletePatternFeature(params *DeletePatternFeatureParams, authIn
 		ID:                 "DeletePatternFeature",
 		Method:             "DELETE",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/patterns/{patternId}",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &DeletePatternFeatureReader{formats: a.formats},
@@ -4004,9 +4380,9 @@ func (a *Client) DeletePatternFeature(params *DeletePatternFeatureParams, authIn
 }
 
 /*
-DeletePhraseListFeature features delete phraselist feature
+  DeletePhraseListFeature features delete phraselist feature
 
-Deletes a phraselist feature from an application.
+  Deletes a phraselist feature from an application.
 */
 func (a *Client) DeletePhraseListFeature(params *DeletePhraseListFeatureParams, authInfo runtime.ClientAuthInfoWriter) (*DeletePhraseListFeatureOK, error) {
 	// TODO: Validate the params before sending
@@ -4018,8 +4394,8 @@ func (a *Client) DeletePhraseListFeature(params *DeletePhraseListFeatureParams, 
 		ID:                 "DeletePhraseListFeature",
 		Method:             "DELETE",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/phraselists/{phraselistId}",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &DeletePhraseListFeatureReader{formats: a.formats},
@@ -4041,9 +4417,9 @@ func (a *Client) DeletePhraseListFeature(params *DeletePhraseListFeatureParams, 
 }
 
 /*
-DeletePrebuildEntity models delete prebuilt entity
+  DeletePrebuildEntity models delete prebuilt entity
 
-Deletes a prebuilt entity extractor from the application.
+  Deletes a prebuilt entity extractor from the application.
 */
 func (a *Client) DeletePrebuildEntity(params *DeletePrebuildEntityParams, authInfo runtime.ClientAuthInfoWriter) (*DeletePrebuildEntityOK, error) {
 	// TODO: Validate the params before sending
@@ -4055,8 +4431,8 @@ func (a *Client) DeletePrebuildEntity(params *DeletePrebuildEntityParams, authIn
 		ID:                 "DeletePrebuildEntity",
 		Method:             "DELETE",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/prebuilts/{prebuiltId}",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &DeletePrebuildEntityReader{formats: a.formats},
@@ -4078,9 +4454,9 @@ func (a *Client) DeletePrebuildEntity(params *DeletePrebuildEntityParams, authIn
 }
 
 /*
-DeleteSublist models delete sublist entity
+  DeleteSublist models delete sublist entity
 
-Deletes a sublist of a specified list entity.
+  Deletes a sublist of a specified list entity.
 */
 func (a *Client) DeleteSublist(params *DeleteSublistParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteSublistOK, error) {
 	// TODO: Validate the params before sending
@@ -4092,8 +4468,8 @@ func (a *Client) DeleteSublist(params *DeleteSublistParams, authInfo runtime.Cli
 		ID:                 "DeleteSublist",
 		Method:             "DELETE",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/closedlists/{clEntityId}/sublists/{subListId}",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &DeleteSublistReader{formats: a.formats},
@@ -4115,9 +4491,9 @@ func (a *Client) DeleteSublist(params *DeleteSublistParams, authInfo runtime.Cli
 }
 
 /*
-DeleteSubscriptionKey users delete subscription key
+  DeleteSubscriptionKey users delete subscription key
 
-**THIS API IS DEPRECATED.**
+  **THIS API IS DEPRECATED.**
 */
 func (a *Client) DeleteSubscriptionKey(params *DeleteSubscriptionKeyParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteSubscriptionKeyOK, error) {
 	// TODO: Validate the params before sending
@@ -4129,8 +4505,8 @@ func (a *Client) DeleteSubscriptionKey(params *DeleteSubscriptionKeyParams, auth
 		ID:                 "DeleteSubscriptionKey",
 		Method:             "DELETE",
 		PathPattern:        "/subscriptions/{subscriptionKey}",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &DeleteSubscriptionKeyReader{formats: a.formats},
@@ -4152,9 +4528,9 @@ func (a *Client) DeleteSubscriptionKey(params *DeleteSubscriptionKeyParams, auth
 }
 
 /*
-DeleteUnlabelledUtterance versions delete unlabelled utterance
+  DeleteUnlabelledUtterance versions delete unlabelled utterance
 
-Deleted an unlabelled utterance. This utterance is in the "Review endpoint utterances" list.
+  Deleted an unlabelled utterance. This utterance is in the "Review endpoint utterances" list.
 */
 func (a *Client) DeleteUnlabelledUtterance(params *DeleteUnlabelledUtteranceParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteUnlabelledUtteranceOK, error) {
 	// TODO: Validate the params before sending
@@ -4166,7 +4542,7 @@ func (a *Client) DeleteUnlabelledUtterance(params *DeleteUnlabelledUtterancePara
 		ID:                 "DeleteUnlabelledUtterance",
 		Method:             "DELETE",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/suggest",
-		ProducesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"text/plain"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -4189,9 +4565,9 @@ func (a *Client) DeleteUnlabelledUtterance(params *DeleteUnlabelledUtterancePara
 }
 
 /*
-DeleteVersion versions delete application version
+  DeleteVersion versions delete application version
 
-Deletes an application version.
+  Deletes an application version.
 */
 func (a *Client) DeleteVersion(params *DeleteVersionParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteVersionOK, error) {
 	// TODO: Validate the params before sending
@@ -4203,8 +4579,8 @@ func (a *Client) DeleteVersion(params *DeleteVersionParams, authInfo runtime.Cli
 		ID:                 "DeleteVersion",
 		Method:             "DELETE",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &DeleteVersionReader{formats: a.formats},
@@ -4226,9 +4602,9 @@ func (a *Client) DeleteVersion(params *DeleteVersionParams, authInfo runtime.Cli
 }
 
 /*
-DeletehierarchialEntity models delete hierarchical entity
+  DeletehierarchialEntity models delete hierarchical entity
 
-Deletes a hierarchical entity extractor from the application version.
+  Deletes a hierarchical entity extractor from the application version.
 */
 func (a *Client) DeletehierarchialEntity(params *DeletehierarchialEntityParams, authInfo runtime.ClientAuthInfoWriter) (*DeletehierarchialEntityOK, error) {
 	// TODO: Validate the params before sending
@@ -4240,8 +4616,8 @@ func (a *Client) DeletehierarchialEntity(params *DeletehierarchialEntityParams, 
 		ID:                 "DeletehierarchialEntity",
 		Method:             "DELETE",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/hierarchicalentities/{hEntityId}",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &DeletehierarchialEntityReader{formats: a.formats},
@@ -4263,9 +4639,9 @@ func (a *Client) DeletehierarchialEntity(params *DeletehierarchialEntityParams, 
 }
 
 /*
-ExportVersion versions export application version
+  ExportVersion versions export application version
 
-Exports a LUIS application to JSON format.
+  Exports a LUIS application to JSON format.
 */
 func (a *Client) ExportVersion(params *ExportVersionParams, authInfo runtime.ClientAuthInfoWriter) (*ExportVersionOK, error) {
 	// TODO: Validate the params before sending
@@ -4278,7 +4654,7 @@ func (a *Client) ExportVersion(params *ExportVersionParams, authInfo runtime.Cli
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/export",
 		ProducesMediaTypes: []string{"application/json", "text/plain"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &ExportVersionReader{formats: a.formats},
@@ -4300,9 +4676,9 @@ func (a *Client) ExportVersion(params *ExportVersionParams, authInfo runtime.Cli
 }
 
 /*
-GetApplication apps get application info
+  GetApplication apps get application info
 
-Gets the application info.
+  Gets the application info.
 */
 func (a *Client) GetApplication(params *GetApplicationParams, authInfo runtime.ClientAuthInfoWriter) (*GetApplicationOK, error) {
 	// TODO: Validate the params before sending
@@ -4315,7 +4691,7 @@ func (a *Client) GetApplication(params *GetApplicationParams, authInfo runtime.C
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &GetApplicationReader{formats: a.formats},
@@ -4337,9 +4713,9 @@ func (a *Client) GetApplication(params *GetApplicationParams, authInfo runtime.C
 }
 
 /*
-GetApplicationFeatures features get version features
+  GetApplicationFeatures features get version features
 
-Gets all application version features.
+  Gets all application version features.
 */
 func (a *Client) GetApplicationFeatures(params *GetApplicationFeaturesParams, authInfo runtime.ClientAuthInfoWriter) (*GetApplicationFeaturesOK, error) {
 	// TODO: Validate the params before sending
@@ -4352,7 +4728,7 @@ func (a *Client) GetApplicationFeatures(params *GetApplicationFeaturesParams, au
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/features",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &GetApplicationFeaturesReader{formats: a.formats},
@@ -4374,9 +4750,9 @@ func (a *Client) GetApplicationFeatures(params *GetApplicationFeaturesParams, au
 }
 
 /*
-GetApplicationSettings apps get application settings
+  GetApplicationSettings apps get application settings
 
-Get the application settings
+  Get the application settings
 */
 func (a *Client) GetApplicationSettings(params *GetApplicationSettingsParams, authInfo runtime.ClientAuthInfoWriter) (*GetApplicationSettingsOK, error) {
 	// TODO: Validate the params before sending
@@ -4389,7 +4765,7 @@ func (a *Client) GetApplicationSettings(params *GetApplicationSettingsParams, au
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/settings",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &GetApplicationSettingsReader{formats: a.formats},
@@ -4411,9 +4787,9 @@ func (a *Client) GetApplicationSettings(params *GetApplicationSettingsParams, au
 }
 
 /*
-GetApplicationVersion versions get application version
+  GetApplicationVersion versions get application version
 
-Gets the task info.
+  Gets the task info.
 */
 func (a *Client) GetApplicationVersion(params *GetApplicationVersionParams, authInfo runtime.ClientAuthInfoWriter) (*GetApplicationVersionOK, error) {
 	// TODO: Validate the params before sending
@@ -4426,7 +4802,7 @@ func (a *Client) GetApplicationVersion(params *GetApplicationVersionParams, auth
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &GetApplicationVersionReader{formats: a.formats},
@@ -4448,9 +4824,9 @@ func (a *Client) GetApplicationVersion(params *GetApplicationVersionParams, auth
 }
 
 /*
-GetApplicationVersionKey versions get application version subscription key
+  GetApplicationVersionKey versions get application version subscription key
 
-**THIS IS DEPRECATED**
+  **THIS IS DEPRECATED**
 */
 func (a *Client) GetApplicationVersionKey(params *GetApplicationVersionKeyParams, authInfo runtime.ClientAuthInfoWriter) (*GetApplicationVersionKeyOK, error) {
 	// TODO: Validate the params before sending
@@ -4463,7 +4839,7 @@ func (a *Client) GetApplicationVersionKey(params *GetApplicationVersionKeyParams
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/assignedkey",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &GetApplicationVersionKeyReader{formats: a.formats},
@@ -4485,9 +4861,9 @@ func (a *Client) GetApplicationVersionKey(params *GetApplicationVersionKeyParams
 }
 
 /*
-GetApplications apps get applications list
+  GetApplications apps get applications list
 
-Lists all of the user applications.
+  Lists all of the user applications.
 */
 func (a *Client) GetApplications(params *GetApplicationsParams, authInfo runtime.ClientAuthInfoWriter) (*GetApplicationsOK, error) {
 	// TODO: Validate the params before sending
@@ -4500,7 +4876,7 @@ func (a *Client) GetApplications(params *GetApplicationsParams, authInfo runtime
 		Method:             "GET",
 		PathPattern:        "/apps/",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &GetApplicationsReader{formats: a.formats},
@@ -4522,9 +4898,9 @@ func (a *Client) GetApplications(params *GetApplicationsParams, authInfo runtime
 }
 
 /*
-GetAssistants apps get personal assistant applications
+  GetAssistants apps get personal assistant applications
 
-**THIS API IS DEPRECATED.**
+  **THIS API IS DEPRECATED.**
 */
 func (a *Client) GetAssistants(params *GetAssistantsParams, authInfo runtime.ClientAuthInfoWriter) (*GetAssistantsOK, error) {
 	// TODO: Validate the params before sending
@@ -4537,7 +4913,7 @@ func (a *Client) GetAssistants(params *GetAssistantsParams, authInfo runtime.Cli
 		Method:             "GET",
 		PathPattern:        "/apps/assistants",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &GetAssistantsReader{formats: a.formats},
@@ -4559,9 +4935,9 @@ func (a *Client) GetAssistants(params *GetAssistantsParams, authInfo runtime.Cli
 }
 
 /*
-GetAzureAccounts apps get l UI s azure accounts assigned to the application
+  GetAzureAccounts apps get l UI s azure accounts assigned to the application
 
-Gets the LUIS azure accounts assigned to the application for the user using his ARM token.
+  Gets the LUIS azure accounts assigned to the application for the user using his ARM token.
 */
 func (a *Client) GetAzureAccounts(params *GetAzureAccountsParams, authInfo runtime.ClientAuthInfoWriter) (*GetAzureAccountsOK, error) {
 	// TODO: Validate the params before sending
@@ -4574,7 +4950,7 @@ func (a *Client) GetAzureAccounts(params *GetAzureAccountsParams, authInfo runti
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/azureaccounts",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &GetAzureAccountsReader{formats: a.formats},
@@ -4596,9 +4972,9 @@ func (a *Client) GetAzureAccounts(params *GetAzureAccountsParams, authInfo runti
 }
 
 /*
-GetClosedList models get closed list entity
+  GetClosedList models get closed list entity
 
-Gets information of a closed list model.
+  Gets information of a closed list model.
 */
 func (a *Client) GetClosedList(params *GetClosedListParams, authInfo runtime.ClientAuthInfoWriter) (*GetClosedListOK, error) {
 	// TODO: Validate the params before sending
@@ -4611,7 +4987,7 @@ func (a *Client) GetClosedList(params *GetClosedListParams, authInfo runtime.Cli
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/closedlists/{clEntityId}",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &GetClosedListReader{formats: a.formats},
@@ -4633,9 +5009,9 @@ func (a *Client) GetClosedList(params *GetClosedListParams, authInfo runtime.Cli
 }
 
 /*
-GetClosedLists models get version closedlist list
+  GetClosedLists models get version closedlist list
 
-Gets information about the closedlist models.
+  Gets information about the closedlist models.
 */
 func (a *Client) GetClosedLists(params *GetClosedListsParams, authInfo runtime.ClientAuthInfoWriter) (*GetClosedListsOK, error) {
 	// TODO: Validate the params before sending
@@ -4648,7 +5024,7 @@ func (a *Client) GetClosedLists(params *GetClosedListsParams, authInfo runtime.C
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/closedlists",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &GetClosedListsReader{formats: a.formats},
@@ -4670,9 +5046,9 @@ func (a *Client) GetClosedLists(params *GetClosedListsParams, authInfo runtime.C
 }
 
 /*
-GetCompositeEntities models get version composite entity list
+  GetCompositeEntities models get version composite entity list
 
-Gets information about the composite entity models.
+  Gets information about the composite entity models.
 */
 func (a *Client) GetCompositeEntities(params *GetCompositeEntitiesParams, authInfo runtime.ClientAuthInfoWriter) (*GetCompositeEntitiesOK, error) {
 	// TODO: Validate the params before sending
@@ -4685,7 +5061,7 @@ func (a *Client) GetCompositeEntities(params *GetCompositeEntitiesParams, authIn
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/compositeentities",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &GetCompositeEntitiesReader{formats: a.formats},
@@ -4707,9 +5083,9 @@ func (a *Client) GetCompositeEntities(params *GetCompositeEntitiesParams, authIn
 }
 
 /*
-GetCompositeEntity models get composite entity
+  GetCompositeEntity models get composite entity
 
-Gets information about the composite entity model.
+  Gets information about the composite entity model.
 */
 func (a *Client) GetCompositeEntity(params *GetCompositeEntityParams, authInfo runtime.ClientAuthInfoWriter) (*GetCompositeEntityOK, error) {
 	// TODO: Validate the params before sending
@@ -4722,7 +5098,7 @@ func (a *Client) GetCompositeEntity(params *GetCompositeEntityParams, authInfo r
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/compositeentities/{cEntityId}",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &GetCompositeEntityReader{formats: a.formats},
@@ -4744,9 +5120,9 @@ func (a *Client) GetCompositeEntity(params *GetCompositeEntityParams, authInfo r
 }
 
 /*
-GetCultures apps get l UI s application cultures list
+  GetCultures apps get l UI s application cultures list
 
-Gets the supported LUIS application cultures.
+  Gets the supported LUIS application cultures.
 */
 func (a *Client) GetCultures(params *GetCulturesParams, authInfo runtime.ClientAuthInfoWriter) (*GetCulturesOK, error) {
 	// TODO: Validate the params before sending
@@ -4759,7 +5135,7 @@ func (a *Client) GetCultures(params *GetCulturesParams, authInfo runtime.ClientA
 		Method:             "GET",
 		PathPattern:        "/apps/cultures",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &GetCulturesReader{formats: a.formats},
@@ -4781,9 +5157,9 @@ func (a *Client) GetCultures(params *GetCulturesParams, authInfo runtime.ClientA
 }
 
 /*
-GetCustomPrebuiltDomain apps get l UI s prebuilt domains list
+  GetCustomPrebuiltDomain apps get l UI s prebuilt domains list
 
-Gets all the available custom prebuilt domains for all cultures
+  Gets all the available custom prebuilt domains for all cultures
 */
 func (a *Client) GetCustomPrebuiltDomain(params *GetCustomPrebuiltDomainParams, authInfo runtime.ClientAuthInfoWriter) (*GetCustomPrebuiltDomainOK, error) {
 	// TODO: Validate the params before sending
@@ -4796,7 +5172,7 @@ func (a *Client) GetCustomPrebuiltDomain(params *GetCustomPrebuiltDomainParams, 
 		Method:             "GET",
 		PathPattern:        "/apps/customprebuiltdomains",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &GetCustomPrebuiltDomainReader{formats: a.formats},
@@ -4818,9 +5194,9 @@ func (a *Client) GetCustomPrebuiltDomain(params *GetCustomPrebuiltDomainParams, 
 }
 
 /*
-GetCustomPrebuiltDomainsByCulture apps get l UI s prebuilt domains for culture list
+  GetCustomPrebuiltDomainsByCulture apps get l UI s prebuilt domains for culture list
 
-Gets all the available custom prebuilt domains for a specific culture
+  Gets all the available custom prebuilt domains for a specific culture
 */
 func (a *Client) GetCustomPrebuiltDomainsByCulture(params *GetCustomPrebuiltDomainsByCultureParams, authInfo runtime.ClientAuthInfoWriter) (*GetCustomPrebuiltDomainsByCultureOK, error) {
 	// TODO: Validate the params before sending
@@ -4833,7 +5209,7 @@ func (a *Client) GetCustomPrebuiltDomainsByCulture(params *GetCustomPrebuiltDoma
 		Method:             "GET",
 		PathPattern:        "/apps/customprebuiltdomains/{culture}",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &GetCustomPrebuiltDomainsByCultureReader{formats: a.formats},
@@ -4855,9 +5231,9 @@ func (a *Client) GetCustomPrebuiltDomainsByCulture(params *GetCustomPrebuiltDoma
 }
 
 /*
-GetDomains apps get l UI s application domains list
+  GetDomains apps get l UI s application domains list
 
-Gets the available application domains.
+  Gets the available application domains.
 */
 func (a *Client) GetDomains(params *GetDomainsParams, authInfo runtime.ClientAuthInfoWriter) (*GetDomainsOK, error) {
 	// TODO: Validate the params before sending
@@ -4870,7 +5246,7 @@ func (a *Client) GetDomains(params *GetDomainsParams, authInfo runtime.ClientAut
 		Method:             "GET",
 		PathPattern:        "/apps/domains",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &GetDomainsReader{formats: a.formats},
@@ -4892,9 +5268,9 @@ func (a *Client) GetDomains(params *GetDomainsParams, authInfo runtime.ClientAut
 }
 
 /*
-GetEndpoints apps get endpoints
+  GetEndpoints apps get endpoints
 
-Returns the available endpoint deployment regions and urls
+  Returns the available endpoint deployment regions and urls
 */
 func (a *Client) GetEndpoints(params *GetEndpointsParams, authInfo runtime.ClientAuthInfoWriter) (*GetEndpointsOK, error) {
 	// TODO: Validate the params before sending
@@ -4907,7 +5283,7 @@ func (a *Client) GetEndpoints(params *GetEndpointsParams, authInfo runtime.Clien
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/endpoints",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &GetEndpointsReader{formats: a.formats},
@@ -4929,9 +5305,9 @@ func (a *Client) GetEndpoints(params *GetEndpointsParams, authInfo runtime.Clien
 }
 
 /*
-GetEntities models get version entity list
+  GetEntities models get version entity list
 
-Gets information about the entity models.
+  Gets information about the entity models.
 */
 func (a *Client) GetEntities(params *GetEntitiesParams, authInfo runtime.ClientAuthInfoWriter) (*GetEntitiesOK, error) {
 	// TODO: Validate the params before sending
@@ -4944,7 +5320,7 @@ func (a *Client) GetEntities(params *GetEntitiesParams, authInfo runtime.ClientA
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/entities",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &GetEntitiesReader{formats: a.formats},
@@ -4966,9 +5342,9 @@ func (a *Client) GetEntities(params *GetEntitiesParams, authInfo runtime.ClientA
 }
 
 /*
-GetEntity models get entity
+  GetEntity models get entity
 
-Gets information about the entity model.
+  Gets information about the entity model.
 */
 func (a *Client) GetEntity(params *GetEntityParams, authInfo runtime.ClientAuthInfoWriter) (*GetEntityOK, error) {
 	// TODO: Validate the params before sending
@@ -4981,7 +5357,7 @@ func (a *Client) GetEntity(params *GetEntityParams, authInfo runtime.ClientAuthI
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/entities/{entityId}",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &GetEntityReader{formats: a.formats},
@@ -5003,9 +5379,9 @@ func (a *Client) GetEntity(params *GetEntityParams, authInfo runtime.ClientAuthI
 }
 
 /*
-GetExamples examples utterances review labeled examples
+  GetExamples examples utterances review labeled examples
 
-Returns examples to be reviewed.
+  Returns examples to be reviewed.
 */
 func (a *Client) GetExamples(params *GetExamplesParams, authInfo runtime.ClientAuthInfoWriter) (*GetExamplesOK, error) {
 	// TODO: Validate the params before sending
@@ -5018,7 +5394,7 @@ func (a *Client) GetExamples(params *GetExamplesParams, authInfo runtime.ClientA
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/examples",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &GetExamplesReader{formats: a.formats},
@@ -5040,9 +5416,9 @@ func (a *Client) GetExamples(params *GetExamplesParams, authInfo runtime.ClientA
 }
 
 /*
-GetHierarchialEntity models get hierarchical entity
+  GetHierarchialEntity models get hierarchical entity
 
-Gets information about the hierarchical entity model.
+  Gets information about the hierarchical entity model.
 */
 func (a *Client) GetHierarchialEntity(params *GetHierarchialEntityParams, authInfo runtime.ClientAuthInfoWriter) (*GetHierarchialEntityOK, error) {
 	// TODO: Validate the params before sending
@@ -5055,7 +5431,7 @@ func (a *Client) GetHierarchialEntity(params *GetHierarchialEntityParams, authIn
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/hierarchicalentities/{hEntityId}",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &GetHierarchialEntityReader{formats: a.formats},
@@ -5077,9 +5453,9 @@ func (a *Client) GetHierarchialEntity(params *GetHierarchialEntityParams, authIn
 }
 
 /*
-GetIntent models get intent
+  GetIntent models get intent
 
-Gets information about the intent model.
+  Gets information about the intent model.
 */
 func (a *Client) GetIntent(params *GetIntentParams, authInfo runtime.ClientAuthInfoWriter) (*GetIntentOK, error) {
 	// TODO: Validate the params before sending
@@ -5092,7 +5468,7 @@ func (a *Client) GetIntent(params *GetIntentParams, authInfo runtime.ClientAuthI
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/intents/{intentId}",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &GetIntentReader{formats: a.formats},
@@ -5114,9 +5490,9 @@ func (a *Client) GetIntent(params *GetIntentParams, authInfo runtime.ClientAuthI
 }
 
 /*
-GetIntents models get version intent list
+  GetIntents models get version intent list
 
-Gets information about the intent models.
+  Gets information about the intent models.
 */
 func (a *Client) GetIntents(params *GetIntentsParams, authInfo runtime.ClientAuthInfoWriter) (*GetIntentsOK, error) {
 	// TODO: Validate the params before sending
@@ -5129,7 +5505,7 @@ func (a *Client) GetIntents(params *GetIntentsParams, authInfo runtime.ClientAut
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/intents",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &GetIntentsReader{formats: a.formats},
@@ -5151,9 +5527,9 @@ func (a *Client) GetIntents(params *GetIntentsParams, authInfo runtime.ClientAut
 }
 
 /*
-GetLogs apps download application query logs
+  GetLogs apps download application query logs
 
-Gets the query logs of the past month for the application.
+  Gets the query logs of the past month for the application.
 */
 func (a *Client) GetLogs(params *GetLogsParams, authInfo runtime.ClientAuthInfoWriter) (*GetLogsOK, error) {
 	// TODO: Validate the params before sending
@@ -5166,7 +5542,7 @@ func (a *Client) GetLogs(params *GetLogsParams, authInfo runtime.ClientAuthInfoW
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/querylogs/",
 		ProducesMediaTypes: []string{"application/json", "application/octet-stream"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &GetLogsReader{formats: a.formats},
@@ -5188,9 +5564,9 @@ func (a *Client) GetLogs(params *GetLogsParams, authInfo runtime.ClientAuthInfoW
 }
 
 /*
-GetPatternFeature features get pattern feature info
+  GetPatternFeature features get pattern feature info
 
-Gets pattern feature info.
+  Gets pattern feature info.
 */
 func (a *Client) GetPatternFeature(params *GetPatternFeatureParams, authInfo runtime.ClientAuthInfoWriter) (*GetPatternFeatureOK, error) {
 	// TODO: Validate the params before sending
@@ -5203,7 +5579,7 @@ func (a *Client) GetPatternFeature(params *GetPatternFeatureParams, authInfo run
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/patterns/{patternId}",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &GetPatternFeatureReader{formats: a.formats},
@@ -5225,9 +5601,9 @@ func (a *Client) GetPatternFeature(params *GetPatternFeatureParams, authInfo run
 }
 
 /*
-GetPatternFeatures features get version pattern feature list
+  GetPatternFeatures features get version pattern feature list
 
-Gets all application version pattern features.
+  Gets all application version pattern features.
 */
 func (a *Client) GetPatternFeatures(params *GetPatternFeaturesParams, authInfo runtime.ClientAuthInfoWriter) (*GetPatternFeaturesOK, error) {
 	// TODO: Validate the params before sending
@@ -5240,7 +5616,7 @@ func (a *Client) GetPatternFeatures(params *GetPatternFeaturesParams, authInfo r
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/patterns",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &GetPatternFeaturesReader{formats: a.formats},
@@ -5262,9 +5638,9 @@ func (a *Client) GetPatternFeatures(params *GetPatternFeaturesParams, authInfo r
 }
 
 /*
-GetPhraseListFeature features get phraselist feature info
+  GetPhraseListFeature features get phraselist feature info
 
-Gets phraselist feature info.
+  Gets phraselist feature info.
 */
 func (a *Client) GetPhraseListFeature(params *GetPhraseListFeatureParams, authInfo runtime.ClientAuthInfoWriter) (*GetPhraseListFeatureOK, error) {
 	// TODO: Validate the params before sending
@@ -5277,7 +5653,7 @@ func (a *Client) GetPhraseListFeature(params *GetPhraseListFeatureParams, authIn
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/phraselists/{phraselistId}",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &GetPhraseListFeatureReader{formats: a.formats},
@@ -5299,9 +5675,9 @@ func (a *Client) GetPhraseListFeature(params *GetPhraseListFeatureParams, authIn
 }
 
 /*
-GetPhraseListFeatures features get version phraselist features list
+  GetPhraseListFeatures features get version phraselist features list
 
-Gets all application phraselist features.
+  Gets all application phraselist features.
 */
 func (a *Client) GetPhraseListFeatures(params *GetPhraseListFeaturesParams, authInfo runtime.ClientAuthInfoWriter) (*GetPhraseListFeaturesOK, error) {
 	// TODO: Validate the params before sending
@@ -5314,7 +5690,7 @@ func (a *Client) GetPhraseListFeatures(params *GetPhraseListFeaturesParams, auth
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/phraselists",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &GetPhraseListFeaturesReader{formats: a.formats},
@@ -5336,9 +5712,9 @@ func (a *Client) GetPhraseListFeatures(params *GetPhraseListFeaturesParams, auth
 }
 
 /*
-GetPrebuildEntities models get version prebuilt entity list
+  GetPrebuildEntities models get version prebuilt entity list
 
-Gets information about the prebuilt entity models.
+  Gets information about the prebuilt entity models.
 */
 func (a *Client) GetPrebuildEntities(params *GetPrebuildEntitiesParams, authInfo runtime.ClientAuthInfoWriter) (*GetPrebuildEntitiesOK, error) {
 	// TODO: Validate the params before sending
@@ -5351,7 +5727,7 @@ func (a *Client) GetPrebuildEntities(params *GetPrebuildEntitiesParams, authInfo
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/prebuilts",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &GetPrebuildEntitiesReader{formats: a.formats},
@@ -5373,9 +5749,9 @@ func (a *Client) GetPrebuildEntities(params *GetPrebuildEntitiesParams, authInfo
 }
 
 /*
-GetPrebuildEntity models get prebuilt entity
+  GetPrebuildEntity models get prebuilt entity
 
-Gets information about the prebuilt entity model.
+  Gets information about the prebuilt entity model.
 */
 func (a *Client) GetPrebuildEntity(params *GetPrebuildEntityParams, authInfo runtime.ClientAuthInfoWriter) (*GetPrebuildEntityOK, error) {
 	// TODO: Validate the params before sending
@@ -5388,7 +5764,7 @@ func (a *Client) GetPrebuildEntity(params *GetPrebuildEntityParams, authInfo run
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/prebuilts/{prebuiltId}",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &GetPrebuildEntityReader{formats: a.formats},
@@ -5410,9 +5786,9 @@ func (a *Client) GetPrebuildEntity(params *GetPrebuildEntityParams, authInfo run
 }
 
 /*
-GetSubscriptions users add subscription key
+  GetSubscriptions users add subscription key
 
-**THIS API IS DEPRECATED.**
+  **THIS API IS DEPRECATED.**
 */
 func (a *Client) GetSubscriptions(params *GetSubscriptionsParams, authInfo runtime.ClientAuthInfoWriter) (*GetSubscriptionsCreated, error) {
 	// TODO: Validate the params before sending
@@ -5447,9 +5823,9 @@ func (a *Client) GetSubscriptions(params *GetSubscriptionsParams, authInfo runti
 }
 
 /*
-GetTrainingStatus trains get version training status
+  GetTrainingStatus trains get version training status
 
-Gets the training status of all models (intents and entities) for the specified LUIS app. You must <a href="https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c45">call the train API</a> to train the LUIS app before you call this API to get training status.
+  Gets the training status of all models (intents and entities) for the specified LUIS app. You must <a href="https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c45">call the train API</a> to train the LUIS app before you call this API to get training status.
 
 
 
@@ -5465,7 +5841,7 @@ func (a *Client) GetTrainingStatus(params *GetTrainingStatusParams, authInfo run
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/train",
 		ProducesMediaTypes: []string{"JSON", "application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &GetTrainingStatusReader{formats: a.formats},
@@ -5487,9 +5863,9 @@ func (a *Client) GetTrainingStatus(params *GetTrainingStatusParams, authInfo run
 }
 
 /*
-GetUsageScenarios apps get l UI s application usage scenarios list
+  GetUsageScenarios apps get l UI s application usage scenarios list
 
-Gets the application available usage scenarios.
+  Gets the application available usage scenarios.
 */
 func (a *Client) GetUsageScenarios(params *GetUsageScenariosParams, authInfo runtime.ClientAuthInfoWriter) (*GetUsageScenariosOK, error) {
 	// TODO: Validate the params before sending
@@ -5502,7 +5878,7 @@ func (a *Client) GetUsageScenarios(params *GetUsageScenariosParams, authInfo run
 		Method:             "GET",
 		PathPattern:        "/apps/usagescenarios",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &GetUsageScenariosReader{formats: a.formats},
@@ -5524,9 +5900,9 @@ func (a *Client) GetUsageScenarios(params *GetUsageScenariosParams, authInfo run
 }
 
 /*
-GetUserExternalKeys users get user external api keys
+  GetUserExternalKeys users get user external api keys
 
-**THIS API IS DEPRECATED.**
+  **THIS API IS DEPRECATED.**
 */
 func (a *Client) GetUserExternalKeys(params *GetUserExternalKeysParams, authInfo runtime.ClientAuthInfoWriter) (*GetUserExternalKeysOK, error) {
 	// TODO: Validate the params before sending
@@ -5539,7 +5915,7 @@ func (a *Client) GetUserExternalKeys(params *GetUserExternalKeysParams, authInfo
 		Method:             "GET",
 		PathPattern:        "/externalKeys",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &GetUserExternalKeysReader{formats: a.formats},
@@ -5561,9 +5937,9 @@ func (a *Client) GetUserExternalKeys(params *GetUserExternalKeysParams, authInfo
 }
 
 /*
-GetUserSubscriptionKeys users get user subscription keys
+  GetUserSubscriptionKeys users get user subscription keys
 
-**THIS API IS DEPRECATED.**
+  **THIS API IS DEPRECATED.**
 */
 func (a *Client) GetUserSubscriptionKeys(params *GetUserSubscriptionKeysParams, authInfo runtime.ClientAuthInfoWriter) (*GetUserSubscriptionKeysOK, error) {
 	// TODO: Validate the params before sending
@@ -5576,7 +5952,7 @@ func (a *Client) GetUserSubscriptionKeys(params *GetUserSubscriptionKeysParams, 
 		Method:             "GET",
 		PathPattern:        "/subscriptions",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &GetUserSubscriptionKeysReader{formats: a.formats},
@@ -5598,9 +5974,9 @@ func (a *Client) GetUserSubscriptionKeys(params *GetUserSubscriptionKeysParams, 
 }
 
 /*
-GetUsersAccessList permissions get user access list
+  GetUsersAccessList permissions get user access list
 
-Gets the list of user emails that have permissions to access your application.
+  Gets the list of user emails that have permissions to access your application.
 */
 func (a *Client) GetUsersAccessList(params *GetUsersAccessListParams, authInfo runtime.ClientAuthInfoWriter) (*GetUsersAccessListOK, error) {
 	// TODO: Validate the params before sending
@@ -5613,7 +5989,7 @@ func (a *Client) GetUsersAccessList(params *GetUsersAccessListParams, authInfo r
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/permissions",
 		ProducesMediaTypes: []string{"JSON"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &GetUsersAccessListReader{formats: a.formats},
@@ -5635,9 +6011,9 @@ func (a *Client) GetUsersAccessList(params *GetUsersAccessListParams, authInfo r
 }
 
 /*
-GetVersionModels models get version model list
+  GetVersionModels models get version model list
 
-Gets information about the application version models.
+  Gets information about the application version models.
 */
 func (a *Client) GetVersionModels(params *GetVersionModelsParams, authInfo runtime.ClientAuthInfoWriter) (*GetVersionModelsOK, error) {
 	// TODO: Validate the params before sending
@@ -5650,7 +6026,7 @@ func (a *Client) GetVersionModels(params *GetVersionModelsParams, authInfo runti
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/models",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &GetVersionModelsReader{formats: a.formats},
@@ -5672,9 +6048,9 @@ func (a *Client) GetVersionModels(params *GetVersionModelsParams, authInfo runti
 }
 
 /*
-GetVersions versions get application version list
+  GetVersions versions get application version list
 
-Gets the application versions info.
+  Gets the application versions info.
 */
 func (a *Client) GetVersions(params *GetVersionsParams, authInfo runtime.ClientAuthInfoWriter) (*GetVersionsOK, error) {
 	// TODO: Validate the params before sending
@@ -5687,7 +6063,7 @@ func (a *Client) GetVersions(params *GetVersionsParams, authInfo runtime.ClientA
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &GetVersionsReader{formats: a.formats},
@@ -5709,9 +6085,9 @@ func (a *Client) GetVersions(params *GetVersionsParams, authInfo runtime.ClientA
 }
 
 /*
-GetVersionsPrebuiltEntities models get available prebuilt entity list
+  GetVersionsPrebuiltEntities models get available prebuilt entity list
 
-Gets all the available prebuilt entities for the application based on the application's culture.
+  Gets all the available prebuilt entities for the application based on the application's culture.
 */
 func (a *Client) GetVersionsPrebuiltEntities(params *GetVersionsPrebuiltEntitiesParams, authInfo runtime.ClientAuthInfoWriter) (*GetVersionsPrebuiltEntitiesOK, error) {
 	// TODO: Validate the params before sending
@@ -5724,7 +6100,7 @@ func (a *Client) GetVersionsPrebuiltEntities(params *GetVersionsPrebuiltEntities
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/listprebuilts",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &GetVersionsPrebuiltEntitiesReader{formats: a.formats},
@@ -5746,9 +6122,9 @@ func (a *Client) GetVersionsPrebuiltEntities(params *GetVersionsPrebuiltEntities
 }
 
 /*
-GethierarchicalEntities models get version hierarchical entity list
+  GethierarchicalEntities models get version hierarchical entity list
 
-Gets information about the hierarchical entity models.
+  Gets information about the hierarchical entity models.
 */
 func (a *Client) GethierarchicalEntities(params *GethierarchicalEntitiesParams, authInfo runtime.ClientAuthInfoWriter) (*GethierarchicalEntitiesOK, error) {
 	// TODO: Validate the params before sending
@@ -5761,7 +6137,7 @@ func (a *Client) GethierarchicalEntities(params *GethierarchicalEntitiesParams, 
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/hierarchicalentities",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &GethierarchicalEntitiesReader{formats: a.formats},
@@ -5783,9 +6159,9 @@ func (a *Client) GethierarchicalEntities(params *GethierarchicalEntitiesParams, 
 }
 
 /*
-ImportApplication apps import application
+  ImportApplication apps import application
 
-Imports an application to LUIS, the application's JSON or LU should be included in the request body. Returns new app ID.
+  Imports an application to LUIS, the application's JSON or LU should be included in the request body. Returns new app ID.
 */
 func (a *Client) ImportApplication(params *ImportApplicationParams, authInfo runtime.ClientAuthInfoWriter) (*ImportApplicationCreated, error) {
 	// TODO: Validate the params before sending
@@ -5820,9 +6196,9 @@ func (a *Client) ImportApplication(params *ImportApplicationParams, authInfo run
 }
 
 /*
-ImportVersionJSON versions import version to application
+  ImportVersionJSON versions import version to application
 
-Imports a new version into a LUIS application, the version's JSON
+  Imports a new version into a LUIS application, the version's JSON
 */
 func (a *Client) ImportVersionJSON(params *ImportVersionJSONParams, authInfo runtime.ClientAuthInfoWriter) (*ImportVersionJSONCreated, error) {
 	// TODO: Validate the params before sending
@@ -5857,9 +6233,9 @@ func (a *Client) ImportVersionJSON(params *ImportVersionJSONParams, authInfo run
 }
 
 /*
-ImportVersionLu versions import version to application
+  ImportVersionLu versions import version to application
 
-Imports a new version into a LUIS application, the version's LU should be included in in the request body.
+  Imports a new version into a LUIS application, the version's LU should be included in in the request body.
 */
 func (a *Client) ImportVersionLu(params *ImportVersionLuParams, authInfo runtime.ClientAuthInfoWriter) (*ImportVersionLuCreated, error) {
 	// TODO: Validate the params before sending
@@ -5894,9 +6270,9 @@ func (a *Client) ImportVersionLu(params *ImportVersionLuParams, authInfo runtime
 }
 
 /*
-PublishApplication apps publish application
+  PublishApplication apps publish application
 
-Publishes a specific version of the application.
+  Publishes a specific version of the application.
 */
 func (a *Client) PublishApplication(params *PublishApplicationParams, authInfo runtime.ClientAuthInfoWriter) (*PublishApplicationCreated, *PublishApplicationMultiStatus, error) {
 	// TODO: Validate the params before sending
@@ -5932,9 +6308,9 @@ func (a *Client) PublishApplication(params *PublishApplicationParams, authInfo r
 }
 
 /*
-RemoveAzureAccount apps removes an assigned l UI s azure accounts from an application
+  RemoveAzureAccount apps removes an assigned l UI s azure accounts from an application
 
-Gets the LUIS azure accounts for the user using his ARM token.
+  Gets the LUIS azure accounts for the user using his ARM token.
 */
 func (a *Client) RemoveAzureAccount(params *RemoveAzureAccountParams, authInfo runtime.ClientAuthInfoWriter) (*RemoveAzureAccountOK, error) {
 	// TODO: Validate the params before sending
@@ -5969,9 +6345,9 @@ func (a *Client) RemoveAzureAccount(params *RemoveAzureAccountParams, authInfo r
 }
 
 /*
-RemoveUserFromAccessList permissions remove user from access list
+  RemoveUserFromAccessList permissions remove user from access list
 
-Removed a user to the allowed list of users to access this LUIS application.
+  Removed a user to the allowed list of users to access this LUIS application.
 Users are removed using their email address.
 */
 func (a *Client) RemoveUserFromAccessList(params *RemoveUserFromAccessListParams, authInfo runtime.ClientAuthInfoWriter) (*RemoveUserFromAccessListOK, error) {
@@ -6007,9 +6383,9 @@ func (a *Client) RemoveUserFromAccessList(params *RemoveUserFromAccessListParams
 }
 
 /*
-RenameSubscriptionKey users rename subscription key
+  RenameSubscriptionKey users rename subscription key
 
-**THIS API IS DEPRECATED.**
+  **THIS API IS DEPRECATED.**
 */
 func (a *Client) RenameSubscriptionKey(params *RenameSubscriptionKeyParams, authInfo runtime.ClientAuthInfoWriter) (*RenameSubscriptionKeyOK, error) {
 	// TODO: Validate the params before sending
@@ -6021,7 +6397,7 @@ func (a *Client) RenameSubscriptionKey(params *RenameSubscriptionKeyParams, auth
 		ID:                 "RenameSubscriptionKey",
 		Method:             "PUT",
 		PathPattern:        "/subscriptions",
-		ProducesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -6044,9 +6420,9 @@ func (a *Client) RenameSubscriptionKey(params *RenameSubscriptionKeyParams, auth
 }
 
 /*
-ResetProgrammaticKey users reset programmatic key
+  ResetProgrammaticKey users reset programmatic key
 
-**THIS API IS DEPRECATED.**
+  **THIS API IS DEPRECATED.**
 */
 func (a *Client) ResetProgrammaticKey(params *ResetProgrammaticKeyParams, authInfo runtime.ClientAuthInfoWriter) (*ResetProgrammaticKeyOK, error) {
 	// TODO: Validate the params before sending
@@ -6059,7 +6435,7 @@ func (a *Client) ResetProgrammaticKey(params *ResetProgrammaticKeyParams, authIn
 		Method:             "PUT",
 		PathPattern:        "/programmatickey",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &ResetProgrammaticKeyReader{formats: a.formats},
@@ -6081,9 +6457,9 @@ func (a *Client) ResetProgrammaticKey(params *ResetProgrammaticKeyParams, authIn
 }
 
 /*
-SuggestEntityExamples models suggest endpoint queries for entities
+  SuggestEntityExamples models suggest endpoint queries for entities
 
-Suggests examples that would improve the accuracy of the entity model.
+  Suggests examples that would improve the accuracy of the entity model.
 */
 func (a *Client) SuggestEntityExamples(params *SuggestEntityExamplesParams, authInfo runtime.ClientAuthInfoWriter) (*SuggestEntityExamplesOK, error) {
 	// TODO: Validate the params before sending
@@ -6096,7 +6472,7 @@ func (a *Client) SuggestEntityExamples(params *SuggestEntityExamplesParams, auth
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/entities/{entityId}/suggest",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &SuggestEntityExamplesReader{formats: a.formats},
@@ -6118,9 +6494,9 @@ func (a *Client) SuggestEntityExamples(params *SuggestEntityExamplesParams, auth
 }
 
 /*
-SuggestIntentExamples models suggest endpoint queries for intents
+  SuggestIntentExamples models suggest endpoint queries for intents
 
-Suggests examples that would improve the accuracy of the intent model.
+  Suggests examples that would improve the accuracy of the intent model.
 */
 func (a *Client) SuggestIntentExamples(params *SuggestIntentExamplesParams, authInfo runtime.ClientAuthInfoWriter) (*SuggestIntentExamplesOK, error) {
 	// TODO: Validate the params before sending
@@ -6133,7 +6509,7 @@ func (a *Client) SuggestIntentExamples(params *SuggestIntentExamplesParams, auth
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/intents/{intentId}/suggest",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &SuggestIntentExamplesReader{formats: a.formats},
@@ -6155,9 +6531,9 @@ func (a *Client) SuggestIntentExamples(params *SuggestIntentExamplesParams, auth
 }
 
 /*
-TrainVersion trains train application version
+  TrainVersion trains train application version
 
-Sends a training request for a version of a specified LUIS app.
+  Sends a training request for a version of a specified LUIS app.
 
 This POST request initiates a request asynchronously. To determine whether the training request is successful, submit a GET request to get training status.
 
@@ -6176,7 +6552,7 @@ func (a *Client) TrainVersion(params *TrainVersionParams, authInfo runtime.Clien
 		Method:             "POST",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/train",
 		ProducesMediaTypes: []string{"JSON", "application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TrainVersionReader{formats: a.formats},
@@ -6198,9 +6574,9 @@ func (a *Client) TrainVersion(params *TrainVersionParams, authInfo runtime.Clien
 }
 
 /*
-UpdateAccessList permissions update access list
+  UpdateAccessList permissions update access list
 
-Replaces the current users access list with the one sent in the body.
+  Replaces the current users access list with the one sent in the body.
 If an empty list is sent, all access to other users will be removed.
 
 */
@@ -6237,9 +6613,9 @@ func (a *Client) UpdateAccessList(params *UpdateAccessListParams, authInfo runti
 }
 
 /*
-UpdateApplication apps rename application
+  UpdateApplication apps rename application
 
-Updates the name or description of the application.
+  Updates the name or description of the application.
 */
 func (a *Client) UpdateApplication(params *UpdateApplicationParams, authInfo runtime.ClientAuthInfoWriter) (*UpdateApplicationOK, error) {
 	// TODO: Validate the params before sending
@@ -6274,9 +6650,9 @@ func (a *Client) UpdateApplication(params *UpdateApplicationParams, authInfo run
 }
 
 /*
-UpdateApplicationSettings apps update application settings
+  UpdateApplicationSettings apps update application settings
 
-Updates the application settings
+  Updates the application settings
 */
 func (a *Client) UpdateApplicationSettings(params *UpdateApplicationSettingsParams, authInfo runtime.ClientAuthInfoWriter) (*UpdateApplicationSettingsOK, error) {
 	// TODO: Validate the params before sending
@@ -6311,9 +6687,9 @@ func (a *Client) UpdateApplicationSettings(params *UpdateApplicationSettingsPara
 }
 
 /*
-UpdateAssignedKey versions assign subscription key to version
+  UpdateAssignedKey versions assign subscription key to version
 
-**THIS IS DEPRECATED**
+  **THIS IS DEPRECATED**
 */
 func (a *Client) UpdateAssignedKey(params *UpdateAssignedKeyParams, authInfo runtime.ClientAuthInfoWriter) (*UpdateAssignedKeyOK, error) {
 	// TODO: Validate the params before sending
@@ -6325,7 +6701,7 @@ func (a *Client) UpdateAssignedKey(params *UpdateAssignedKeyParams, authInfo run
 		ID:                 "UpdateAssignedKey",
 		Method:             "PUT",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/assignedkey",
-		ProducesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -6348,9 +6724,9 @@ func (a *Client) UpdateAssignedKey(params *UpdateAssignedKeyParams, authInfo run
 }
 
 /*
-UpdateClosedList models update closed list entity
+  UpdateClosedList models update closed list entity
 
-Updates the closed list model.
+  Updates the closed list model.
 */
 func (a *Client) UpdateClosedList(params *UpdateClosedListParams, authInfo runtime.ClientAuthInfoWriter) (*UpdateClosedListOK, error) {
 	// TODO: Validate the params before sending
@@ -6362,7 +6738,7 @@ func (a *Client) UpdateClosedList(params *UpdateClosedListParams, authInfo runti
 		ID:                 "UpdateClosedList",
 		Method:             "PUT",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/closedlists/{clEntityId}",
-		ProducesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -6385,9 +6761,9 @@ func (a *Client) UpdateClosedList(params *UpdateClosedListParams, authInfo runti
 }
 
 /*
-UpdateCompositeEntity models update composite entity
+  UpdateCompositeEntity models update composite entity
 
-Updates the composite entity extractor.
+  Updates the composite entity extractor.
 */
 func (a *Client) UpdateCompositeEntity(params *UpdateCompositeEntityParams, authInfo runtime.ClientAuthInfoWriter) (*UpdateCompositeEntityOK, error) {
 	// TODO: Validate the params before sending
@@ -6399,7 +6775,7 @@ func (a *Client) UpdateCompositeEntity(params *UpdateCompositeEntityParams, auth
 		ID:                 "UpdateCompositeEntity",
 		Method:             "PUT",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/compositeentities/{cEntityId}",
-		ProducesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -6422,9 +6798,9 @@ func (a *Client) UpdateCompositeEntity(params *UpdateCompositeEntityParams, auth
 }
 
 /*
-UpdateEntity models rename entity
+  UpdateEntity models rename entity
 
-Updates the name of an entity extractor.
+  Updates the name of an entity extractor.
 */
 func (a *Client) UpdateEntity(params *UpdateEntityParams, authInfo runtime.ClientAuthInfoWriter) (*UpdateEntityOK, error) {
 	// TODO: Validate the params before sending
@@ -6436,7 +6812,7 @@ func (a *Client) UpdateEntity(params *UpdateEntityParams, authInfo runtime.Clien
 		ID:                 "UpdateEntity",
 		Method:             "PUT",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/entities/{entityId}",
-		ProducesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -6459,9 +6835,9 @@ func (a *Client) UpdateEntity(params *UpdateEntityParams, authInfo runtime.Clien
 }
 
 /*
-UpdateHierarchialEntity models update hierarchical entity
+  UpdateHierarchialEntity models update hierarchical entity
 
-Updates the name and children of a hierarchical entity model.
+  Updates the name and children of a hierarchical entity model.
 */
 func (a *Client) UpdateHierarchialEntity(params *UpdateHierarchialEntityParams, authInfo runtime.ClientAuthInfoWriter) (*UpdateHierarchialEntityOK, error) {
 	// TODO: Validate the params before sending
@@ -6473,7 +6849,7 @@ func (a *Client) UpdateHierarchialEntity(params *UpdateHierarchialEntityParams, 
 		ID:                 "UpdateHierarchialEntity",
 		Method:             "PUT",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/hierarchicalentities/{hEntityId}",
-		ProducesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -6496,9 +6872,9 @@ func (a *Client) UpdateHierarchialEntity(params *UpdateHierarchialEntityParams, 
 }
 
 /*
-UpdateIntent models rename intent
+  UpdateIntent models rename intent
 
-Updates the name of an intent classifier.
+  Updates the name of an intent classifier.
 */
 func (a *Client) UpdateIntent(params *UpdateIntentParams, authInfo runtime.ClientAuthInfoWriter) (*UpdateIntentOK, error) {
 	// TODO: Validate the params before sending
@@ -6510,7 +6886,7 @@ func (a *Client) UpdateIntent(params *UpdateIntentParams, authInfo runtime.Clien
 		ID:                 "UpdateIntent",
 		Method:             "PUT",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/intents/{intentId}",
-		ProducesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -6533,9 +6909,9 @@ func (a *Client) UpdateIntent(params *UpdateIntentParams, authInfo runtime.Clien
 }
 
 /*
-UpdatePatternFeature features update pattern feature
+  UpdatePatternFeature features update pattern feature
 
-Updates the pattern, the name and the state of the pattern feature.
+  Updates the pattern, the name and the state of the pattern feature.
 */
 func (a *Client) UpdatePatternFeature(params *UpdatePatternFeatureParams, authInfo runtime.ClientAuthInfoWriter) (*UpdatePatternFeatureOK, error) {
 	// TODO: Validate the params before sending
@@ -6547,7 +6923,7 @@ func (a *Client) UpdatePatternFeature(params *UpdatePatternFeatureParams, authIn
 		ID:                 "UpdatePatternFeature",
 		Method:             "PUT",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/patterns/{patternId}",
-		ProducesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -6570,9 +6946,9 @@ func (a *Client) UpdatePatternFeature(params *UpdatePatternFeatureParams, authIn
 }
 
 /*
-UpdatePhraseListFeature features update phraselist feature
+  UpdatePhraseListFeature features update phraselist feature
 
-Updates the phrases, the state and the name of the phraselist feature.
+  Updates the phrases, the state and the name of the phraselist feature.
 */
 func (a *Client) UpdatePhraseListFeature(params *UpdatePhraseListFeatureParams, authInfo runtime.ClientAuthInfoWriter) (*UpdatePhraseListFeatureOK, error) {
 	// TODO: Validate the params before sending
@@ -6584,7 +6960,7 @@ func (a *Client) UpdatePhraseListFeature(params *UpdatePhraseListFeatureParams, 
 		ID:                 "UpdatePhraseListFeature",
 		Method:             "PUT",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/phraselists/{phraselistId}",
-		ProducesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -6607,9 +6983,9 @@ func (a *Client) UpdatePhraseListFeature(params *UpdatePhraseListFeatureParams, 
 }
 
 /*
-UpdateSublist models update closedlist s sublist
+  UpdateSublist models update closedlist s sublist
 
-Updates one of the closed list's sublists
+  Updates one of the closed list's sublists
 */
 func (a *Client) UpdateSublist(params *UpdateSublistParams, authInfo runtime.ClientAuthInfoWriter) (*UpdateSublistOK, error) {
 	// TODO: Validate the params before sending
@@ -6621,7 +6997,7 @@ func (a *Client) UpdateSublist(params *UpdateSublistParams, authInfo runtime.Cli
 		ID:                 "UpdateSublist",
 		Method:             "PUT",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/closedlists/{clEntityId}/sublists/{subListId}",
-		ProducesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -6644,9 +7020,9 @@ func (a *Client) UpdateSublist(params *UpdateSublistParams, authInfo runtime.Cli
 }
 
 /*
-UpdateVersion versions rename application version
+  UpdateVersion versions rename application version
 
-Updates the name or description of the application version.
+  Updates the name or description of the application version.
 */
 func (a *Client) UpdateVersion(params *UpdateVersionParams, authInfo runtime.ClientAuthInfoWriter) (*UpdateVersionOK, error) {
 	// TODO: Validate the params before sending
@@ -6658,7 +7034,7 @@ func (a *Client) UpdateVersion(params *UpdateVersionParams, authInfo runtime.Cli
 		ID:                 "UpdateVersion",
 		Method:             "PUT",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/",
-		ProducesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -6681,9 +7057,9 @@ func (a *Client) UpdateVersion(params *UpdateVersionParams, authInfo runtime.Cli
 }
 
 /*
-AppsMoveAppToAnotherLuisAuthoringAzureResource apps move app to another l UI s authoring azure resource
+  AppsMoveAppToAnotherLuisAuthoringAzureResource apps move app to another l UI s authoring azure resource
 
-Moves the app to a different LUIS authoring Azure resource.
+  Moves the app to a different LUIS authoring Azure resource.
 */
 func (a *Client) AppsMoveAppToAnotherLuisAuthoringAzureResource(params *AppsMoveAppToAnotherLuisAuthoringAzureResourceParams, authInfo runtime.ClientAuthInfoWriter) (*AppsMoveAppToAnotherLuisAuthoringAzureResourceOK, error) {
 	// TODO: Validate the params before sending
@@ -6718,9 +7094,9 @@ func (a *Client) AppsMoveAppToAnotherLuisAuthoringAzureResource(params *AppsMove
 }
 
 /*
-AppsPackagepublishedapplicationasgzip apps package published application as gzip
+  AppsPackagepublishedapplicationasgzip apps package published application as gzip
 
-Packages published LUIS application as GZip
+  Packages published LUIS application as GZip
 */
 func (a *Client) AppsPackagepublishedapplicationasgzip(params *AppsPackagepublishedapplicationasgzipParams, authInfo runtime.ClientAuthInfoWriter) (*AppsPackagepublishedapplicationasgzipOK, error) {
 	// TODO: Validate the params before sending
@@ -6733,7 +7109,7 @@ func (a *Client) AppsPackagepublishedapplicationasgzip(params *AppsPackagepublis
 		Method:             "GET",
 		PathPattern:        "/package/{appId}/slot/{slotName}/gzip",
 		ProducesMediaTypes: []string{"application/octet-stream"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &AppsPackagepublishedapplicationasgzipReader{formats: a.formats},
@@ -6755,9 +7131,9 @@ func (a *Client) AppsPackagepublishedapplicationasgzip(params *AppsPackagepublis
 }
 
 /*
-AppsPackagetrainedapplicationasgzip apps package trained application as g zip
+  AppsPackagetrainedapplicationasgzip apps package trained application as g zip
 
-Packages trained LUIS application as GZip
+  Packages trained LUIS application as GZip
 */
 func (a *Client) AppsPackagetrainedapplicationasgzip(params *AppsPackagetrainedapplicationasgzipParams, authInfo runtime.ClientAuthInfoWriter) (*AppsPackagetrainedapplicationasgzipOK, error) {
 	// TODO: Validate the params before sending
@@ -6770,7 +7146,7 @@ func (a *Client) AppsPackagetrainedapplicationasgzip(params *AppsPackagetraineda
 		Method:             "GET",
 		PathPattern:        "/package/{appId}/versions/{versionId}/gzip",
 		ProducesMediaTypes: []string{"application/octet-stream"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &AppsPackagetrainedapplicationasgzipReader{formats: a.formats},
@@ -6792,9 +7168,9 @@ func (a *Client) AppsPackagetrainedapplicationasgzip(params *AppsPackagetraineda
 }
 
 /*
-ModelsGetModel models get model
+  ModelsGetModel models get model
 
-Gets information about a model.
+  Gets information about a model.
 */
 func (a *Client) ModelsGetModel(params *ModelsGetModelParams, authInfo runtime.ClientAuthInfoWriter) (*ModelsGetModelOK, error) {
 	// TODO: Validate the params before sending
@@ -6807,7 +7183,7 @@ func (a *Client) ModelsGetModel(params *ModelsGetModelParams, authInfo runtime.C
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/models/{modelId}",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &ModelsGetModelReader{formats: a.formats},
@@ -6829,9 +7205,9 @@ func (a *Client) ModelsGetModel(params *ModelsGetModelParams, authInfo runtime.C
 }
 
 /*
-ModelsGetModelExamplesList models get model examples list
+  ModelsGetModelExamplesList models get model examples list
 
-Gets list of model examples.
+  Gets list of model examples.
 */
 func (a *Client) ModelsGetModelExamplesList(params *ModelsGetModelExamplesListParams, authInfo runtime.ClientAuthInfoWriter) (*ModelsGetModelExamplesListOK, error) {
 	// TODO: Validate the params before sending
@@ -6844,7 +7220,7 @@ func (a *Client) ModelsGetModelExamplesList(params *ModelsGetModelExamplesListPa
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/models/{modelId}/examples",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &ModelsGetModelExamplesListReader{formats: a.formats},
@@ -6866,9 +7242,9 @@ func (a *Client) ModelsGetModelExamplesList(params *ModelsGetModelExamplesListPa
 }
 
 /*
-VersionsGetApplicationVersionSettings versions get application version settings
+  VersionsGetApplicationVersionSettings versions get application version settings
 
-Gets the application version settings.
+  Gets the application version settings.
 */
 func (a *Client) VersionsGetApplicationVersionSettings(params *VersionsGetApplicationVersionSettingsParams, authInfo runtime.ClientAuthInfoWriter) (*VersionsGetApplicationVersionSettingsOK, error) {
 	// TODO: Validate the params before sending
@@ -6881,7 +7257,7 @@ func (a *Client) VersionsGetApplicationVersionSettings(params *VersionsGetApplic
 		Method:             "GET",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/settings",
 		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &VersionsGetApplicationVersionSettingsReader{formats: a.formats},
@@ -6903,9 +7279,9 @@ func (a *Client) VersionsGetApplicationVersionSettings(params *VersionsGetApplic
 }
 
 /*
-VersionsUpdateApplicationVersionSettings versions update application version settings
+  VersionsUpdateApplicationVersionSettings versions update application version settings
 
-Updates the application version settings.
+  Updates the application version settings.
 */
 func (a *Client) VersionsUpdateApplicationVersionSettings(params *VersionsUpdateApplicationVersionSettingsParams, authInfo runtime.ClientAuthInfoWriter) (*VersionsUpdateApplicationVersionSettingsOK, error) {
 	// TODO: Validate the params before sending
@@ -6917,7 +7293,7 @@ func (a *Client) VersionsUpdateApplicationVersionSettings(params *VersionsUpdate
 		ID:                 "versions-update-application-version-settings",
 		Method:             "PUT",
 		PathPattern:        "/apps/{appId}/versions/{versionId}/settings",
-		ProducesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
