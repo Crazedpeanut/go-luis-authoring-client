@@ -20,9 +20,6 @@ type JSONApp struct {
 	// actions
 	Actions []*JSONAction `json:"actions"`
 
-	// bing entities
-	BingEntities []string `json:"bing_entities"`
-
 	// closed lists
 	ClosedLists []*JSONClosedList `json:"closedLists"`
 
@@ -46,6 +43,9 @@ type JSONApp struct {
 
 	// name
 	Name string `json:"name,omitempty"`
+
+	// prebuilt entities
+	PrebuiltEntities []string `json:"prebuiltEntities"`
 
 	// regex features
 	RegexFeatures []*JSONRegexFeature `json:"regex_features"`

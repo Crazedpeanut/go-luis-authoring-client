@@ -11010,7 +11010,7 @@
           },
           "type": "array"
         },
-        "bing_entities": {
+        "prebuiltEntities": {
           "items": {
             "type": "string"
           },
