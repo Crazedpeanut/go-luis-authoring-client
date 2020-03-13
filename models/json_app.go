@@ -45,7 +45,7 @@ type JSONApp struct {
 	Name string `json:"name,omitempty"`
 
 	// prebuilt entities
-	PrebuiltEntities []string `json:"prebuiltEntities"`
+	PrebuiltEntities []*JSONAppPrebuiltEntitiesItems0 `json:"prebuiltEntities"`
 
 	// regex features
 	RegexFeatures []*JSONRegexFeature `json:"regex_features"`
@@ -82,6 +82,10 @@ func (m *JSONApp) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateModelFeatures(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validatePrebuiltEntities(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -249,6 +253,31 @@ func (m *JSONApp) validateModelFeatures(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *JSONApp) validatePrebuiltEntities(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.PrebuiltEntities) { // not required
+		return nil
+	}
+
+	for i := 0; i < len(m.PrebuiltEntities); i++ {
+		if swag.IsZero(m.PrebuiltEntities[i]) { // not required
+			continue
+		}
+
+		if m.PrebuiltEntities[i] != nil {
+			if err := m.PrebuiltEntities[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("prebuiltEntities" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
 func (m *JSONApp) validateRegexFeatures(formats strfmt.Registry) error {
 
 	if swag.IsZero(m.RegexFeatures) { // not required
@@ -310,6 +339,37 @@ func (m *JSONApp) MarshalBinary() ([]byte, error) {
 // UnmarshalBinary interface implementation
 func (m *JSONApp) UnmarshalBinary(b []byte) error {
 	var res JSONApp
+	if err := swag.ReadJSON(b, &res); err != nil {
+		return err
+	}
+	*m = res
+	return nil
+}
+
+// JSONAppPrebuiltEntitiesItems0 JSON app prebuilt entities items0
+// swagger:model JSONAppPrebuiltEntitiesItems0
+type JSONAppPrebuiltEntitiesItems0 struct {
+
+	// name
+	Name string `json:"name,omitempty"`
+}
+
+// Validate validates this JSON app prebuilt entities items0
+func (m *JSONAppPrebuiltEntitiesItems0) Validate(formats strfmt.Registry) error {
+	return nil
+}
+
+// MarshalBinary interface implementation
+func (m *JSONAppPrebuiltEntitiesItems0) MarshalBinary() ([]byte, error) {
+	if m == nil {
+		return nil, nil
+	}
+	return swag.WriteJSON(m)
+}
+
+// UnmarshalBinary interface implementation
+func (m *JSONAppPrebuiltEntitiesItems0) UnmarshalBinary(b []byte) error {
+	var res JSONAppPrebuiltEntitiesItems0
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}
